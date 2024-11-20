@@ -1,9 +1,14 @@
 body{
-  background-color:#e1ebed
+  background-color:#e1ebed;
 }
 
 head{
-  background-color:#e1ebed
+  background-color:#bbc5c7;
+}
+
+header{
+  text-align: center;
+  background-color:#bbc5c7;
 }
 
 .collapsible {
