@@ -27,6 +27,7 @@ head{
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
+  text-align: left;
 }
   .container {
     display: flex;
@@ -36,4 +37,5 @@ head{
   .text {
     font-size: 20px;
     width: 1050px;
+    text-align: left;
   }
