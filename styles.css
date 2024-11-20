@@ -13,9 +13,9 @@ head{
   padding: 18px;
   width: 100%;
   border: none;
+  text-align: left;
   outline: none;
   font-size: 25px;
-  text-align: left;
 }
 
 .active, .collapsible:hover {
@@ -26,16 +26,18 @@ head{
   padding: 0 18px;
   display: none;
   overflow: hidden;
+  height: 350px;
   background-color: #f1f1f1;
-  text-align: left;
 }
 
 .container {
     display: flex;
-}
+    align-items: left;
+    justify-content: left;
+  }
   
-  .text {
+.text {
     font-size: 20px;
+    float: left;
     width: 1050px;
-    text-align: left;
   }
