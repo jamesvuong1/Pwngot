@@ -29,10 +29,10 @@ head{
   background-color: #f1f1f1;
   text-align: left;
 }
-  .container {
+
+.container {
     display: flex;
-    justify-content: center;
-  }
+}
   
   .text {
     font-size: 20px;
