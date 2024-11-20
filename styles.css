@@ -15,6 +15,7 @@ head{
   border: none;
   outline: none;
   font-size: 25px;
+  text-align: left;
 }
 
 .active, .collapsible:hover {
