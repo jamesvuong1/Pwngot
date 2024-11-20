@@ -13,7 +13,6 @@ head{
   padding: 18px;
   width: 100%;
   border: none;
-  text-align: left;
   outline: none;
   font-size: 25px;
 }
@@ -30,7 +29,6 @@ head{
 }
   .container {
     display: flex;
-    align-items: center;
     justify-content: center;
   }
   
