@@ -12,9 +12,3 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-changeFavicon("/favicon.png");
-document.title = "SpaceTime Makerspace";
-var currenturl = location.href.replace(location.origin + "/", "");
-if(currenturl == ""){
-  currenturl = "index.html";
-}
