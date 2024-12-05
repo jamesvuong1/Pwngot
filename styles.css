@@ -65,8 +65,12 @@ main{
     background-color: #0056b3; /* Darker blue on hover */
 }
 footer {
-        background: #333;
-        color: gray;
-        text-align: center;
-        padding: 10px 0;
+    min-height: 100dvh; /*Make Footer Stay At Botton*/
+    display: grid; /*Make Footer Stay At Botton*/
+    grid-template-rows: auto 1fr auto; /*Make Footer Stay At Botton*/
+    grid-template-columns: minmax(0, 1fr) /*Make Footer Stay At Botton*/
+    background: #333;
+    color: gray;
+    text-align: center;
+    padding: 10px 0;
 }
