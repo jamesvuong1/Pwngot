@@ -64,12 +64,9 @@ main{
 .button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
-
 footer {
-    background: #333;
-    color: gray;
-    text-align: center;
-    padding: 10px 0;
-    bottom: 0;
-    position: absolute;
+        background: #333;
+        color: gray;
+        text-align: center;
+        padding: 10px 0;
 }
