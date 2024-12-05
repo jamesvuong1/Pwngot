@@ -15,6 +15,10 @@ header{
 main{
   background-color:#FFFFFF;
 }
+
+footer{
+  position:sticky;
+}
 .collapsible {
   background-color: #42a4f5;
   color: white;
