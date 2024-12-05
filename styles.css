@@ -17,7 +17,7 @@ main{
 }
 
 footer{
-  position:sticky;
+  position: fixed;
 }
 .collapsible {
   background-color: #42a4f5;
