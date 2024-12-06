@@ -1,5 +1,5 @@
 body{
-  min-height: 95vh;
+  min-height: 100vh;
   background-color:#6eabb8;
 }
 
@@ -76,5 +76,5 @@ footer {
 
 .sticky-footer {
     position: sticky;
-    top: 100%
+    top: 90%
 }
