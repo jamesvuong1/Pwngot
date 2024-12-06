@@ -67,10 +67,13 @@ main{
 }
 
 footer {
-    position: sticky;
-    top: 100%;
     background: #333;
     color: gray;
     text-align: center;
     padding: 10px 0;
+}
+
+.sticky-footer {
+    position: sticky;
+    top: 100%; 
 }
