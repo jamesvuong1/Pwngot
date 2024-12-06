@@ -68,6 +68,7 @@ main{
 
 footer {
     padding: 0px;
+    padding-bottom: 0px;
     background: #333;/*blank*/
     color: gray;
     text-align: center;
