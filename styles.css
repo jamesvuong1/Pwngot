@@ -65,6 +65,8 @@ main{
     background-color: #0056b3; /* Darker blue on hover */
 }
 footer {
+    position: sticky;
+    top: 100%;
     background: #333;
     color: gray;
     text-align: center;
