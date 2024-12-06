@@ -75,6 +75,7 @@ footer {
 }
 
 .sticky-footer {
+    padding: 0px;
     position: sticky;
     left:0;
     right:0;
