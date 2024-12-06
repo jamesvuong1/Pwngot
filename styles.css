@@ -26,7 +26,7 @@ main{
   border: none;
   text-align: left;
   outline: none;
-  font-size: 2px;
+  font-size: 28px;
 }
 
 .active, .collapsible:hover {
