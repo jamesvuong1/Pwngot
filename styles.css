@@ -71,11 +71,11 @@ footer {
     background: #333;/*blank*/
     color: gray;
     text-align: center;
-    left:0;
-    right:0;
 }
 
 .sticky-footer {
     position: sticky;
     margin: 0;
+    left:0;
+    right:0;
 }
