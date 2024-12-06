@@ -67,6 +67,7 @@ main{
 }
 
 footer {
+    margin-bottom: 0;
     padding: 0px;
     background: #333;/*blank*/
     color: gray;
