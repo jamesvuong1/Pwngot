@@ -1,4 +1,5 @@
 body{
+  min-height: 100vh;
   background-color:#6eabb8;
 }
 
@@ -72,8 +73,4 @@ footer {
     color: gray;
     text-align: center;
     padding: 10px 0;
-}
-
-html{
-  min-height: 100vh;
 }
