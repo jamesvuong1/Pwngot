@@ -67,7 +67,7 @@ main{
 }
 
 footer {
-    margin-bottom: 0;
+    margin: 0;
     padding: 0px;
     background: #333;/*blank*/
     color: gray;
@@ -77,5 +77,6 @@ footer {
 
 .sticky-footer {
     position: sticky;
+    margin: 0
     top: 100%; 
 }
