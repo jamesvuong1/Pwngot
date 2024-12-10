@@ -53,3 +53,53 @@ nav ul li a {
   text-decoration: none;
 }
 
+section {
+  padding: 50px;
+}
+
+h2 {
+  color: black;
+}
+.citation-container {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.citation-container i {
+  font-style: italic;
+}
+
+.citation-container a {
+  color: #0074d9;
+  text-decoration: none;
+}
+
+.citation-container a:hover {
+  text-decoration: underline;
+}
+.download {
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.view {
+    background-color: #378805;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.imageContainer{
+  float: right;
+  padding: 0 12.5%;
+  display: none;
