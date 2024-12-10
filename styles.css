@@ -1,80 +1,55 @@
-body{
-  min-height: 100vh;
-  background-color:#6eabb8;
+@font-face {
+  /* Font family name */
+  font-family: 'latolight';
+
+  /* Path to the WOFF file */
+  src: url('fonts/Lato-Light.woff') format('woff');
+
+  /* Optional: Font weight and style */
+  font-weight: normal;
+  font-style: normal;
+}
+*:not(footer):not(.imageContainer){
+  position:relative;
+animation:animatetop 0.4s
 }
 
-head{
-  background-color:#2f7382;
-}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
 
-header{
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+body {
+  font-family: latolight;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #161421;
+  color: #F6D55C;
+  padding: 20px;
   text-align: center;
-  background-color:#2f7382;
-  width: 100%;
 }
 
-main{
-  background-color:#FFFFFF;
+nav ul {
+  list-style-type: none;
+  color: #161421;
+  padding: 0;
 }
 
-.collapsible {
-  background-color: #42a4f5;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 28px;
+nav ul li {
+  display: inline;
+  margin-right: 15px;
 }
 
-.active, .collapsible:hover {
-  background-color: #320bb3;
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
 }
 
-.content {
-  padding: 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-}
-
-.container {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-  }
-  
-.text {
-    font-size: 20px;
-    float: left;
-    width: 1050px;
-  }
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007BFF; /* Blue */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-top: 20px; /* Adds some space above the button */
-}
-.button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-footer {
-    padding: 0px;
-    background: #333;/*blank*/
-    color: gray;
-    text-align: center;
-    margin: 0;
-}
-
-.sticky-footer {
-    position: sticky;
-    top: 90%
-}
