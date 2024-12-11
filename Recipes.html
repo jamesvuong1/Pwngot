@@ -9,8 +9,24 @@
     <script src="script.js" defer></script>
     <style>
         body {
-            background-color: #34C759; /* green background */
+            /* Rainbow background */
+            background: linear-gradient(90deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082);
+            background-size: 1000px 1000px;
+            animation: rainbow 10s ease infinite;
         }
+        
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 82%;
+            }
+            50% {
+                background-position: 100% 19%;
+            }
+            100% {
+                background-position: 0% 82%;
+            }
+        }
+        
        .sticky-footer {
             background-color: #f0f0f0; /* light gray background for footer */
             padding: 10px;
@@ -48,4 +64,3 @@
         </footer>
     </div>
 </body>
-</html>
