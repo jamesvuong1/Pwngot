@@ -30,7 +30,7 @@
             }
         }
         
-      .sticky-footer {
+       .sticky-footer {
             background-color: #f0f0f0; /* light gray background for footer */
             padding: 10px;
             text-align: center;
@@ -43,9 +43,15 @@
             text-align: center;
         }
         
+       .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        
        .button {
             padding: 10px 20px;
-            margin: 10px;
             border: none;
             border-radius: 5px;
             background-color: #fff;
@@ -63,23 +69,22 @@
     <header>
         <h1>SpaceTime Online Kitchen</h1>
     </header>
-    <a href="index.html" class="button">Home</a>    <!-- Button to navigate to the home page -->
-    <a href="about-us.html" class="button">About Us</a> <!-- Button to navigate to the about us page -->
-    <a href="quick-eats.html" class="button">Quick Eats</a> <!-- Button to navigate to the quick eats page -->
-    <a href="Recipes.html" class="button">Recipes</a> <!-- Button to navigate to the recipes page -->
-    <a href="events.html" class="button">Events</a> <!-- Button to navigate to the events page -->
-    <a href="membership.html" class="button">Membership</a> <!-- Button to navigate to the membership page -->
-    <a href="calendar.html" class="button">Calendar</a> <!-- Button to navigate to the calendar page -->
-    <a href="contact-us.html" class="button">Contact Us</a> <!-- Button to navigate to the contact us page -->
-
-  
+    <div class="button-container">
+        <a href="index.html" class="button">Home</a>
+        <a href="about-us.html" class="button">About Us</a>
+        <a href="quick-eats.html" class="button">Quick Eats</a>
+        <a href="Recipes.html" class="button">Recipes</a>
+        <a href="events.html" class="button">Events</a>
+        <a href="membership.html" class="button">Membership</a>
+        <a href="calendar.html" class="button">Calendar</a>
+        <a href="contact-us.html" class="button">Contact Us</a>
+    </div>
     <main>
-    <h4>
-        At SpaceTime Online Kitchen
-    </h4>
-    <p style="color: #f03c15;">Welcome</p> <!-- added welcome text in red -->
+        <h4>
+            At SpaceTime Online Kitchen
+        </h4>
+        <p style="color: #f03c15;">Welcome</p>
     </main>
-    
     <div class="sticky-footer">
         <footer>
             <p>&copy; 2024 SpaceTime Online Kitchen. All rights reserved.</p>
