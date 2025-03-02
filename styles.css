@@ -114,7 +114,7 @@ h2 {
   text-align:center;
 }
 .navbar li{
-  float:center;
+  float:left;
 }
 body {
   font-family: Arial, sans-serif;
