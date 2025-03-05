@@ -9,7 +9,7 @@
     <script src="script.js" defer></script>
 </head>
      <style>
- .button {
+       .button {
             background-color: #4CAF50;
             color: #fff;
             padding: 10px 20px;
@@ -24,22 +24,54 @@
        .button:hover {
             background-color: #3e8e41;
         }
+        
+       .collapsible {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+        
+       .collapsible:hover {
+            background-color: #3e8e41;
+        }
+        
+       .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+        
+       .sticky-footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
     </style>
+</head>
 <body>
     <header>
         <h1>SpaceTime Online Kitchen</h1>
     </header>
-    <nav class="navbar">
-    <ul>
-        <a href="index.html">Home</a>
-        <a href="about-us.html">About Us</a>
-        <a href="quick-eats.html">Quick Eats</a>
-        <a href="Recipes.html">Recipes</a>
-        <a href="events.html">Events</a>
-        <a href="membership.html">Membership</a>
-        <a href="calendar.html">Calendar</a>
-        <a href="contact-us.html">Contact Us</a>
-        <a href="recipe.html">Recipe finder</a>
+    <a href="index.html" class="button">Home</a>    <!-- Button to navigate to the home page -->
+    <a href="about-us.html" class="button">About Us</a> <!-- Button to navigate to the about us page -->
+    <a href="quick-eats.html" class="button">Quick Eats</a> <!-- Button to navigate to the quick eats page -->
+    <a href="Recipes.html" class="button">Recipes</a> <!-- Button to navigate to the recipes page -->
+    <a href="events.html" class="button">Events</a> <!-- Button to navigate to the events page -->
+    <a href="membership.html" class="button">Membership</a> <!-- Button to navigate to the membership page -->
+    <a href="calendar.html" class="button">Calendar</a> <!-- Button to navigate to the calendar page -->
+    <a href="contact-us.html" class="button">Contact Us</a> 
+    <a href="recipe.html">Recipe finder</a><!-- Button to navigate to the contact us page -->
     </ul>
 </nav>
     <main>
