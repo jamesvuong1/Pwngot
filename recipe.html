@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SpaceTime Online Kitchen - Recipe Finder</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png" />
   <style>
     body { 
       font-family: Arial, sans-serif; 
-      background: #f8f8f8;
+      background: #f8f8f8; 
       margin: 0; 
       padding: 20px;
     }
@@ -18,11 +18,18 @@
       background: #fff; 
       padding: 20px; 
       border-radius: 8px; 
-      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1, h2 { text-align: center; }
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; margin-bottom: 5px; }
+    h1, h2 { 
+      text-align: center; 
+    }
+    .form-group { 
+      margin-bottom: 15px;
+    }
+    .form-group label { 
+      display: block; 
+      margin-bottom: 5px;
+    }
     input[type="text"] { 
       width: 100%; 
       padding: 10px; 
@@ -38,9 +45,11 @@
       border: none; 
       border-radius: 4px; 
       font-size: 16px; 
-      cursor: pointer; 
+      cursor: pointer;
     }
-    button:hover { background: #45a049; }
+    button:hover { 
+      background: #45a049; 
+    }
     #result { 
       margin-top: 20px; 
       padding: 10px; 
@@ -59,31 +68,10 @@
   <div class="container">
     <h1>SpaceTime Online Kitchen</h1>
     <h2>Recipe Finder</h2>
-    <!-- Dietary Preferences (not used in query for now) -->
-    <div class="form-group">
-      <label>Are you vegetarian?</label>
-      <label><input type="radio" name="vegetarian" value="yes"> Yes</label>
-      <label><input type="radio" name="vegetarian" value="no" checked> No</label>
-    </div>
-    <div class="form-group">
-      <label>Nut Allergy?</label>
-      <label><input type="radio" name="nut_allergy" value="yes"> Yes</label>
-      <label><input type="radio" name="nut_allergy" value="no" checked> No</label>
-    </div>
-    <div class="form-group">
-      <label>Gluten-Free?</label>
-      <label><input type="radio" name="gluten_free" value="yes"> Yes</label>
-      <label><input type="radio" name="gluten_free" value="no" checked> No</label>
-    </div>
-    <div class="form-group">
-      <label>Low-Calorie?</label>
-      <label><input type="radio" name="low_calorie" value="yes"> Yes</label>
-      <label><input type="radio" name="low_calorie" value="no" checked> No</label>
-    </div>
-    <!-- Ingredients Input -->
+    <!-- Ingredient Input -->
     <div class="form-group">
       <label for="ingredients">Enter available ingredients (comma-separated):</label>
-      <input type="text" id="ingredients" placeholder="e.g., chicken, tomato, basil">
+      <input type="text" id="ingredients" placeholder="e.g., chicken, tomato, basil" />
     </div>
     <button id="submit">Get Recipe Suggestion</button>
     <div id="loading">Fetching recipe...</div>
@@ -92,47 +80,48 @@
 
   <script>
     async function fetchRecipe() {
-      // Get the input from the user
       const ingredientsInput = document.getElementById('ingredients').value.trim();
       if (!ingredientsInput) {
         alert("Please enter at least one ingredient.");
         return;
       }
       
-      // Build the search query (using ingredients as a query term)
-      const query = encodeURIComponent(ingredientsInput);
-      const apiKey = "vSvYVSUnAmXpMjfCf7OHsG8l5vIDeqW96tRK1ggU";
-      const apiUrl = `https://api.api-ninjas.com/v1/recipe?query=${query}`;
+      // Prepare ingredients string for the API call
+      const ingredients = ingredientsInput.split(',')
+                          .map(item => item.trim())
+                          .join(',');
       
-      // Setup headers with API key
-      const headers = {
-        'X-Api-Key': apiKey
-      };
-
-      // Clear previous results and show loading message
+      // API key and URL using the correct parameter "ingredients" with a limit of 1
+      const apiKey = "vSvYVSUnAmXpMjfCf7OHsG8l5vIDeqW96tRK1ggU";
+      const apiUrl = `https://api.api-ninjas.com/v1/recipe?ingredients=${encodeURIComponent(ingredients)}&limit=1`;
+      
+      // Clear any previous result and show loading
       document.getElementById('result').innerHTML = "";
       document.getElementById('loading').style.display = "block";
 
       try {
-        // Make the API call
-        const response = await fetch(apiUrl, { headers });
+        const response = await fetch(apiUrl, {
+          headers: {
+            'X-Api-Key': apiKey
+          }
+        });
+        
         if (!response.ok) {
           throw new Error("API error: " + response.status);
         }
+        
         const data = await response.json();
         document.getElementById('loading').style.display = "none";
         
-        // Check if any recipes were returned
-        if (!data.length) {
+        if (!data || data.length === 0) {
           document.getElementById('result').innerHTML = "<p>No recipes found. Try different ingredients.</p>";
           return;
         }
         
-        // Use the first recipe result
         const recipe = data[0];
         let html = `<h2>${recipe.title}</h2>`;
         
-        // Show image if available
+        // Display the image if available
         if (recipe.image) {
           html += `<img src="${recipe.image}" alt="${recipe.title}" style="max-width:100%; height:auto; margin-bottom:10px;">`;
         }
@@ -147,8 +136,8 @@
         document.getElementById('result').innerHTML = `<p style="color:red;">Error fetching recipe: ${error.message}</p>`;
       }
     }
-
-    // Add click listener to the button
+    
+    // Event listener for the button click
     document.getElementById('submit').addEventListener('click', fetchRecipe);
   </script>
 </body>
