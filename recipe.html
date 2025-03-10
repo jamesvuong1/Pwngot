@@ -134,10 +134,8 @@
             if (data.length > 0) {
                 const recipe = data[0];
                 let output = `<strong>Recipe Name:</strong> ${recipe.title}<br>`;
-                if (recipe.image_url) {
-                    output += `<img src="${recipe.image_url}" alt="${recipe.title}" style="max-width:100%; height:auto;"><br>`;
-                }
-                output += `<a href="${recipe.source_url}" target="_blank" class="button">View Full Recipe</a>`;
+                output += `<strong>Ingredients:</strong> ${recipe.ingredients.join(', ')}<br>`;
+                output += `<strong>Instructions:</strong><br><p>${recipe.instructions.replace(/\n/g, '<br>')}</p>`;
                 document.getElementById('result').innerHTML = output;
             } else {
                 document.getElementById('result').innerText = 'No recipes found. Try different ingredients.';
