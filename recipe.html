@@ -1,165 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SpaceTime Online Kitchen - Recipe Finder AI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced Recipe Finder</title>
   <style>
-    /* Global Styles */
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      padding-bottom: 70px; /* Extra space so content isn't hidden behind the sticky footer */
-      line-height: 1.6;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
     }
-    header {
-      background-color: #f8f8f8;
-      padding: 1rem;
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
       text-align: center;
-    }
-    nav {
-      text-align: center;
-      margin: 1rem 0;
-    }
-    nav a.button {
-      background-color: #4CAF50;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin: 10px 5px;
-    }
-    nav a.button:hover {
-      background-color: #3e8e41;
-    }
-    h1, h2 {
       color: #333;
     }
+    .form-group {
+      margin-bottom: 15px;
+    }
     label {
-      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
     }
-    input, button {
-      padding: 0.5rem;
-      font-size: 1rem;
-      margin: 0.5rem 0;
+    input[type="text"] {
       width: 100%;
-      box-sizing: border-box;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
-    #results {
-      margin-top: 2rem;
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-        
-       .collapsible {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
-        }
-        
-       .collapsible:hover {
-            background-color: #3e8e41;
-        }
-        
-       .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #f1f1f1;
-        }
-        
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e7f3fe;
+      border-left: 6px solid #2196F3;
+      color: #333;
+    }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>SpaceTime Online Kitchen</h1>
-  </header>
-  
-  
-  <nav>
-    <a href="index.html" class="button">Home</a>
-    <a href="about-us.html" class="button">About Us</a>
-    <a href="quick-eats.html" class="button">Quick Eats</a>
-    <a href="Recipes.html" class="button">Recipes</a>
-    <a href="events.html" class="button">Events</a>
-    <a href="membership.html" class="button">Membership</a>
-    <a href="calendar.html" class="button">Calendar</a>
-    <a href="contact-us.html" class="button">Contact Us</a>
-    <a href="recipe.html" class="button">Recipe finder</a>
-  </nav>
-  
-  <main>
-    <section id="recipe-finder">
-      <h2>Recipe Finder AI</h2>
-      <form id="recipe-form">
-        <label for="ingredients">Enter Ingredients (comma-separated):</label>
-        <input type="text" id="ingredients" name="ingredients" placeholder="e.g., chicken, tomato, basil" required>
-        <button type="submit">Find Recipe</button>
-      </form>
-      <div id="results"></div>
-    </section>
-  </main>
-  
+  <div class="container">
+    <h2>Enhanced Recipe Finder</h2>
+    
+    <div class="form-group">
+      <label>Are you a vegetarian?</label>
+      <label><input type="radio" name="vegetarian" value="yes"> Yes</label>
+      <label><input type="radio" name="vegetarian" value="no" checked> No</label>
+    </div>
+
+    <div class="form-group">
+      <label>Do you have a nut allergy?</label>
+      <label><input type="radio" name="nut_allergy" value="yes"> Yes</label>
+      <label><input type="radio" name="nut_allergy" value="no" checked> No</label>
+    </div>
+
+    <div class="form-group">
+      <label>Do you want gluten-free recipes?</label>
+      <label><input type="radio" name="gluten_free" value="yes"> Yes</label>
+      <label><input type="radio" name="gluten_free" value="no" checked> No</label>
+    </div>
+
+    <div class="form-group">
+      <label>Do you prefer low-calorie recipes?</label>
+      <label><input type="radio" name="low_calorie" value="yes"> Yes</label>
+      <label><input type="radio" name="low_calorie" value="no" checked> No</label>
+    </div>
+    
+    <div class="form-group">
+      <label for="ingredients">Enter your available ingredients (comma-separated):</label>
+      <input type="text" id="ingredients" placeholder="e.g., chicken, tomato, basil" />
+    </div>
+    
+    <button id="submit">Get Recipe Suggestion</button>
+    
+    <div id="result"></div>
+  </div>
+
   <script>
-    const SPOONACULAR_API_KEY = "145f2f6c9b31454d9fdc12426fa6e04e";
+    document.getElementById('submit').addEventListener('click', async function () {
+      const vegetarian = document.querySelector('input[name="vegetarian"]:checked').value;
+      const nutAllergy = document.querySelector('input[name="nut_allergy"]:checked').value;
+      const glutenFree = document.querySelector('input[name="gluten_free"]:checked').value;
+      const lowCalorie = document.querySelector('input[name="low_calorie"]:checked').value;
+      const ingredientsInput = document.getElementById('ingredients').value;
+      const ingredients = ingredientsInput.split(',')
+        .map(item => item.trim().toLowerCase())
+        .join(',');
 
-    document.getElementById('recipe-form').addEventListener('submit', async function(event) {
-      event.preventDefault();
+      const apiKey = "942c081f60ac4db68f3ee1826b05f812";
+      let apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&includeIngredients=${encodeURIComponent(ingredients)}`;
 
-      const ingredients = document.getElementById('ingredients').value.trim();
-      const resultsDiv = document.getElementById('results');
-
-      resultsDiv.innerHTML = '<p>Loading...</p>';
+      // Add dietary preferences
+      if (vegetarian === 'yes') {
+        apiUrl += '&diet=vegetarian';
+      }
+      if (nutAllergy === 'yes') {
+        apiUrl += '&excludeIngredients=peanuts,tree nuts';
+      }
+      if (glutenFree === 'yes') {
+        apiUrl += '&intolerances=gluten';
+      }
+      if (lowCalorie === 'yes') {
+        apiUrl += '&maxCalories=500';
+      }
 
       try {
-        const findUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${encodeURIComponent(ingredients)}&number=1&ranking=1&ignorePantry=true&apiKey=${SPOONACULAR_API_KEY}`;
-        const findResponse = await fetch(findUrl);
-        if (!findResponse.ok) {
-          throw new Error(`Error fetching recipe: ${findResponse.statusText}`);
-        }
-        const recipes = await findResponse.json();
-
-        if (recipes.length === 0) {
-          resultsDiv.innerHTML = '<p>No recipes found for the provided ingredients.</p>';
-          return;
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
         }
 
-        const recipe = recipes[0];
-        const recipeId = recipe.id;
+        const data = await response.json();
 
-        const infoUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${SPOONACULAR_API_KEY}`;
-        const infoResponse = await fetch(infoUrl);
-        if (!infoResponse.ok) {
-          throw new Error(`Error fetching recipe details: ${infoResponse.statusText}`);
-        }
-        const recipeDetails = await infoResponse.json();
-
-        let html = `<h2>${recipeDetails.title}</h2>`;
-        html += `<p><strong>Ready in:</strong> ${recipeDetails.readyInMinutes} minutes</p>`;
-        html += `<p><strong>Servings:</strong> ${recipeDetails.servings}</p>`;
-        html += `<h3>Ingredients:</h3><ul>`;
-        recipeDetails.extendedIngredients.forEach(ingredient => {
-          html += `<li>${ingredient.original}</li>`;
-        });
-        html += `</ul>`;
-        html += `<h3>Instructions:</h3>`;
-        if (recipeDetails.instructions) {
-          html += `<p>${recipeDetails.instructions}</p>`;
+        if (data.results && data.results.length > 0) {
+          const recipe = data.results[0];
+          let output = `<strong>Recipe Name:</strong> ${recipe.title}<br>`;
+          if (recipe.image) {
+            output += `<img src="${recipe.image}" alt="${recipe.title}" style="max-width:100%; height:auto;"><br>`;
+          }
+          output += `<a href="https://spoonacular.com/recipes/${recipe.title.replace(/ /g, '-')}-${recipe.id}" target="_blank">View Full Recipe</a>`;
+          document.getElementById('result').innerHTML = output;
         } else {
-          html += `<p>No instructions available.</p>`;
+          document.getElementById('result').innerText = 'No recipes found. Try different ingredients.';
         }
-        resultsDiv.innerHTML = html;
       } catch (error) {
-        resultsDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+        document.getElementById('result').innerText = `Error fetching recipe: ${error.message}`;
       }
     });
   </script>
