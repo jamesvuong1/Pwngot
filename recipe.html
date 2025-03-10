@@ -46,17 +46,18 @@
       border-radius: 4px; 
       font-size: 16px; 
       cursor: pointer;
+      margin-bottom: 10px;
     }
     button:hover { 
       background: #45a049; 
     }
-    #result { 
+    #result, #aiResponse { 
       margin-top: 20px; 
       padding: 10px; 
       border-left: 4px solid #4CAF50; 
       background: #e7f3fe; 
     }
-    #loading { 
+    #loading, #aiLoading { 
       text-align: center; 
       font-style: italic; 
       margin-top: 10px; 
@@ -76,6 +77,16 @@
     <button id="submit">Get Recipe Suggestion</button>
     <div id="loading">Fetching recipe...</div>
     <div id="result"></div>
+
+    <!-- Additional Interactive AI Element -->
+    <h2>Ask the AI</h2>
+    <div class="form-group">
+      <label for="aiQuestion">Ask a cooking question:</label>
+      <input type="text" id="aiQuestion" placeholder="E.g., How do I store fresh basil?" />
+    </div>
+    <button id="askAi">Ask the AI</button>
+    <div id="aiLoading">Fetching AI tip...</div>
+    <div id="aiResponse"></div>
   </div>
 
   <script>
@@ -86,24 +97,22 @@
         return;
       }
       
-      // Prepare ingredients string for the API call
+      // Prepare the ingredients string for the API call
       const ingredients = ingredientsInput.split(',')
                           .map(item => item.trim())
                           .join(',');
       
-      // API key and URL using the correct parameter "ingredients" with a limit of 1
+      // API key and URL using the "ingredients" parameter with a limit of 1
       const apiKey = "vSvYVSUnAmXpMjfCf7OHsG8l5vIDeqW96tRK1ggU";
       const apiUrl = `https://api.api-ninjas.com/v1/recipe?ingredients=${encodeURIComponent(ingredients)}&limit=1`;
       
-      // Clear any previous result and show loading
+      // Clear previous results and show the loading message
       document.getElementById('result').innerHTML = "";
       document.getElementById('loading').style.display = "block";
 
       try {
         const response = await fetch(apiUrl, {
-          headers: {
-            'X-Api-Key': apiKey
-          }
+          headers: { 'X-Api-Key': apiKey }
         });
         
         if (!response.ok) {
@@ -126,7 +135,15 @@
           html += `<img src="${recipe.image}" alt="${recipe.title}" style="max-width:100%; height:auto; margin-bottom:10px;">`;
         }
         
-        html += `<p><strong>Ingredients:</strong><br>${recipe.ingredients.replace(/,/g, '<br>')}</p>`;
+        // Convert ingredients into an unordered list
+        const ingredientsArray = recipe.ingredients.split(',');
+        let ingredientsList = '<ul>';
+        ingredientsArray.forEach(item => {
+          ingredientsList += `<li>${item.trim()}</li>`;
+        });
+        ingredientsList += '</ul>';
+        
+        html += `<p><strong>Ingredients:</strong>${ingredientsList}</p>`;
         html += `<p><strong>Instructions:</strong><br>${recipe.instructions.replace(/\./g, '.<br>')}</p>`;
         
         document.getElementById('result').innerHTML = html;
@@ -137,8 +154,36 @@
       }
     }
     
-    // Event listener for the button click
+    // Example AI functionality: returns a random cooking tip from a predefined list
+    function askAI() {
+      const question = document.getElementById('aiQuestion').value.trim();
+      if (!question) {
+        alert("Please enter a question for the AI.");
+        return;
+      }
+      
+      // Clear previous AI response and show loading message
+      document.getElementById('aiResponse').innerHTML = "";
+      document.getElementById('aiLoading').style.display = "block";
+      
+      // Simulate an AI response after a short delay (in a real app, you would call an AI API)
+      setTimeout(() => {
+        document.getElementById('aiLoading').style.display = "none";
+        const tips = [
+          "For fresher basil, store it in a glass of water like a bouquet.",
+          "Always let your meat rest after cooking to retain juices.",
+          "When chopping garlic, smash it first to get more flavor.",
+          "Use a sharp knife to improve safety and precision in the kitchen.",
+          "Experiment with herbs to bring out new flavors in your dishes."
+        ];
+        const randomTip = tips[Math.floor(Math.random() * tips.length)];
+        document.getElementById('aiResponse').innerHTML = `<p><strong>AI Tip:</strong> ${randomTip}</p>`;
+      }, 1000);
+    }
+    
+    // Event listeners
     document.getElementById('submit').addEventListener('click', fetchRecipe);
+    document.getElementById('askAi').addEventListener('click', askAI);
   </script>
 </body>
 </html>
