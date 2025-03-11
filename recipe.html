@@ -7,10 +7,11 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <style>
     body { 
-      font-family: Arial, sans-serif; 
-      background: #f8f8f8; 
-      margin: 0; 
-      padding: 20px;
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      line-height: 1.6;
     }
     .container { 
       max-width: 600px; 
@@ -20,21 +21,23 @@
       border-radius: 8px; 
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1, h2 { 
-      text-align: center; 
+        h1, h2 {
+      color: #333;
     }
-    .form-group { 
-      margin-bottom: 15px;
+    label {
+      font-weight: bold;
     }
-    .form-group label { 
-      display: block; 
-      margin-bottom: 5px;
+    input, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      width: 100%;
+      box-sizing: border-box;
     }
-    input[type="text"] { 
-      width: 100%; 
-      padding: 10px; 
-      border: 1px solid #ccc; 
-      border-radius: 4px; 
+    #results {
+      margin-top: 2rem;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
     }
     button { 
       display: block; 
@@ -48,20 +51,27 @@
       cursor: pointer;
       margin-bottom: 10px;
     }
-    button:hover { 
-      background: #45a049; 
-    }
-    #result, #aiResponse { 
-      margin-top: 20px; 
-      padding: 10px; 
-      border-left: 4px solid #4CAF50; 
-      background: #e7f3fe; 
-    }
-    #loading, #aiLoading { 
-      text-align: center; 
-      font-style: italic; 
-      margin-top: 10px; 
-      display: none;
+    .collapsible {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+        
+       .collapsible:hover {
+            background-color: #3e8e41;
+        }
+        
+       .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }: none;
     }
   </style>
 <head>
