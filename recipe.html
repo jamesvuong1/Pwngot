@@ -64,126 +64,72 @@
       display: none;
     }
   </style>
-</head>
-<body>
-  <div class="container">
-    <h1>SpaceTime Online Kitchen</h1>
-    <h2>Recipe Finder</h2>
-    <!-- Ingredient Input -->
-    <div class="form-group">
-      <label for="ingredients">Enter available ingredients (comma-separated):</label>
-      <input type="text" id="ingredients" placeholder="e.g., chicken, tomato, basil" />
-    </div>
-    <button id="submit">Get Recipe Suggestion</button>
-    <div id="loading">Fetching recipe...</div>
-    <div id="result"></div>
-
-    <!-- Additional Interactive AI Element -->
-    <h2>Ask the AI</h2>
-    <div class="form-group">
-      <label for="aiQuestion">Ask a cooking question:</label>
-      <input type="text" id="aiQuestion" placeholder="E.g., How do I store fresh basil?" />
-    </div>
-    <button id="askAi">Ask the AI</button>
-    <div id="aiLoading">Fetching AI tip...</div>
-    <div id="aiResponse"></div>
-  </div>
+  
+  <main>
+    <section id="recipe-finder">
+      <h2>Recipe Finder AI</h2>
+      <form id="recipe-form">
+        <label for="ingredients">Enter Ingredients (comma-separated):</label>
+        <input type="text" id="ingredients" name="ingredients" placeholder="e.g., chicken, tomato, basil" required>
+        <button type="submit">Find Recipe</button>
+      </form>
+      <div id="results"></div>
+    </section>
+  </main>
 
   <script>
-    async function fetchRecipe() {
-      const ingredientsInput = document.getElementById('ingredients').value.trim();
-      if (!ingredientsInput) {
-        alert("Please enter at least one ingredient.");
-        return;
-      }
-      
-      // Prepare the ingredients string for the API call
-      const ingredients = ingredientsInput.split(',')
-                          .map(item => item.trim())
-                          .join(',');
-      
-      // API key and URL using the "ingredients" parameter with a limit of 1
-      const apiKey = "vSvYVSUnAmXpMjfCf7OHsG8l5vIDeqW96tRK1ggU";
-      const apiUrl = `https://api.api-ninjas.com/v1/recipe?ingredients=${encodeURIComponent(ingredients)}&limit=1`;
-      
-      // Clear previous results and show the loading message
-      document.getElementById('result').innerHTML = "";
-      document.getElementById('loading').style.display = "block";
+    const SPOONACULAR_API_KEY = "145f2f6c9b31454d9fdc12426fa6e04e";
+
+    document.getElementById('recipe-form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const ingredients = document.getElementById('ingredients').value.trim();
+      const resultsDiv = document.getElementById('results');
+
+      resultsDiv.innerHTML = '<p>Loading...</p>';
 
       try {
-        const response = await fetch(apiUrl, {
-          headers: { 'X-Api-Key': apiKey }
-        });
-        
-        if (!response.ok) {
-          throw new Error("API error: " + response.status);
+        const findUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${encodeURIComponent(ingredients)}&number=1&ranking=1&ignorePantry=true&apiKey=${SPOONACULAR_API_KEY}`;
+        const findResponse = await fetch(findUrl);
+        if (!findResponse.ok) {
+          throw new Error(`Error fetching recipe: ${findResponse.statusText}`);
         }
-        
-        const data = await response.json();
-        document.getElementById('loading').style.display = "none";
-        
-        if (!data || data.length === 0) {
-          document.getElementById('result').innerHTML = "<p>No recipes found. Try different ingredients.</p>";
+        const recipes = await findResponse.json();
+
+        if (recipes.length === 0) {
+          resultsDiv.innerHTML = '<p>No recipes found for the provided ingredients.</p>';
           return;
         }
-        
-        const recipe = data[0];
-        let html = `<h2>${recipe.title}</h2>`;
-        
-        // Display the image if available
-        if (recipe.image) {
-          html += `<img src="${recipe.image}" alt="${recipe.title}" style="max-width:100%; height:auto; margin-bottom:10px;">`;
+
+        const recipe = recipes[0];
+        const recipeId = recipe.id;
+
+        const infoUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${SPOONACULAR_API_KEY}`;
+        const infoResponse = await fetch(infoUrl);
+        if (!infoResponse.ok) {
+          throw new Error(`Error fetching recipe details: ${infoResponse.statusText}`);
         }
-        
-        // Convert ingredients into an unordered list
-        const ingredientsArray = recipe.ingredients.split(',');
-        let ingredientsList = '<ul>';
-        ingredientsArray.forEach(item => {
-          ingredientsList += `<li>${item.trim()}</li>`;
+        const recipeDetails = await infoResponse.json();
+
+        let html = `<h2>${recipeDetails.title}</h2>`;
+        html += `<p><strong>Ready in:</strong> ${recipeDetails.readyInMinutes} minutes</p>`;
+        html += `<p><strong>Servings:</strong> ${recipeDetails.servings}</p>`;
+        html += `<h3>Ingredients:</h3><ul>`;
+        recipeDetails.extendedIngredients.forEach(ingredient => {
+          html += `<li>${ingredient.original}</li>`;
         });
-        ingredientsList += '</ul>';
-        
-        html += `<p><strong>Ingredients:</strong>${ingredientsList}</p>`;
-        html += `<p><strong>Instructions:</strong><br>${recipe.instructions.replace(/\./g, '.<br>')}</p>`;
-        
-        document.getElementById('result').innerHTML = html;
-        
+        html += `</ul>`;
+        html += `<h3>Instructions:</h3>`;
+        if (recipeDetails.instructions) {
+          html += `<p>${recipeDetails.instructions}</p>`;
+        } else {
+          html += `<p>No instructions available.</p>`;
+        }
+        resultsDiv.innerHTML = html;
       } catch (error) {
-        document.getElementById('loading').style.display = "none";
-        document.getElementById('result').innerHTML = `<p style="color:red;">Error fetching recipe: ${error.message}</p>`;
+        resultsDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
       }
-    }
-    
-    // Example AI functionality: returns a random cooking tip from a predefined list
-    function askAI() {
-      const question = document.getElementById('aiQuestion').value.trim();
-      if (!question) {
-        alert("Please enter a question for the AI.");
-        return;
-      }
-      
-      // Clear previous AI response and show loading message
-      document.getElementById('aiResponse').innerHTML = "";
-      document.getElementById('aiLoading').style.display = "block";
-      
-      // Simulate an AI response after a short delay (in a real app, you would call an AI API)
-      setTimeout(() => {
-        document.getElementById('aiLoading').style.display = "none";
-        const tips = [
-          "For fresher basil, store it in a glass of water like a bouquet.",
-          "Always let your meat rest after cooking to retain juices.",
-          "When chopping garlic, smash it first to get more flavor.",
-          "Use a sharp knife to improve safety and precision in the kitchen.",
-          "Experiment with herbs to bring out new flavors in your dishes."
-        ];
-        const randomTip = tips[Math.floor(Math.random() * tips.length)];
-        document.getElementById('aiResponse').innerHTML = `<p><strong>AI Tip:</strong> ${randomTip}</p>`;
-      }, 1000);
-    }
-    
-    // Event listeners
-    document.getElementById('submit').addEventListener('click', fetchRecipe);
-    document.getElementById('askAi').addEventListener('click', askAI);
+    });
   </script>
 </body>
 </html>
