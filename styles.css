@@ -9,10 +9,6 @@
   font-weight: normal;
   font-style: normal;
 }
-*:not(footer):not(.imageContainer){
-  position:relative;
-animation:animatetop 0.4s
-}
 
 
 body {
