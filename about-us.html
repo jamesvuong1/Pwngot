@@ -85,6 +85,17 @@
                transform: translateX(0px);
             }
         }
+
+        @keyframes name-appear {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+               opacity: 1;
+               transform: translateX(0px);
+            }
+        }
         .image {
             animation: image-appear linear;
             animation-timeline: view();
@@ -93,6 +104,12 @@
 
         .text {
             animation: text-appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+
+        .name {
+            animation: name-appear linear;
             animation-timeline: view();
             animation-range: entry 0% cover 40%;
         }
@@ -121,7 +138,7 @@
         <b><h2><u>Meet The Chefs</u></h2></b>
         <br>
         <div class="box">
-        <b><h3><u>Ethan Miller</u></h3></b>
+        <div class="name"><b><h3><u>Ethan Miller</u></h3></b></div>
         <div class="container">
             <div class="image">
                 <img src="Ethin-Miller.jpg" alt="Ethan Miller" width="150" height="200">
@@ -132,7 +149,7 @@
         </div>
         <br>
         <br>
-        <b><h3><u>Ethan Miller</u></h3></b>
+        <div class="name"><b><h3><u>Ethan Miller</u></h3></b></div>
         <div class="container">
             <div class="image">
                 <img src="Ethin-Miller.jpg" alt="Ethan Miller" width="150" height="200">
@@ -143,7 +160,7 @@
         </div>
         <br>
         <br>
-        <b><h3><u>Ethan Miller</u></h3></b>
+        <div class="name"><b><h3><u>Ethan Miller</u></h3></b></div>
         <div class="container">
             <div class="image">
                 <img src="Ethin-Miller.jpg" alt="Ethan Miller" width="150" height="200">
@@ -154,7 +171,7 @@
         </div>
         <br>
         <br>
-        <b><h3><u>Ethan Miller</u></h3></b>
+        <div class="name"><b><h3><u>Ethan Miller</u></h3></b></div>
         <div class="container">
             <div class="image">
                 <img src="Ethin-Miller.jpg" alt="Ethan Miller" width="150" height="200">
@@ -165,7 +182,7 @@
         </div>
         <br>
         <br>
-        <b><h3><u>Ethan Miller</u></h3></b>
+        <div class="name"><b><h3><u>Ethan Miller</u></h3></b></div>
         <div class="container">
             <div class="image">
                 <img src="Ethin-Miller.jpg" alt="Ethan Miller" width="150" height="200">
@@ -176,7 +193,7 @@
         </div>
         <br>
         <br>
-        <b><h3><u>Ethan Miller</u></h3></b>
+        <div class="name"><b><h3><u>Ethan Miller</u></h3></b></div>
         <div class="container">
             <div class="image">
                 <img src="Ethin-Miller.jpg" alt="Ethan Miller" width="150" height="200">
@@ -187,7 +204,7 @@
         </div>
         <br>
         <br>
-        <b><h3><u>Ethan Miller</u></h3></b>
+         <div class="name"><b><h3><u>Ethan Miller</u></h3></b></div>
         <div class="container">
             <div class="image">
                 <img src="Ethin-Miller.jpg" alt="Ethan Miller" width="150" height="200">
@@ -198,7 +215,7 @@
         </div>
          <br>
         <br>
-        <b><h3><u>Ethan Miller</u></h3></b>
+        <div class="name"><b><h3><u>Ethan Miller</u></h3></b></div>
         <div class="container">
             <div class="image">
                 <img src="Ethin-Miller.jpg" alt="Ethan Miller" width="150" height="200">
@@ -209,7 +226,7 @@
         </div>  
         <br>
         <br>
-        <b><h3><u>Ethan Miller</u></h3></b>
+        <div class="name"><b><h3><u>Ethan Miller</u></h3></b></div>
         <div class="container">
             <div class="image">
                 <img src="Ethin-Miller.jpg" alt="Ethan Miller" width="150" height="200">
