@@ -40,7 +40,7 @@
         .button:hover {
             display: inline-block;
             filter: drop-shadow(0 0 10px #4CAF50)
-            scale: 1.5;
+            animation: button-enlargen linear;
         }
 
         .button-container {
@@ -100,6 +100,16 @@
                opacity: 1;
             }
         }
+            
+        @keyframes button-enlargen {
+            from{
+                scale: 1;
+            }
+            to{
+                scale: 1.5;
+            }
+        }
+            
         .image {
             animation: image-appear linear;
             animation-timeline: view();
