@@ -16,7 +16,8 @@
         }
         
        .button {
-            background-color: #4caf50;
+            transition: all 0.4s;
+            background-color: #4CAF50;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -26,9 +27,11 @@
             display: inline-block;
             margin: 10px;
         }
-        
-       .button:hover {
-            background-color: #3e8e41;
+
+        .button:hover {
+            transform: scale(1.1);
+            display: inline-block;
+            filter: drop-shadow(0 0 10px #4CAF50)
         }
 
        .button-container {
@@ -63,7 +66,6 @@
     <header>
         <h1>SpaceTime Online Kitchen</h1>
         <h3>Contact Us</h3>
-    </header>
     <div class="button-container">
          <a href="index.html" class="button">Home</a>
          <a href="about-us.html" class="button">About Us</a>
@@ -75,6 +77,8 @@
          <a href="contact-us.html" class="button">Contact Us</a>
          <a href="recipe.html" class="button">Recipe finder</a>
      </div>
+    </header>
+
     <main>
     <h4>
         At SpacteTime Online Kitchen
