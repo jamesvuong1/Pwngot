@@ -74,8 +74,9 @@
             background-color: #f1f1f1;
         }: none;
     }
-   .button {
-            background-color: #4caf50;
+       .button {
+            transition: all 0.4s;
+            background-color: #4CAF50;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -84,6 +85,12 @@
             text-decoration: none;
             display: inline-block;
             margin: 10px;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            display: inline-block;
+            filter: drop-shadow(0 0 10px #4CAF50)
         }
         
        .button-container {
