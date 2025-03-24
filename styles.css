@@ -296,3 +296,26 @@ body {
   filter: drop-shadow(0 0 10px #29682b);
   opacity:1;
 }
+
+.wrapper{
+  display: flex;
+  
+}
+
+.wrapper .static-txt{
+  font-size: 40px;
+  font-weight: 300px;
+}
+
+.dynamic-txts li{
+  list-style: none;
+  color: #4caf50;
+}
+
+.change-txt{
+  border-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
