@@ -89,14 +89,14 @@ h2 {
   float: right;
   padding: 0 12.5%;
   display: none;
-
+}
 .navbar ul{
   list-style-type:none;
   overflow: hidden;
 }
 .navbar a{
   text-decoration:none;
-  display:block
+  display:block;
   text-align:center;
 }
 .navbar li{
@@ -166,8 +166,34 @@ body {
   position: relative;
   height: 150px;
   width: 150px;
-  border: 2px
-  border-radius: 50%;
+  border: 50px;
+  background: #4CAF50;
+  padding: 3px; 
+}
+
+.card{
+  border-radius: 25px;
+  background-color:#261c42;
+}
+
+.slide-container{
+  max-width:1120px;
+  width:100%;
+  padding: 40px 0;
+}
+
+.slide-content{
+  margin:0 40px;
+  overflow:hidden;
+  border-radius: 25px;
+}
+
+.image-content,
+.card-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding: 10px 14px;
 }
 
 .card-image .card-img{
@@ -175,4 +201,98 @@ body {
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.card-img {
+  display: inline-block;
+  filter: drop-shadow(0 0 10px #ffffff);
+}
+
+.name{
+  font-size: 18px;
+  font-weight:500;
+  color:#fff;
+}
+
+.image-content{
+  position:relative;
+  row-gap: 5px;
+  padding:25px 0;
+}
+
+.overlay{
+  position: absolute;
+  left:0;
+  top:0;
+  height: 100%;
+  width: 100%;
+  background-color:#4CAF50;
+  border-radius: 20px 20px 0 20px;
+}
+
+.overlay::before,
+.overlay::after{
+  content:'';
+  position:absolute;
+  right:0;
+  bottom:-40px;
+  height: 40px;
+  width: 40px;
+  background-color:#4CAF50;
+}
+
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color:#261c42;
+}
+
+.description{
+  font-size: 16px;
+  color:#e6e0e0;
+  text-align:center;
+}
+
+.chefs{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff
+}
+
+.v-button{ 
+  border:none;
+  font-size: 16px;
+  color:#fff;
+  padding: 8px 16px;
+  background-color:#4caf50;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition:all 0.3s ease;
+}
+.v-button:hover{
+  transform: scale(1.1);
+  display: inline-block;
+  filter: drop-shadow(0 0 10px #4CAF50);
+}
+
+.swiper-navBtn{
+  color:#4CAF50;
+}
+
+.swiper-navBtn:hover{
+  display: inline-block;
+  filter: drop-shadow(0 0 10px #4CAF50);
+}
+
+.swiper-pagination-bullet{
+  background-color:#4CAF50;
+  opacity:1;
+}
+
+.swiper-pagination-bullet{
+  display: inline-block;
+  filter: drop-shadow(0 0 10px #29682b);
+  opacity:1;
 }
