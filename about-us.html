@@ -93,7 +93,7 @@
                             </h2>
                             <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
                             
-                            <button class="v-button">View More</button>
+                            <button onclick="myFunction()" class="v-button">View More</button>
                         </div>
                     </div>
                     <div class="card swiper-slide"> 
@@ -254,4 +254,22 @@
 
     <script src="swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+
+    <script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
 </html>
