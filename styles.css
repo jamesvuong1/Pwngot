@@ -376,3 +376,64 @@ body {
     top:-450px;
   }
 }
+
+    .card {
+        position: relative;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 5px 3px #ccc;
+        padding: 15px 20px;
+        width: 600px;
+        transition: 0.5s;
+    }
+    .card:hover {
+        width: 620px;
+    }
+    .col-1 {
+        width: 300px;
+        float: left;
+    }
+     .col-2 {
+         width: 220px;
+         float: right;
+     }
+     .col-2 img {
+         width: 220px;
+     }
+     .author {
+         font-size: 18px;
+         color: rgb(182, 182, 182);
+         text-transform: uppercase;
+         margin: 10px 0;
+         letter-spacing: 0.5px;
+     }
+     .recipe-name {
+         font-size: 2.7rem;
+         font-family:none;
+         color: #000;
+         font-weight: 500;
+     }
+     .description{
+         font-size: 14px;
+         color: rgb(131, 131, 131);
+         margin:15px 0;
+     }
+     .line {
+         margin: 15px 0;
+         color: #ccc;
+     }
+     span {
+         font-size: 15px;
+         color: #000;
+         letter-spacing: 1px;
+         text-transform: uppercase;
+         padding: 5px;
+         transition: 0.5s;
+
+     }
+     span:hover {
+         transform: scale(1.1);
+         display: inline-block;
+         filter: drop-shadow(0 0 10px #4CAF50)
+     }
