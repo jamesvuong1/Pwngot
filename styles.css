@@ -435,3 +435,11 @@ body {
          display: inline-block;
          filter: drop-shadow(0 0 10px #4CAF50)
      }
+
+    .eats {
+        display: flex;
+        justify-content: center;
+        align-items:center ;
+        min-height: 100vh;
+        background: #fff;
+    }
