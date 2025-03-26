@@ -404,7 +404,6 @@ body {
      .author {
          font-size: 18px;
          color: rgb(182, 182, 182);
-         text-transform: uppercase;
          margin: 10px 0;
          letter-spacing: 0.5px;
      }
@@ -427,10 +426,8 @@ body {
          font-size: 15px;
          color: #000;
          letter-spacing: 1px;
-         text-transform: uppercase;
          padding: 5px;
          transition: 0.5s;
-
      }
 
      span:hover {
