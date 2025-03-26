@@ -432,13 +432,7 @@ body {
          transition: 0.5s;
 
      }
-    .eats {
-        display: flex;
-        justify-content: center;
-        align-items:center ;
-        min-height: 100vh;
-        background: #fff;
-    }
+
      span:hover {
          transform: scale(1.1);
          display: inline-block;
