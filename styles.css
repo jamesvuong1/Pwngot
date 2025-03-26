@@ -40,7 +40,7 @@ nav ul li a {
 }
 
 section {
-  padding: 10px;
+  padding: 50px;
 }
 
 h2 {
@@ -297,25 +297,82 @@ body {
   opacity:1;
 }
 
-.wrapper{
-  display: flex;
-  
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-.wrapper .static-txt{
-  font-size: 4px;
-  font-weight: 10px;
-}
-
-.dynamic-txts li{
-  list-style: none;
-  color: #4caf50;
-}
-
-.change-txt{
-  border-sizing: border-box;
-  min-height: 10vh;
+.change-txt{ 
+  min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
+}
+
+.wrapper{
+  display:flex;
+}
+
+.wrapper .static-txt{
+  color:#000;
+  font-size: 40px;
+  font-weight: 100px;
+}
+
+.wrapper .dynamic-txt{
+  margin-left: 15px;
+  line-height: 90px;
+  height: 90px;
+  overflow: hidden;
+}
+
+.wrapper .static-txt{
+  margin-left: 15px;
+  line-height: 90px;
+  height: 90px;
+}
+
+.dynamic-txt li{
+  list-style: none;
+  color:#4CAF50;
+  font-size: 40px;
+  top: 0%;
+  font-weight: 100px;
+  position: relative;
+  animation: slide 10s steps(5);
+  animation-iteration-count: infinite;
+}
+
+.dynamic-txt li{
+  position: relative;
+}
+
+.dynamic-txt li::after{
+  content:"";
+  position: absolute;
+  left: 0;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid #4CAF50;
+  animation: typing 2s steps(10);
+  animation-iteration-count: infinite;
+}
+
+@keyframes typing{
+  40%,
+  60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+
+@keyframes slide{
+  100%{
+    top:-450px;
+  }
 }
