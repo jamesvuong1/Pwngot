@@ -432,7 +432,7 @@ body {
          transition: 0.5s;
 
      }
-    .quick-eats {
+    .eats {
         display: flex;
         justify-content: center;
         align-items:center ;
