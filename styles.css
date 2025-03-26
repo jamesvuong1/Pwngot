@@ -1,14 +1,20 @@
+\
+
 @font-face {
   /* Font family name */
   font-family: 'latolight';
 
+
   /* Path to the WOFF file */
   src: url('fonts/Lato-Light.woff') format('woff');
+
 
   /* Optional: Font weight and style */
   font-weight: normal;
   font-style: normal;
 }
+
+
 
 
 body {
@@ -23,25 +29,30 @@ header {
   text-align: center;
 }
 
+
 nav ul {
   list-style-type: none;
   color: #000000;
   padding: 0;
 }
 
+
 nav ul li {
   display: inline;
   margin-right: 15px;
 }
+
 
 nav ul li a {
   color: #000000;
   text-decoration: none;
 }
 
+
 section {
   padding: 50px;
 }
+
 
 h2 {
   color: black;
@@ -55,14 +66,17 @@ h2 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 .citation-container i {
   font-style: italic;
 }
+
 
 .citation-container a {
   color: #0074d9;
   text-decoration: none;
 }
+
 
 .citation-container a:hover {
   text-decoration: underline;
@@ -107,7 +121,7 @@ body {
   margin: 0;
   padding: 0;
 }
-        
+       
 .button {
   background-color: #4CAF50;
   color: #fff;
@@ -119,16 +133,17 @@ body {
   display: inline-block;
   margin: 10px;
 }
-        
+       
 .button:hover {
   background-color: #3e8e41;
 }
+
 
 .button-container {
   text-align: center;
   margin: 10px;
 }
-        
+       
 .collapsible {
   background-color: #4CAF50;
   color: #fff;
@@ -139,18 +154,18 @@ body {
   width: 100%;
   text-align: left;
 }
-        
+       
 .collapsible:hover {
   background-color: #3e8e41;
 }
-        
+       
 .content {
   padding: 0 18px;
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
 }
-        
+       
 .sticky-footer {
   position: fixed;
   left: 0;
@@ -162,19 +177,22 @@ body {
   padding: 10px;
 }
 
+
 .card-image{
   position: relative;
   height: 150px;
   width: 150px;
   border: 50px;
   background: #4CAF50;
-  padding: 3px; 
+  padding: 3px;
 }
+
 
 .card{
   border-radius: 25px;
   background-color:#261c42;
 }
+
 
 .slide-container{
   max-width:1120px;
@@ -182,11 +200,13 @@ body {
   padding: 40px 0;
 }
 
+
 .slide-content{
   margin:0 40px;
   overflow:hidden;
   border-radius: 25px;
 }
+
 
 .image-content,
 .card-content{
@@ -196,6 +216,7 @@ body {
   padding: 10px 14px;
 }
 
+
 .card-image .card-img{
   height: 100%;
   width: 100%;
@@ -203,10 +224,12 @@ body {
   border-radius: 50%;
 }
 
+
 .card-img {
   display: inline-block;
   filter: drop-shadow(0 0 10px #ffffff);
 }
+
 
 .name{
   font-size: 18px;
@@ -214,11 +237,13 @@ body {
   color:#fff;
 }
 
+
 .image-content{
   position:relative;
   row-gap: 5px;
   padding:25px 0;
 }
+
 
 .overlay{
   position: absolute;
@@ -229,6 +254,7 @@ body {
   background-color:#4CAF50;
   border-radius: 20px 20px 0 20px;
 }
+
 
 .overlay::before,
 .overlay::after{
@@ -241,16 +267,19 @@ body {
   background-color:#4CAF50;
 }
 
+
 .overlay::after{
   border-radius: 0 25px 0 0;
   background-color:#261c42;
 }
+
 
 .description{
   font-size: 16px;
   color:#e6e0e0;
   text-align:center;
 }
+
 
 .chefs{
   min-height: 100vh;
@@ -260,7 +289,8 @@ body {
   background-color: #fff
 }
 
-.v-button{ 
+
+.v-button{
   border:none;
   font-size: 16px;
   color:#fff;
@@ -277,19 +307,23 @@ body {
   filter: drop-shadow(0 0 10px #4CAF50);
 }
 
+
 .swiper-navBtn{
   color:#4CAF50;
 }
+
 
 .swiper-navBtn:hover{
   display: inline-block;
   filter: drop-shadow(0 0 10px #4CAF50);
 }
 
+
 .swiper-pagination-bullet{
   background-color:#4CAF50;
   opacity:1;
 }
+
 
 .swiper-pagination-bullet{
   display: inline-block;
@@ -297,13 +331,15 @@ body {
   opacity:1;
 }
 
+
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
 }
 
-.change-txt{ 
+
+.change-txt{
   min-height: 20vh;
   display: flex;
   justify-content: center;
@@ -311,15 +347,18 @@ body {
   background-color: #fff;
 }
 
+
 .wrapper{
   display:flex;
 }
+
 
 .wrapper .static-txt{
   color:#000;
   font-size: 40px;
   font-weight: 100px;
 }
+
 
 .wrapper .dynamic-txt{
   margin-left: 15px;
@@ -328,11 +367,13 @@ body {
   overflow: hidden;
 }
 
+
 .wrapper .static-txt{
   margin-left: 15px;
   line-height: 90px;
   height: 90px;
 }
+
 
 .dynamic-txt li{
   list-style: none;
@@ -345,9 +386,11 @@ body {
   animation-iteration-count: infinite;
 }
 
+
 .dynamic-txt li{
   position: relative;
 }
+
 
 .dynamic-txt li::after{
   content:"";
@@ -361,6 +404,7 @@ body {
   animation-iteration-count: infinite;
 }
 
+
 @keyframes typing{
   40%,
   60%{
@@ -371,13 +415,15 @@ body {
   }
 }
 
+
 @keyframes slide{
   100%{
     top:-450px;
   }
 }
 
-    .r-card {
+
+    .l-card {
         position: relative;
         background: #fff;
         border: 1px solid #ccc;
@@ -387,9 +433,23 @@ body {
         width: 600px;
         transition: 0.5s;
     }
-    .r-card:hover {
+    .l-card:hover {
         width: 620px;
     }
+
+    .c-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 5px 3px #ccc;
+      padding: 15px 20px;
+      width: 600px;
+      transition: 0.5s;
+  }
+  .c-card:hover {
+      width: 620px;
+  }
     .col-1 {
         width: 300px;
         float: left;
@@ -422,24 +482,34 @@ body {
          margin: 15px 0;
          color: #ccc;
      }
-     span {
+    .r-button{
          font-size: 15px;
-         color: #000;
+         background-color: #4CAF50;
+         border-radius:6px;
+         color: #fff;
          letter-spacing: 1px;
          padding: 5px;
+         border: 0px;
          transition: 0.5s;
      }
 
-     span:hover {
-         transform: scale(1.1);
-         display: inline-block;
-         filter: drop-shadow(0 0 10px #4CAF50)
+
+    .r-button:hover{
+      display: inline-block;
+      filter: drop-shadow(0 0 7px #4CAF50);
+      border: 0px;
      }
 
-    .eats {
+    .right-eats{
         display: flex;
-        justify-content: center;
+        justify-content: left;
+        padding-left: 25px;
         align-items:center ;
-        min-height: 100vh;
+        min-height: 50vh;
+        max-width: 650px;
         background: #fff;
     }
+
+
+
+
