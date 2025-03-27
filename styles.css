@@ -444,11 +444,11 @@ body {
       border-radius: 10px;
       box-shadow: 0 5px 3px #ccc;
       padding: 15px 20px;
-      width: 600px;
+      width: 30%;
       transition: 0.5s;
   }
   .c-card:hover {
-      width: 620px;
+      width: 31%;
   }
     .col-1 {
         width: 300px;
@@ -506,7 +506,7 @@ body {
         padding-left: 25px;
         align-items:center ;
         min-height: 50vh;
-        max-width: 650px;
+        max-width: 33%;
         background: #fff;
     }
 
