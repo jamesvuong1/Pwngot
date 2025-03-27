@@ -444,43 +444,47 @@ body {
       border-radius: 10px;
       box-shadow: 0 5px 3px #ccc;
       padding: 15px 20px;
-      width: 30%;
+      width: 30vw;
       transition: 0.5s;
   }
   .c-card:hover {
-      width: 31%;
+      width: 31vw;
   }
     .col-1 {
-        width: 300px;
+        width: 33vw;
         float: left;
     }
      .col-2 {
-         width: 220px;
+         width: 33vw;
          float: right;
      }
      .col-2 img {
-         width: 220px;
+         width: 33vw;
      }
      .author {
          font-size: 18px;
          color: rgb(182, 182, 182);
          margin: 10px 0;
          letter-spacing: 0.5px;
+         max-width: 33vw;
      }
      .recipe-name {
          font-size: 2.7rem;
          font-family:none;
          color: #000;
          font-weight: 500;
+         max-width: 33vw;
      }
      .description{
          font-size: 14px;
          color: rgb(131, 131, 131);
          margin:15px 0;
+         max-width: 33vw;
      }
      .line {
          margin: 15px 0;
          color: #ccc;
+         max-width: 33vw;
      }
     .r-button{
          font-size: 15px;
