@@ -515,3 +515,17 @@ body {
         max-width: 33vw;
         background: #fff;
     }
+
+    .home-page-icons-table{
+        justify-self: center;
+    }
+
+    .icon-screen{
+      padding-left: 10vw;
+      padding-right: 10vw;
+      max-width: 30vw;
+    }
+
+    .icon-screen .middle{
+      padding-top: 100px;
+    }
