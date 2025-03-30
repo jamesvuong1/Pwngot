@@ -1,3 +1,4 @@
+
 @font-face {
   /* Font family name */
   font-family: 'latolight';
@@ -12,6 +13,19 @@
   font-style: normal;
 }
 
+@font-face {
+  /* Font family name */
+  font-family: 'latolight';
+
+
+  /* Path to the WOFF file */
+  src: url('fonts/open-sans.woff') format('woff');
+
+
+  /* Optional: Font weight and style */
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
@@ -521,11 +535,32 @@ body {
     }
 
     .icon-screen{
+      font: open-sans;
+      font-size: 30px;
       padding-left: 10vw;
       padding-right: 10vw;
-      max-width: 30vw;
+      max-width: 50vw;
     }
 
     .icon-screen .middle{
-      padding-top: 100px;
+      padding-bottom: 10vh;
     }
+
+  .new-button-container {
+      text-align: center;
+      margin: 10px;
+      position: relative;
+      display: inline-block;
+      
+  }  
+  .new-label {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff0000;
+    transform: rotate(15deg);
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
