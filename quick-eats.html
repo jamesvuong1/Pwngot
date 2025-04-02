@@ -1,222 +1,560 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8"> 
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpaceTime Online Kitchen</title>
-    <link rel="icon" type="image/png" href="favicon.png"/>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-</head>
-      <style>
-        .body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+    <title>Quick Eats | SpaceTime Online Kitchen</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         
-       .button {
-            transition: all 0.4s;
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        h1, h2, h3, h4 {
+            margin: 0;
+            font-weight: 300;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        .button {
+            transition: all 0.3s ease;
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            margin: 10px;
+            margin: 8px;
+            font-size: 1rem;
+            box-shadow: var(--card-shadow);
         }
-
+        
         .button:hover {
-            transform: scale(1.1);
-            display: inline-block;
-            filter: drop-shadow(0 0 10px #4CAF50)
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
-          
+        
         .button-container {
             text-align: center;
-            margin: 10px;
-        }  
+            margin: 20px 0;
+            padding: 10px 0;
+        }
         
-       .collapsible {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
+        .new-button-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .new-label {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #FF5722;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        /* Recipe Cards */
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .recipe-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .recipe-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .recipe-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .recipe-card:hover .recipe-image img {
+            transform: scale(1.05);
+        }
+        
+        .recipe-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .recipe-number {
+            background-color: var(--primary-light);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .recipe-author {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .recipe-name {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .recipe-description {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .recipe-footer {
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .time-badge {
+            background-color: #f5f5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        
+        .read-more {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .read-more:hover {
+            color: var(--primary-dark);
+        }
+        
+        /* Collapsible Recipe Details */
+        .collapsible {
+            background-color: var(--primary-light);
+            color: white;
+            padding: 15px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
             text-align: left;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            transition: background-color 0.3s;
         }
         
-       .collapsible:hover {
-            background-color: #3e8e41;
+        .collapsible:hover {
+            background-color: var(--primary-dark);
         }
         
-       .content {
-            padding: 0 18px;
+        .content {
+            padding: 20px;
             display: none;
             overflow: hidden;
-            background-color: #f1f1f1;
+            background-color: var(--white);
+            border-radius: 0 0 5px 5px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
         }
         
-          </style>
+        .content h3 {
+            color: var(--primary-dark);
+            margin-top: 1.5rem;
+        }
+        
+        .content ul, .content ol {
+            padding-left: 20px;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #eee;
+            margin: 1.5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .button-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .button {
+                padding: 10px 15px;
+                margin: 5px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
 <body>
     <header>
-        <h1>SpaceTime Online Kitchen</h1>
-        <h3>Quick Eats</h3>
-    <div class="button-container">
-         <a href="index.html" class="button">Home</a>
-         <a href="about-us.html" class="button">About Us</a>
-         <a href="quick-eats.html" class="button">Quick Eats</a>
-         <a href="Recipes.html" class="button">Recipes</a>
-         <a href="events.html" class="button">Events</a>
-         <a href="membership.html" class="button">Membership</a>
-         <a href="calendar.html" class="button">Calendar</a>
-         <a href="contact-us.html" class="button">Contact Us</a>
-         <div class="new-button-container">
+        <div class="container">
+            <h1>SpaceTime Online Kitchen</h1>
+            <h3>Quick Eats</h3>
+        </div>
+    </header>
+    
+    <div class="button-container container">
+        <a href="index.html" class="button">Home</a>
+        <a href="about-us.html" class="button">About Us</a>
+        <a href="quick-eats.html" class="button">Quick Eats</a>
+        <a href="Recipes.html" class="button">Recipes</a>
+        <a href="events.html" class="button">Events</a>
+        <a href="membership.html" class="button">Membership</a>
+        <a href="calendar.html" class="button">Calendar</a>
+        <a href="contact-us.html" class="button">Contact Us</a>
+        <div class="new-button-container">
             <a href="recipe.html" class="button">Recipe Finder</a>
             <span class="new-label">New</span>
-        </div>    
-     </div>
-    </header>
-    <main>
+        </div>
+    </div>
+    
+    <main class="container">
+        <h4>
+            Running late for work? In a hurry? Need a quick meal? Check out our quick eats recipes, designed to be prepared in no time. Each recipe takes no more than 30 minutes to cook, and they all taste fantastic!
+        </h4>
         
-    <h4>
-        Running late for work?/ In a hurry? Need a quick meal? Check out our quick eats recipes, designed to be prepared in no time. Each recipe takes no more than 30 minutes to cook, and they all taste fantastic!
-        <table>
-            <tr>
-              <th>        <div class="right-eats">
-                <div class="l-card">
-                    <div class="col-1">
-                        <div class="c1">1</div>
-                        <div class="author">James Smith</div>
-                        <div class="recipe-name">Crispy Chicken<br>Tenders</div>
-                        <div class="quick-description">Crispy chicken tenders are a delicious comfort food with a crunchy exterior and tender meat. Easy to make, they’re sure to impress!
+        <div class="recipe-grid">
+            <!-- Recipe 1 -->
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Crispy Chicken Tenders">
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-number">1</div>
+                    <div class="recipe-author">By James Smith</div>
+                    <div class="recipe-name">Crispy Chicken Tenders</div>
+                    <div class="recipe-description">Golden-brown chicken tenders with a crunchy exterior and juicy interior. Perfect with your favorite dipping sauce!</div>
+                    <div class="recipe-footer">
+                        <span class="time-badge">25 mins</span>
+                        <a href="#chicken-tenders" class="read-more">View Recipe</a>
+                    </div>
+                </div>
             </div>
-                        <div class="line">---------------------------------- <button class="r-button">Read More</button></div>
             
-                    </div>
-                    <div class="col-2">
-                        <img src="https://ljmstsastudent.github.io/Pwngo/chicken-tenders.jpeg" alt="Chicken Tenders">
+            <!-- Recipe 2 -->
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Avocado Toast">
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-number">2</div>
+                    <div class="recipe-author">By Maria Garcia</div>
+                    <div class="recipe-name">Gourmet Avocado Toast</div>
+                    <div class="recipe-description">Creamy avocado on toasted artisan bread with cherry tomatoes, feta, and a drizzle of balsamic glaze.</div>
+                    <div class="recipe-footer">
+                        <span class="time-badge">10 mins</span>
+                        <a href="#avocado-toast" class="read-more">View Recipe</a>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Recipe 3 -->
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Vegetable Stir Fry">
                 </div>
-              <th>    <div class="right-eats">
-                <div class="c-card">
-                 <div class="col-1">
-                     <div class="c1">1</div>
-                     <div class="author">James Smith</div>
-                     <div class="recipe-name">Crispy Chicken<br>Tenders</div>
-                     <div class="quick-description">Crispy chicken tenders are a delicious comfort food with a crunchy exterior and tender meat. Easy to make, they’re sure to impress!
-             </div>
-                     <div class="line">---------------------------------- <button class="r-button">Read More</button></div>
-             
-                 </div>
-                 <div class="col-2">
-                     <img src="https://ljmstsastudent.github.io/Pwngo/chicken-tenders.jpeg" alt="Chicken Tenders">
-                 </div>
-             </div>
-             </div>
-             <th>    <div class="right-eats">
-                <div class="c-card">
-                 <div class="col-1">
-                     <div class="c1">1</div>
-                     <div class="author">James Smith</div>
-                     <div class="recipe-name">Crispy Chicken<br>Tenders</div>
-                     <div class="quick-description">Crispy chicken tenders are a delicious comfort food with a crunchy exterior and tender meat. Easy to make, they’re sure to impress!
-             </div>
-                     <div class="line">---------------------------------- <button class="r-button">Read More</button></div>
-             
-                 </div>
-                 <div class="col-2">
-                     <img src="https://ljmstsastudent.github.io/Pwngo/chicken-tenders.jpeg" alt="Chicken Tenders">
-                 </div>
-             </div>
-             </div>
-            </tr>
-          </table>
-          
-
-
-
-        <button type="button" class="collapsible">Crispy Sandwiches</button>
-        <div class="content">
-            <div class="container">
-                <div class="text" style="width:200px">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="recipe-content">
+                    <div class="recipe-number">3</div>
+                    <div class="recipe-author">By Chen Wei</div>
+                    <div class="recipe-name">Speedy Vegetable Stir Fry</div>
+                    <div class="recipe-description">Colorful veggies in a savory garlic-ginger sauce, ready in minutes. Serve over rice or noodles.</div>
+                    <div class="recipe-footer">
+                        <span class="time-badge">20 mins</span>
+                        <a href="#stir-fry" class="read-more">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recipe 4 -->
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Caprese Salad">
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-number">4</div>
+                    <div class="recipe-author">By Sophia Rossi</div>
+                    <div class="recipe-name">Classic Caprese Salad</div>
+                    <div class="recipe-description">Fresh mozzarella, ripe tomatoes, and basil leaves drizzled with olive oil and balsamic reduction.</div>
+                    <div class="recipe-footer">
+                        <span class="time-badge">15 mins</span>
+                        <a href="#caprese" class="read-more">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recipe 5 -->
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Shrimp Scampi">
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-number">5</div>
+                    <div class="recipe-author">By David Wilson</div>
+                    <div class="recipe-name">Quick Shrimp Scampi</div>
+                    <div class="recipe-description">Garlicky shrimp in a buttery white wine sauce served over linguine. An elegant meal in minutes.</div>
+                    <div class="recipe-footer">
+                        <span class="time-badge">30 mins</span>
+                        <a href="#scampi" class="read-more">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recipe 6 -->
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Greek Yogurt Parfait">
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-number">6</div>
+                    <div class="recipe-author">By Elena Petrov</div>
+                    <div class="recipe-name">Berry Yogurt Parfait</div>
+                    <div class="recipe-description">Layers of Greek yogurt, fresh berries, and granola for a healthy breakfast or snack.</div>
+                    <div class="recipe-footer">
+                        <span class="time-badge">5 mins</span>
+                        <a href="#parfait" class="read-more">View Recipe</a>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <button type="button" class="collapsible">Crispy Chicken Tenders</button>
+        <!-- Recipe Details -->
+        <button type="button" class="collapsible" id="chicken-tenders">Crispy Chicken Tenders</button>
         <div class="content">
-            <div class="container">
-                <div class="text" style="width:200px">
-                    <h3>Ingredients:</h3>  
-                    
-                    <ul>
-                        <li>1 lb chicken breast fillets (cut into strips)</li>
-                        <li>½ cup flour (for dredging)</li>
-                        <li>2 large eggs (beaten)</li>
-                        <li>1 cup breadcrumbs (panko for extra crunch)</li>
-                        <li>½ tsp garlic powder</li>
-                        <li>½ tsp paprika</li>
-                        <li> Salt and pepper(optional)</li>
-                        <li>Oil for frying(preferably canola oil)</li>
-                    </ul>
+            <h3>Ingredients:</h3>  
+            <ul>
+                <li>1 lb chicken breast fillets (cut into strips)</li>
+                <li>½ cup flour (for dredging)</li>
+                <li>2 large eggs (beaten)</li>
+                <li>1 cup breadcrumbs (panko for extra crunch)</li>
+                <li>½ tsp garlic powder</li>
+                <li>½ tsp paprika</li>
+                <li>Salt and pepper to taste</li>
+                <li>Oil for frying (preferably canola oil)</li>
+            </ul>
 
-                    <hr></hr>
-                    
-                    <h3>Instructions:</h3>
-                    <ol>
-                    <h3>Getting the Chicken Ready:</h3>
-                        
-                    <li>Start by cutting your chicken breast fillets into nice, even strips. Once cut, give them a gentle pat with paper towels to soak up any extra moisture.</li>
-                    <h3>Setting up your Dredging Stations</h3>
-                        <li>Grab three shallow dishes. In the first one, pour some flour and sprinkle in a pinch of salt and pepper if you like.
-   - In the second dish, crack two eggs and beat them until well mixed.
-   - For the third dish, combine breadcrumbs with garlic powder and paprika for that extra flavor kick.</li>
-                        <h3>Dredge em Chicken Tendies</h3>
-                        <li>  - Take a chicken strip and first coat it in the flour, shaking off any excess. 
-   - Next, dip it into the beaten eggs, making sure every bit is covered.
-   - Finally, roll the strip in the breadcrumb mixture, pressing down gently. </li>
-                        <h3>Heating The Oil</h3>
-                        <li> - In a large skillet, pour in about half an inch of canola oil and heat it over medium-high. You’ll know it’s ready when you drop a breadcrumb in and it sizzles right away.</li>
-                    <h3>Fry the Chicken</h3>
-                        <li> - Carefully add the breaded chicken strips to the hot oil in batches, making sure not to overcrowd the pan. This helps them cook evenly.
-   - Fry each side for about 4-5 minutes, or until they turn a beautiful golden brown and are cooked through (make sure the internal temperature hits 165°F).</li>
-                    <h3>Drain the Excess Oil</h3>
-                        <li>   - Once they’re golden and crispy, use tongs to take the chicken strips out of the oil and set them on a plate lined with paper towels. This will help soak up any extra oil.</li>
-                    <h3>Cooked and Ready!</h3>
-                        <li>- Serve those crispy chicken strips warm, and don’t forget to add your favorite dipping sauces like ketchup, barbecue, or honey mustard.</li>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                        </p>
-                        
-                        </ol>
-
-                </div>
-            </div>
+            <hr>
+            
+            <h3>Instructions:</h3>
+            <h4>Getting the Chicken Ready:</h4>
+            <ol>
+                <li>Start by cutting your chicken breast fillets into nice, even strips. Once cut, pat them dry with paper towels.</li>
+            </ol>
+            
+            <h4>Setting Up Your Dredging Stations:</h4>
+            <ol start="2">
+                <li>Prepare three shallow dishes. In the first one, place flour seasoned with salt and pepper.</li>
+                <li>In the second dish, beat two eggs until well mixed.</li>
+                <li>For the third dish, combine breadcrumbs with garlic powder and paprika.</li>
+            </ol>
+            
+            <h4>Breading the Chicken:</h4>
+            <ol start="5">
+                <li>Coat each chicken strip first in the flour, shaking off any excess.</li>
+                <li>Next, dip it into the beaten eggs, ensuring full coverage.</li>
+                <li>Finally, press the strip into the breadcrumb mixture to coat evenly.</li>
+            </ol>
+            
+            <h4>Cooking:</h4>
+            <ol start="8">
+                <li>Heat about ½ inch of oil in a large skillet over medium-high heat (350°F).</li>
+                <li>Fry the breaded chicken strips in batches for 4-5 minutes per side until golden brown.</li>
+                <li>Drain on paper towels and serve immediately with your favorite dipping sauces.</li>
+            </ol>
         </div>
+        
+        <button type="button" class="collapsible" id="avocado-toast">Gourmet Avocado Toast</button>
+        <div class="content">
+            <h3>Ingredients:</h3>  
+            <ul>
+                <li>2 slices artisan bread (sourdough or whole grain)</li>
+                <li>1 ripe avocado</li>
+                <li>½ cup cherry tomatoes, halved</li>
+                <li>¼ cup crumbled feta cheese</li>
+                <li>1 tbsp balsamic glaze</li>
+                <li>1 tbsp extra virgin olive oil</li>
+                <li>Salt and pepper to taste</li>
+                <li>Red pepper flakes (optional)</li>
+            </ul>
 
+            <hr>
+            
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Toast the bread slices until golden and crisp.</li>
+                <li>Cut the avocado in half, remove the pit, and scoop the flesh into a bowl.</li>
+                <li>Mash the avocado with a fork and season with salt and pepper.</li>
+                <li>Spread the mashed avocado evenly on the toasted bread.</li>
+                <li>Top with cherry tomatoes and crumbled feta.</li>
+                <li>Drizzle with olive oil and balsamic glaze.</li>
+                <li>Sprinkle with red pepper flakes if desired and serve immediately.</li>
+            </ol>
+        </div>
+        
+        <button type="button" class="collapsible" id="stir-fry">Speedy Vegetable Stir Fry</button>
+        <div class="content">
+            <h3>Ingredients:</h3>  
+            <ul>
+                <li>2 tbsp vegetable oil</li>
+                <li>2 cloves garlic, minced</li>
+                <li>1 tbsp ginger, grated</li>
+                <li>1 bell pepper, sliced</li>
+                <li>1 cup broccoli florets</li>
+                <li>1 carrot, julienned</li>
+                <li>1 cup snap peas</li>
+                <li>2 tbsp soy sauce</li>
+                <li>1 tbsp oyster sauce</li>
+                <li>1 tsp sesame oil</li>
+                <li>1 tsp cornstarch mixed with 2 tbsp water</li>
+                <li>Sesame seeds for garnish</li>
+            </ul>
+
+            <hr>
+            
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Heat oil in a wok or large skillet over high heat.</li>
+                <li>Add garlic and ginger, stir for 30 seconds until fragrant.</li>
+                <li>Add the harder vegetables (carrots, broccoli) first and stir-fry for 2 minutes.</li>
+                <li>Add remaining vegetables and stir-fry for another 3 minutes.</li>
+                <li>Add soy sauce, oyster sauce, and sesame oil, tossing to coat.</li>
+                <li>Pour in cornstarch mixture and stir until sauce thickens.</li>
+                <li>Garnish with sesame seeds and serve over rice or noodles.</li>
+            </ol>
+        </div>
+        
+        <!-- Additional recipe sections for Caprese Salad, Shrimp Scampi, and Yogurt Parfait would follow the same pattern -->
+        
     </main>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
+    
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                    // Scroll to the opened section
+                    content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+            
+            // Open the collapsible if it's the one linked from the card
+            if (window.location.hash === '#' + coll[i].id) {
+                coll[i].nextElementSibling.style.display = "block";
+            }
+        }
+        
+        // Smooth scroll for recipe links
+        document.querySelectorAll('.read-more').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Open the collapsible
+                document.querySelector(targetId).nextElementSibling.style.display = "block";
+            });
+        });
+    </script>
 </body>
 </html>
