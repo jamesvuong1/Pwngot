@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceTime Online Kitchen - Culinary Community Hub</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+        }
+        
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 300;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-light);
+            margin: 1rem 0;
+        }
+        
+        .button {
+            transition: all 0.3s ease;
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 8px;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        
+        .new-button-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .new-label {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #FF5722;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        /* Hero Section */
+        #hero {
+            padding: 3rem 0;
+            text-align: center;
+            background-color: var(--white);
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .change-txt {
+            margin: 2rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .static-txt {
+            color: var(--text-color);
+            font-weight: 400;
+        }
+        
+        .dynamic-txt {
+            margin-left: 15px;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+        }
+        
+        .dynamic-txt li {
+            list-style: none;
+            color: var(--primary-light);
+            font-weight: 500;
+            position: relative;
+            top: 0;
+            animation: slide 6s steps(4) infinite;
+        }
+        
+        @keyframes slide {
+            100% {
+                top: -120px;
+            }
+        }
+        
+        .dynamic-txt li span {
+            position: relative;
+        }
+        
+        .dynamic-txt li span::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--white);
+            border-left: 2px solid var(--primary-light);
+            animation: typing 1.5s steps(10) infinite;
+        }
+        
+        @keyframes typing {
+            100% {
+                left: 100%;
+                margin: 0 -35px 0 35px;
+            }
+        }
+        
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            padding: 10px;
+            background-color: rgba(76, 175, 80, 0.1);
+        }
+        
+        .stat-card p {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Welcome Section */
+        .welcome-section {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .welcome-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .button-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .button {
+                padding: 10px 15px;
+                margin: 5px;
+                font-size: 0.9rem;
+            }
+            
+            .wrapper {
+                flex-direction: column;
+            }
+            
+            .dynamic-txt {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SpaceTime Online Kitchen</h1>
+            <h3>Quick Eats</h3>
+        </div>
+    </header>
+    
+    <div class="button-container container">
+        <a href="index.html" class="button">Home</a>
+        <a href="about-us.html" class="button">About Us</a>
+        <a href="quick-eats.html" class="button">Quick Eats</a>
+        <a href="Recipes.html" class="button">Recipes</a>
+        <a href="events.html" class="button">Events</a>
+        <a href="membership.html" class="button">Membership</a>
+        <a href="calendar.html" class="button">Calendar</a>
+        <a href="contact-us.html" class="button">Contact Us</a>
+        <div class="new-button-container">
+            <a href="recipe.html" class="button">Recipe Finder</a>
+            <span class="new-label">New</span>
+        </div>
+    </div>
+    
+    <main class="container">
+        <section id="hero">
+            <div class="change-txt">
+                <div class="wrapper">
+                    <div class="static-txt">Here For Your</div>
+                    <ul class="dynamic-txt">
+                        <li><span>Creativity</span></li>
+                        <li><span>Passions</span></li>
+                        <li><span>Hobbies</span></li>
+                        <li><span>Learning</span></li>
+                        <li><span>Family</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <img src="food.jpg" alt="Food Donation Icon">
+                    <h3>Community Impact</h3>
+                    <p>Donated over 10,000 meals to people around the world.</p>
+                </div>
+                
+                <div class="stat-card">
+                    <img src="person.jpg" alt="Education Icon">
+                    <h3>Culinary Education</h3>
+                    <p>Taught over 1,000 people how to cook through our classes.</p>
+                </div>
+                
+                <div class="stat-card">
+                    <img src="chef-hat.jpg" alt="Career Development Icon">
+                    <h3>Career Development</h3>
+                    <p>Helped over 500 people earn degrees in culinary arts.</p>
+                </div>
+            </div>
+            
+            <div class="welcome-section">
+                <h1>Welcome to SpaceTime Cooking!</h1>
+                <h2>Where our recipes, your time, and our space equals perfection.</h2>
+                <p>SpaceTime Cooking is a vibrant community cooking hub that offers a collaborative kitchen space for individuals to come together to create, innovate, and learn new culinary skills. Our facility is equipped with top-of-the-line kitchen tools and equipment for baking, cooking, food preservation, and more.</p>
+                <p>We have empowered many to bring their culinary dreams to life and have educated countless others on the diverse aspects of cooking and gastronomy.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SpaceTime Online Kitchen. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
