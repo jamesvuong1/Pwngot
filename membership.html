@@ -2,147 +2,374 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.i5rguef
-    <title>SpaceTime Online Kitchen</title>
-    <link rel="icon" type="image/png" href="favicon.png"/>
-    <link rel="stylesheet" href="swiper-bundle.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership Information - SpaceTime Online Kitchen</title>
+    <title>Membership | SpaceTime Online Kitchen</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-              main{
-            padding-left: 20px;
-            padding-right: 20px;
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         
-       .button {
-            transition: all 0.4s;
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        h1, h2, h3, h4 {
+            margin: 0;
+            font-weight: 300;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        .button {
+            transition: all 0.3s ease;
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            margin: 10px;
+            margin: 8px;
+            font-size: 1rem;
+            box-shadow: var(--card-shadow);
         }
-
+        
         .button:hover {
-            transform: scale(1.1);
-            display: inline-block;
-            filter: drop-shadow(0 0 10px #4CAF50);
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
-
+        
         .button-container {
             text-align: center;
-            margin: 10px;
-        }    
+            margin: 20px 0;
+            padding: 10px 0;
         }
-        h1, h2 {
-            color: #333;
+        
+        .new-button-container {
+            position: relative;
+            display: inline-block;
         }
-        h1 {
-            font-size: 28px;
+        
+        .new-label {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #FF5722;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
         }
-        h2 {
-            font-size: 22px;
-            margin-top: 20px;
+        
+        /* Membership Content */
+        .membership-content {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+            max-width: 1000px;
         }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
+        
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: center;
         }
-        ul {
+        
+        /* Membership Tiers */
+        .tiers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .tier-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            border-top: 4px solid var(--primary-light);
+            transition: transform 0.3s ease;
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tier-card h3 {
+            color: var(--primary-dark);
+            margin-top: 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tier-card ul {
             padding-left: 20px;
         }
-        li {
-            font-size: 16px;
-            margin-bottom: 8px;
+        
+        .tier-card li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .tier-card li:before {
+            content: "•";
+            color: var(--primary-light);
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Pricing Tables */
+        .pricing-section {
+            margin: 3rem 0;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .pricing-table th, .pricing-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-table th {
+            background-color: var(--primary-light);
+            color: white;
+            font-weight: 400;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        .pricing-table tr:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-button {
+            background-color: var(--primary-dark);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .button-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .button {
+                padding: 10px 15px;
+                margin: 5px;
+                font-size: 0.9rem;
+            }
+            
+            .tiers-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-table {
+                display: block;
+                overflow-x: auto;
+            }
         }
     </style>
 </head>
-        <header>
-        <h1>SpaceTime Online Kitchen</h1>
-         <h3>Events</h3>
-    <div class="button-container">
-         <a href="index.html" class="button">Home</a>
-         <a href="about-us.html" class="button">About Us</a>
-         <a href="quick-eats.html" class="button">Quick Eats</a>
-         <a href="Recipes.html" class="button">Recipes</a>
-         <a href="events.html" class="button">Events</a>
-         <a href="membership.html" class="button">Membership</a>
-         <a href="calendar.html" class="button">Calendar</a>
-         <a href="contact-us.html" class="button">Contact Us</a>
-         <div class="new-button-container">
+<body>
+    <header>
+        <div class="container">
+            <h1>SpaceTime Online Kitchen</h1>
+            <h3>Membership</h3>
+        </div>
+    </header>
+    
+    <div class="button-container container">
+        <a href="index.html" class="button">Home</a>
+        <a href="about-us.html" class="button">About Us</a>
+        <a href="quick-eats.html" class="button">Quick Eats</a>
+        <a href="Recipes.html" class="button">Recipes</a>
+        <a href="events.html" class="button">Events</a>
+        <a href="membership.html" class="button">Membership</a>
+        <a href="calendar.html" class="button">Calendar</a>
+        <a href="contact-us.html" class="button">Contact Us</a>
+        <div class="new-button-container">
             <a href="recipe.html" class="button">Recipe Finder</a>
             <span class="new-label">New</span>
-    </header>
+        </div>
     </div>
-<body>
-        <h1>SpaceTime Online Kitchen</h1>
-        <h3>About Us</h3>
-        <h1>Membership Information</h1>
-        <p>At <strong>SpaceTime Online Kitchen</strong>, we offer various membership options tailored to fit your needs. Choose the membership tier that best suits you:</p>
-        
-        <h2>Membership Tiers</h2>
-        
-        <h3>Basic Membership</h3>
-        <ul>
-            <li>Access to state-of-the-art kitchen tools and appliances.</li>
-            <li>Discounts on workshops, cooking classes, and events.</li>
-            <li>Networking opportunities with fellow culinary enthusiasts and professionals.</li>
-        </ul>
-        
-        <h3>Premium Membership</h3>
-        <ul>
-            <li>Extended access to kitchen equipment and priority registration for workshops.</li>
-            <li>Exclusive member-only events and projects.</li>
-            <li>Free or discounted access to partner facilities and resources.</li>
-        </ul>
-        
-        <h3>Corporate Membership</h3>
-        <ul>
-            <li>Specialized memberships for businesses or organizations.</li>
-            <li>Discounts on reserving kitchen space for your company.</li>
-            <li>Priority booking and reservable workspace options.</li>
-            <li>Early notification about workshops and other events.</li>
-        </ul>
-        
-        <h2>Membership Plans</h2>
-        <ul>
-            <li><strong>1 Month Membership</strong> - $65</li>
-            <li><strong>6 Month Membership</strong> - $351</li>
-            <li><strong>12 Month Membership</strong> - $663</li>
-        </ul>
-        
-        <h2>Additional Membership Costs</h2>
-        <ul>
-            <li><strong>Basic Membership</strong> - No Additional Costs</li>
-            <li><strong>Premium Membership</strong> - $10 per month additional cost</li>
-            <li><strong>Corporate Membership</strong> - $20 per month additional cost</li>
-        </ul>
-        
-        <h2>Membership Fees</h2>
-        <p>Membership fees vary depending on the tier and duration of the membership. Contact us for detailed pricing information and to sign up today!</p>
-
-    <body>
-
+    
+    <main class="container">
+        <div class="membership-content">
+            <h1>SpaceTime Online Kitchen Membership</h1>
+            <p class="intro-text">Join our culinary community and unlock exclusive benefits tailored to fit your needs. Choose the membership tier that best suits your passion for cooking and learning.</p>
+            
+            <h2>Membership Tiers</h2>
+            <div class="tiers-container">
+                <div class="tier-card">
+                    <h3>Basic Membership</h3>
+                    <ul>
+                        <li>Access to state-of-the-art kitchen tools and appliances</li>
+                        <li>10% discount on workshops and cooking classes</li>
+                        <li>Networking with culinary enthusiasts</li>
+                        <li>Monthly newsletter with recipes and tips</li>
+                        <li>Access to members-only online content</li>
+                    </ul>
+                </div>
+                
+                <div class="tier-card">
+                    <h3>Premium Membership</h3>
+                    <ul>
+                        <li>All Basic benefits plus:</li>
+                        <li>Extended kitchen access hours</li>
+                        <li>20% discount on workshops and events</li>
+                        <li>Priority registration for popular classes</li>
+                        <li>Exclusive member-only events</li>
+                        <li>Free access to partner facilities</li>
+                    </ul>
+                </div>
+                
+                <div class="tier-card">
+                    <h3>Corporate Membership</h3>
+                    <ul>
+                        <li>All Premium benefits plus:</li>
+                        <li>Specialized for businesses/organizations</li>
+                        <li>Discounts on kitchen space reservations</li>
+                        <li>Priority booking for team events</li>
+                        <li>Early notification about new workshops</li>
+                        <li>Dedicated account manager</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pricing-section">
+                <h2>Membership Plans & Pricing</h2>
+                
+                <h3>Subscription Durations</h3>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Plan</th>
+                            <th>Price</th>
+                            <th>Savings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 Month Membership</td>
+                            <td>$65</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>6 Month Membership</td>
+                            <td>$351 ($58.50/month)</td>
+                            <td class="highlight">10% savings</td>
+                        </tr>
+                        <tr>
+                            <td>12 Month Membership</td>
+                            <td>$663 ($55.25/month)</td>
+                            <td class="highlight">15% savings</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Tier Upgrades</h3>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Membership Tier</th>
+                            <th>Additional Monthly Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Basic Membership</td>
+                            <td>No additional cost</td>
+                        </tr>
+                        <tr>
+                            <td>Premium Membership</td>
+                            <td class="highlight">+$10/month</td>
+                        </tr>
+                        <tr>
+                            <td>Corporate Membership</td>
+                            <td class="highlight">+$20/month</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="cta-section">
+                <h2>Ready to Join Our Culinary Community?</h2>
+                <p>Become a member today and start enjoying exclusive benefits and access to our premium facilities.</p>
+                <a href="contact-us.html" class="button cta-button">Contact Us to Sign Up</a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
