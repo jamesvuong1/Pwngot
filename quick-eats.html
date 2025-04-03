@@ -201,64 +201,105 @@
             font-size: 0.8rem;
         }
         
-        .read-more {
+        .view-recipe {
             color: var(--primary-light);
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
-        }
-        
-        .read-more:hover {
-            color: var(--primary-dark);
-        }
-        
-        /* Collapsible Recipe Details */
-        .collapsible {
-            background-color: var(--primary-light);
-            color: white;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
-            width: 100%;
-            text-align: left;
-            font-size: 1.1rem;
-            margin: 1rem 0;
-            transition: background-color 0.3s;
         }
         
-        .collapsible:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        .content {
-            padding: 20px;
-            display: none;
-            overflow: hidden;
-            background-color: var(--white);
-            border-radius: 0 0 5px 5px;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-        }
-        
-        .content h3 {
+        .view-recipe:hover {
             color: var(--primary-dark);
-            margin-top: 1.5rem;
         }
         
-        .content ul, .content ol {
+        /* Recipe Modal */
+        .recipe-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 100;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 800px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: #aaa;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover {
+            color: var(--text-color);
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .ingredients-list, .instructions-list {
             padding-left: 20px;
         }
         
-        .content li {
+        .ingredients-list li {
             margin-bottom: 0.5rem;
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
         }
         
-        hr {
-            border: 0;
-            height: 1px;
-            background-color: #eee;
-            margin: 1.5rem 0;
+        .ingredients-list li:before {
+            content: "•";
+            color: var(--primary-light);
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+        }
+        
+        .instructions-list li {
+            margin-bottom: 1rem;
+            padding-left: 25px;
+            position: relative;
+            counter-increment: step-counter;
+        }
+        
+        .instructions-list li:before {
+            content: counter(step-counter);
+            background-color: var(--primary-light);
+            color: white;
+            font-size: 0.8rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
         }
         
         @media (max-width: 768px) {
@@ -276,6 +317,15 @@
                 padding: 10px 15px;
                 margin: 5px;
                 font-size: 0.9rem;
+            }
+            
+            .modal-content {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .modal-image {
+                height: 200px;
             }
         }
     </style>
@@ -310,7 +360,7 @@
         
         <div class="recipe-grid">
             <!-- Recipe 1 -->
-            <div class="recipe-card">
+            <div class="recipe-card" data-recipe="chicken-tenders">
                 <div class="recipe-image">
                     <img src="https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Crispy Chicken Tenders">
                 </div>
@@ -321,13 +371,13 @@
                     <div class="recipe-description">Golden-brown chicken tenders with a crunchy exterior and juicy interior. Perfect with your favorite dipping sauce!</div>
                     <div class="recipe-footer">
                         <span class="time-badge">25 mins</span>
-                        <a href="#chicken-tenders" class="read-more">View Recipe</a>
+                        <span class="view-recipe">View Recipe</span>
                     </div>
                 </div>
             </div>
             
             <!-- Recipe 2 -->
-            <div class="recipe-card">
+            <div class="recipe-card" data-recipe="avocado-toast">
                 <div class="recipe-image">
                     <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Avocado Toast">
                 </div>
@@ -338,13 +388,13 @@
                     <div class="recipe-description">Creamy avocado on toasted artisan bread with cherry tomatoes, feta, and a drizzle of balsamic glaze.</div>
                     <div class="recipe-footer">
                         <span class="time-badge">10 mins</span>
-                        <a href="#avocado-toast" class="read-more">View Recipe</a>
+                        <span class="view-recipe">View Recipe</span>
                     </div>
                 </div>
             </div>
             
             <!-- Recipe 3 -->
-            <div class="recipe-card">
+            <div class="recipe-card" data-recipe="vegetable-stir-fry">
                 <div class="recipe-image">
                     <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Vegetable Stir Fry">
                 </div>
@@ -355,205 +405,192 @@
                     <div class="recipe-description">Colorful veggies in a savory garlic-ginger sauce, ready in minutes. Serve over rice or noodles.</div>
                     <div class="recipe-footer">
                         <span class="time-badge">20 mins</span>
-                        <a href="#stir-fry" class="read-more">View Recipe</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Recipe 4 -->
-            <div class="recipe-card">
-                <div class="recipe-image">
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Caprese Salad">
-                </div>
-                <div class="recipe-content">
-                    <div class="recipe-number">4</div>
-                    <div class="recipe-author">By Sophia Rossi</div>
-                    <div class="recipe-name">Classic Caprese Salad</div>
-                    <div class="recipe-description">Fresh mozzarella, ripe tomatoes, and basil leaves drizzled with olive oil and balsamic reduction.</div>
-                    <div class="recipe-footer">
-                        <span class="time-badge">15 mins</span>
-                        <a href="#caprese" class="read-more">View Recipe</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Recipe 5 -->
-            <div class="recipe-card">
-                <div class="recipe-image">
-                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Shrimp Scampi">
-                </div>
-                <div class="recipe-content">
-                    <div class="recipe-number">5</div>
-                    <div class="recipe-author">By David Wilson</div>
-                    <div class="recipe-name">Quick Shrimp Scampi</div>
-                    <div class="recipe-description">Garlicky shrimp in a buttery white wine sauce served over linguine. An elegant meal in minutes.</div>
-                    <div class="recipe-footer">
-                        <span class="time-badge">30 mins</span>
-                        <a href="#scampi" class="read-more">View Recipe</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Recipe 6 -->
-            <div class="recipe-card">
-                <div class="recipe-image">
-                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Greek Yogurt Parfait">
-                </div>
-                <div class="recipe-content">
-                    <div class="recipe-number">6</div>
-                    <div class="recipe-author">By Elena Petrov</div>
-                    <div class="recipe-name">Berry Yogurt Parfait</div>
-                    <div class="recipe-description">Layers of Greek yogurt, fresh berries, and granola for a healthy breakfast or snack.</div>
-                    <div class="recipe-footer">
-                        <span class="time-badge">5 mins</span>
-                        <a href="#parfait" class="read-more">View Recipe</a>
+                        <span class="view-recipe">View Recipe</span>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Recipe Details -->
-        <button type="button" class="collapsible" id="chicken-tenders">Crispy Chicken Tenders</button>
-        <div class="content">
-            <h3>Ingredients:</h3>  
-            <ul>
-                <li>1 lb chicken breast fillets (cut into strips)</li>
-                <li>½ cup flour (for dredging)</li>
-                <li>2 large eggs (beaten)</li>
-                <li>1 cup breadcrumbs (panko for extra crunch)</li>
-                <li>½ tsp garlic powder</li>
-                <li>½ tsp paprika</li>
-                <li>Salt and pepper to taste</li>
-                <li>Oil for frying (preferably canola oil)</li>
-            </ul>
-
-            <hr>
-            
-            <h3>Instructions:</h3>
-            <h4>Getting the Chicken Ready:</h4>
-            <ol>
-                <li>Start by cutting your chicken breast fillets into nice, even strips. Once cut, pat them dry with paper towels.</li>
-            </ol>
-            
-            <h4>Setting Up Your Dredging Stations:</h4>
-            <ol start="2">
-                <li>Prepare three shallow dishes. In the first one, place flour seasoned with salt and pepper.</li>
-                <li>In the second dish, beat two eggs until well mixed.</li>
-                <li>For the third dish, combine breadcrumbs with garlic powder and paprika.</li>
-            </ol>
-            
-            <h4>Breading the Chicken:</h4>
-            <ol start="5">
-                <li>Coat each chicken strip first in the flour, shaking off any excess.</li>
-                <li>Next, dip it into the beaten eggs, ensuring full coverage.</li>
-                <li>Finally, press the strip into the breadcrumb mixture to coat evenly.</li>
-            </ol>
-            
-            <h4>Cooking:</h4>
-            <ol start="8">
-                <li>Heat about ½ inch of oil in a large skillet over medium-high heat (350°F).</li>
-                <li>Fry the breaded chicken strips in batches for 4-5 minutes per side until golden brown.</li>
-                <li>Drain on paper towels and serve immediately with your favorite dipping sauces.</li>
-            </ol>
+        <!-- Recipe Modals -->
+        <div id="chicken-tenders" class="recipe-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img src="https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Crispy Chicken Tenders" class="modal-image">
+                <h2>Crispy Chicken Tenders</h2>
+                <p class="recipe-author">By James Smith | 25 mins</p>
+                
+                <div class="modal-section">
+                    <h3>Description</h3>
+                    <p>Golden-brown chicken tenders with a crunchy exterior and juicy interior. Perfect with your favorite dipping sauce!</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Ingredients</h3>
+                    <ul class="ingredients-list">
+                        <li>1 lb chicken breast fillets (cut into strips)</li>
+                        <li>½ cup flour (for dredging)</li>
+                        <li>2 large eggs (beaten)</li>
+                        <li>1 cup breadcrumbs (panko for extra crunch)</li>
+                        <li>½ tsp garlic powder</li>
+                        <li>½ tsp paprika</li>
+                        <li>Salt and pepper to taste</li>
+                        <li>Oil for frying (preferably canola oil)</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Instructions</h3>
+                    <ol class="instructions-list">
+                        <li><strong>Prepare the chicken:</strong> Cut chicken breast into even strips and pat dry with paper towels.</li>
+                        <li><strong>Set up dredging stations:</strong> Place flour in first bowl, beaten eggs in second, and breadcrumbs mixed with seasonings in third.</li>
+                        <li><strong>Bread the chicken:</strong> Coat each strip in flour, then egg, then breadcrumb mixture, pressing gently to adhere.</li>
+                        <li><strong>Heat oil:</strong> Pour ½ inch of oil in skillet and heat to 350°F (medium-high heat).</li>
+                        <li><strong>Fry the tenders:</strong> Cook in batches for 4-5 minutes per side until golden brown and internal temperature reaches 165°F.</li>
+                        <li><strong>Drain and serve:</strong> Transfer to paper towel-lined plate to drain excess oil. Serve immediately with dipping sauces.</li>
+                    </ol>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Tips</h3>
+                    <ul class="ingredients-list">
+                        <li>For extra crispiness, double coat by repeating the egg and breadcrumb steps</li>
+                        <li>Try adding ¼ cup grated parmesan to the breadcrumbs for extra flavor</li>
+                        <li>Bake at 400°F for 15-20 minutes for a healthier version</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         
-        <button type="button" class="collapsible" id="avocado-toast">Gourmet Avocado Toast</button>
-        <div class="content">
-            <h3>Ingredients:</h3>  
-            <ul>
-                <li>2 slices artisan bread (sourdough or whole grain)</li>
-                <li>1 ripe avocado</li>
-                <li>½ cup cherry tomatoes, halved</li>
-                <li>¼ cup crumbled feta cheese</li>
-                <li>1 tbsp balsamic glaze</li>
-                <li>1 tbsp extra virgin olive oil</li>
-                <li>Salt and pepper to taste</li>
-                <li>Red pepper flakes (optional)</li>
-            </ul>
-
-            <hr>
-            
-            <h3>Instructions:</h3>
-            <ol>
-                <li>Toast the bread slices until golden and crisp.</li>
-                <li>Cut the avocado in half, remove the pit, and scoop the flesh into a bowl.</li>
-                <li>Mash the avocado with a fork and season with salt and pepper.</li>
-                <li>Spread the mashed avocado evenly on the toasted bread.</li>
-                <li>Top with cherry tomatoes and crumbled feta.</li>
-                <li>Drizzle with olive oil and balsamic glaze.</li>
-                <li>Sprinkle with red pepper flakes if desired and serve immediately.</li>
-            </ol>
+        <div id="avocado-toast" class="recipe-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Avocado Toast" class="modal-image">
+                <h2>Gourmet Avocado Toast</h2>
+                <p class="recipe-author">By Maria Garcia | 10 mins</p>
+                
+                <div class="modal-section">
+                    <h3>Description</h3>
+                    <p>Creamy avocado on toasted artisan bread with cherry tomatoes, feta, and a drizzle of balsamic glaze.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Ingredients</h3>
+                    <ul class="ingredients-list">
+                        <li>2 slices artisan bread (sourdough or whole grain)</li>
+                        <li>1 ripe avocado</li>
+                        <li>½ cup cherry tomatoes, halved</li>
+                        <li>¼ cup crumbled feta cheese</li>
+                        <li>1 tbsp balsamic glaze</li>
+                        <li>1 tbsp extra virgin olive oil</li>
+                        <li>Salt and pepper to taste</li>
+                        <li>Red pepper flakes (optional)</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Instructions</h3>
+                    <ol class="instructions-list">
+                        <li><strong>Toast the bread:</strong> Lightly toast bread slices until golden and crisp.</li>
+                        <li><strong>Prepare avocado:</strong> Cut avocado in half, remove pit, and scoop flesh into bowl. Mash with fork and season with salt and pepper.</li>
+                        <li><strong>Assemble:</strong> Spread mashed avocado evenly on toasted bread.</li>
+                        <li><strong>Add toppings:</strong> Top with cherry tomatoes and crumbled feta cheese.</li>
+                        <li><strong>Finish:</strong> Drizzle with olive oil and balsamic glaze. Sprinkle with red pepper flakes if desired.</li>
+                        <li><strong>Serve immediately</strong> while bread is still warm and crisp.</li>
+                    </ol>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Variations</h3>
+                    <ul class="ingredients-list">
+                        <li>Add a poached egg for extra protein</li>
+                        <li>Substitute goat cheese for feta for a creamier texture</li>
+                        <li>Add microgreens or arugula for freshness</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         
-        <button type="button" class="collapsible" id="stir-fry">Speedy Vegetable Stir Fry</button>
-        <div class="content">
-            <h3>Ingredients:</h3>  
-            <ul>
-                <li>2 tbsp vegetable oil</li>
-                <li>2 cloves garlic, minced</li>
-                <li>1 tbsp ginger, grated</li>
-                <li>1 bell pepper, sliced</li>
-                <li>1 cup broccoli florets</li>
-                <li>1 carrot, julienned</li>
-                <li>1 cup snap peas</li>
-                <li>2 tbsp soy sauce</li>
-                <li>1 tbsp oyster sauce</li>
-                <li>1 tsp sesame oil</li>
-                <li>1 tsp cornstarch mixed with 2 tbsp water</li>
-                <li>Sesame seeds for garnish</li>
-            </ul>
-
-            <hr>
-            
-            <h3>Instructions:</h3>
-            <ol>
-                <li>Heat oil in a wok or large skillet over high heat.</li>
-                <li>Add garlic and ginger, stir for 30 seconds until fragrant.</li>
-                <li>Add the harder vegetables (carrots, broccoli) first and stir-fry for 2 minutes.</li>
-                <li>Add remaining vegetables and stir-fry for another 3 minutes.</li>
-                <li>Add soy sauce, oyster sauce, and sesame oil, tossing to coat.</li>
-                <li>Pour in cornstarch mixture and stir until sauce thickens.</li>
-                <li>Garnish with sesame seeds and serve over rice or noodles.</li>
-            </ol>
+        <div id="vegetable-stir-fry" class="recipe-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Vegetable Stir Fry" class="modal-image">
+                <h2>Speedy Vegetable Stir Fry</h2>
+                <p class="recipe-author">By Chen Wei | 20 mins</p>
+                
+                <div class="modal-section">
+                    <h3>Description</h3>
+                    <p>Colorful veggies in a savory garlic-ginger sauce, ready in minutes. Serve over rice or noodles.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Ingredients</h3>
+                    <ul class="ingredients-list">
+                        <li>2 tbsp vegetable oil</li>
+                        <li>2 cloves garlic, minced</li>
+                        <li>1 tbsp ginger, grated</li>
+                        <li>1 bell pepper, sliced</li>
+                        <li>1 cup broccoli florets</li>
+                        <li>1 carrot, julienned</li>
+                        <li>1 cup snap peas</li>
+                        <li>2 tbsp soy sauce</li>
+                        <li>1 tbsp oyster sauce</li>
+                        <li>1 tsp sesame oil</li>
+                        <li>1 tsp cornstarch mixed with 2 tbsp water</li>
+                        <li>Sesame seeds for garnish</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Instructions</h3>
+                    <ol class="instructions-list">
+                        <li><strong>Prep vegetables:</strong> Wash and cut all vegetables into uniform sizes for even cooking.</li>
+                        <li><strong>Heat wok:</strong> Heat oil in wok or large skillet over high heat until shimmering.</li>
+                        <li><strong>Aromatics:</strong> Add garlic and ginger, stir for 30 seconds until fragrant.</li>
+                        <li><strong>Cook hard vegetables:</strong> Add carrots and broccoli first, stir-fry for 2 minutes.</li>
+                        <li><strong>Add remaining veggies:</strong> Add bell pepper and snap peas, stir-fry for another 3 minutes.</li>
+                        <li><strong>Add sauces:</strong> Pour in soy sauce, oyster sauce, and sesame oil, tossing to coat evenly.</li>
+                        <li><strong>Thicken sauce:</strong> Add cornstarch mixture and stir until sauce thickens and coats vegetables.</li>
+                        <li><strong>Garnish and serve:</strong> Sprinkle with sesame seeds and serve immediately over rice or noodles.</li>
+                    </ol>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Pro Tips</h3>
+                    <ul class="ingredients-list">
+                        <li>Have all ingredients prepped before starting as stir-fry cooks quickly</li>
+                        <li>Keep the heat high to prevent vegetables from becoming soggy</li>
+                        <li>Add protein like tofu, chicken, or shrimp for a complete meal</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
-        <!-- Additional recipe sections for Caprese Salad, Shrimp Scampi, and Yogurt Parfait would follow the same pattern -->
-        
     </main>
     
     <script>
-        var coll = document.getElementsByClassName("collapsible");
-        
-        for (var i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                    // Scroll to the opened section
-                    content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
+        // Recipe Modal functionality
+        document.querySelectorAll('.view-recipe').forEach(button => {
+            button.addEventListener('click', function() {
+                const recipeId = this.closest('.recipe-card').dataset.recipe;
+                const modal = document.getElementById(recipeId);
+                modal.style.display = "block";
+                document.body.style.overflow = "hidden"; // Prevent scrolling
             });
-            
-            // Open the collapsible if it's the one linked from the card
-            if (window.location.hash === '#' + coll[i].id) {
-                coll[i].nextElementSibling.style.display = "block";
+        });
+        
+        // Close modals
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.recipe-modal').style.display = "none";
+                document.body.style.overflow = "auto"; // Re-enable scrolling
+            });
+        });
+        
+        // Close modal when clicking outside content
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('recipe-modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
             }
-        }
-        
-        // Smooth scroll for recipe links
-        document.querySelectorAll('.read-more').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Open the collapsible
-                document.querySelector(targetId).nextElementSibling.style.display = "block";
-            });
         });
     </script>
 </body>
