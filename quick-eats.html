@@ -1,11 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Eats | SpaceTime Online Kitchen</title>
+    <title>SpaceTime Online Kitchen - Culinary Community Hub</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         :root {
             --primary-color: #2E7D32;
@@ -15,7 +18,6 @@
             --light-bg: #f9f9f9;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0,0,0,0.1);
-            --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         
         body {
@@ -39,9 +41,11 @@
             text-align: center;
             padding: 2rem 0;
             box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
         }
         
-        h1, h2, h3, h4 {
+        h1, h2, h3 {
             margin: 0;
             font-weight: 300;
         }
@@ -51,19 +55,16 @@
             margin-bottom: 0.5rem;
         }
         
-        h3 {
-            font-size: 1.5rem;
+        h2 {
+            font-size: 1.8rem;
             color: var(--primary-color);
             margin: 1.5rem 0;
         }
         
-        h4 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin: 2rem auto;
-            max-width: 800px;
-            text-align: center;
-            line-height: 1.8;
+        h3 {
+            font-size: 1.3rem;
+            color: #4CAF50;
+            margin: 1rem 0;
         }
         
         .button {
@@ -78,7 +79,7 @@
             display: inline-block;
             margin: 8px;
             font-size: 1rem;
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .button:hover {
@@ -94,6 +95,7 @@
         }
         
         .new-button-container {
+            justify-content: center;
             position: relative;
             display: inline-block;
         }
@@ -110,203 +112,154 @@
             font-weight: bold;
         }
         
-        /* Recipe Cards */
-        .recipe-grid {
+        /* Hero Section */
+        #hero {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .change-txt {
+            margin: 2rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .static-txt {
+            color: var(--text-color);
+            font-weight: 400;
+        }
+        
+        .dynamic-txt {
+            margin-left: 15px;
+            height: 30px;
+            line-height: 30px;
+            color: #4CAF50;
+            overflow: hidden;
+        }
+        
+        .dynamic-txt li {
+            list-style: none;
+            color: #4CAF50;
+            font-weight: 500;
+            position: relative;
+            top: 0;
+            animation: slide 10s steps(5) infinite;
+        }
+        
+        @keyframes slide{
+          100%{
+          top:-450px;
+            }
+        }
+        
+        .dynamic-txt li span {
+            position: relative;
+        }
+        
+        .dynamic-txt li::after{
+          content:"";
+          position: absolute;
+          left: 0;
+          background-color: #f9f9f9;
+          height: 100%;
+          width: 100%;
+          border-left: 2px solid #4CAF50;
+          animation: typing 2s steps(10);
+          animation-iteration-count: infinite;
+        }
+
+        
+        @keyframes typing{
+            40%,
+            60%{
+             left: calc(100% + 30px);
+              }
+            100%{
+                left: 0;
+             }
+        }
+        
+        /* Stats Section */
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
         
-        .recipe-card {
+        .stat-card {
             background: var(--white);
             border-radius: 8px;
-            overflow: hidden;
+            padding: 2rem;
+            text-align: center;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
         }
         
-        .recipe-card:hover {
+        .stat-card:hover {
             transform: translateY(-5px);
         }
         
-        .recipe-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .recipe-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .recipe-card:hover .recipe-image img {
-            transform: scale(1.05);
-        }
-        
-        .recipe-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .recipe-number {
-            background-color: var(--primary-light);
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .recipe-author {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .recipe-name {
-            font-size: 1.3rem;
-            font-weight: 400;
+        .stat-card img {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border-radius:0px ;
             margin-bottom: 1rem;
-            color: var(--primary-dark);
         }
         
-        .recipe-description {
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
+        .stat-card p {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .circle {
+          width: 100px;
+          height: 100px;
+          background-color: rgba(76, 175, 80, 0.1);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: inline-block;
         }
         
-        .recipe-footer {
-            border-top: 1px solid #eee;
-            padding-top: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .time-badge {
-            background-color: #f5f5f5;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-        
-        .view-recipe {
-            color: var(--primary-light);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-        
-        .view-recipe:hover {
-            color: var(--primary-dark);
-        }
-        
-        /* Recipe Modal */
-        .recipe-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            z-index: 100;
-            overflow-y: auto;
-        }
-        
-        .modal-content {
+        /* Welcome Section */
+        .welcome-section {
+            max-width: 1500px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 5rem;
             background-color: var(--white);
-            margin: 2rem auto;
-            padding: 2rem;
             border-radius: 8px;
-            max-width: 800px;
             box-shadow: var(--shadow);
-            position: relative;
         }
         
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            color: #aaa;
-            cursor: pointer;
-        }
-        
-        .close-modal:hover {
-            color: var(--text-color);
-        }
-        
-        .modal-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
+        .welcome-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
         }
         
-        .modal-section {
-            margin-bottom: 1.5rem;
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
         }
         
-        .ingredients-list, .instructions-list {
-            padding-left: 20px;
-        }
-        
-        .ingredients-list li {
-            margin-bottom: 0.5rem;
-            list-style-type: none;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .ingredients-list li:before {
-            content: "•";
-            color: var(--primary-light);
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-        }
-        
-        .instructions-list li {
-            margin-bottom: 1rem;
-            padding-left: 25px;
-            position: relative;
-            counter-increment: step-counter;
-        }
-        
-        .instructions-list li:before {
-            content: counter(step-counter);
-            background-color: var(--primary-light);
-            color: white;
-            font-size: 0.8rem;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            left: 0;
+        footer p {
+            margin: 0;
         }
         
         @media (max-width: 768px) {
-            .recipe-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .button-container {
                 display: flex;
                 flex-wrap: wrap;
@@ -319,13 +272,13 @@
                 font-size: 0.9rem;
             }
             
-            .modal-content {
-                margin: 1rem;
-                padding: 1.5rem;
+            .wrapper {
+                flex-direction: column;
             }
             
-            .modal-image {
-                height: 200px;
+            .dynamic-txt {
+                margin-left: 0;
+                margin-top: 10px;
             }
         }
     </style>
@@ -338,7 +291,7 @@
         </div>
     </header>
     
-    <div class="button-container container">
+    <div class="button-container">
         <a href="index.html" class="button">Home</a>
         <a href="about-us.html" class="button">About Us</a>
         <a href="quick-eats.html" class="button">Quick Eats</a>
@@ -352,6 +305,7 @@
             <span class="new-label">New</span>
         </div>
     </div>
+    
     
     <main class="container">
         <h4>
