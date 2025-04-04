@@ -4,286 +4,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Eats | SpaceTime Online Kitchen</title>
-     <link rel="icon" type="image/png" href="favicon.png">
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
-     <style>
-         :root {
-             --primary-color: #2E7D32;
-             --primary-light: #4CAF50;
-             --primary-dark: #1B5E20;
-             --text-color: #333;
-             --light-bg: #f9f9f9;
-             --white: #ffffff;
-             --shadow: 0 4px 12px rgba(0,0,0,0.1);
-             --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
-         }
-         
-         body {
-             font-family: 'Lato', Arial, sans-serif;
-             margin: 0;
-             padding: 0;
-             color: var(--text-color);
-             background-color: var(--light-bg);
-             line-height: 1.6;
-         }
-         
-         .container {
-             max-width: 1200px;
-             margin: 0 auto;
-             padding: 0 20px;
-         }
-         
-         header {
-             background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-             color: var(--white);
-             text-align: center;
-             padding: 2rem 0;
-             box-shadow: var(--shadow);
-         }
-         
-         h1, h2, h3, h4 {
-             margin: 0;
-             font-weight: 300;
-         }
-         
-         h1 {
-             font-size: 2.5rem;
-             margin-bottom: 0.5rem;
-         }
-         
-         h3 {
-             font-size: 1.5rem;
-             color: var(--primary-color);
-             margin: 1.5rem 0;
-         }
-         
-         h4 {
-             font-size: 1.2rem;
-             font-weight: 400;
-             margin: 2rem auto;
-             max-width: 800px;
-             text-align: center;
-             line-height: 1.8;
-         }
-
+    <title>SpaceTime Online Kitchen - Culinary Community Hub</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+        }
+        
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 300;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            color: #4CAF50;
+            margin: 1rem 0;
+        }
+        
         .button {
-             transition: all 0.3s ease;
-             background-color: var(--primary-light);
-             color: var(--white);
-             padding: 12px 24px;
-             border: none;
-             border-radius: 5px;
-             cursor: pointer;
-             text-decoration: none;
-             display: inline-block;
+            transition: all 0.3s ease;
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
             margin: 8px;
-             font-size: 1rem;
-             box-shadow: var(--card-shadow);
-         }
-
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
         .button:hover {
-             transform: scale(1.1);
-             display: inline-block;
-             filter: drop-shadow(0 0 10px #4CAF50)
-             transform: translateY(-2px);
-             background-color: var(--primary-dark);
-             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-         }
-           
-         
-         .button-container {
-             text-align: center;
-           	 margin: 20px 0;
-             padding: 10px 0;
-         }
-       
-         .new-button-container {
-             position: relative;
-             display: inline-block;
-         }
-         
-         .new-label {
-             position: absolute;
-             top: -8px;
-             right: -8px;
-             background-color: #FF5722;
-             color: white;
-             border-radius: 50%;
-             padding: 2px 6px;
-             font-size: 0.7rem;
-             font-weight: bold;
-         }
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        
+        .new-button-container {
+            justify-content: center;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .new-label {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #FF5722;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        /* Hero Section */
+        #hero {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .change-txt {
+            margin: 2rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .static-txt {
+            color: var(--text-color);
+            font-weight: 400;
+        }
+        
+        .dynamic-txt {
+            margin-left: 15px;
+            height: 30px;
+            line-height: 30px;
+            color: #4CAF50;
+            overflow: hidden;
+        }
+        
+        .dynamic-txt li {
+            list-style: none;
+            color: #4CAF50;
+            font-weight: 500;
+            position: relative;
+            top: 0;
+            animation: slide 10s steps(5) infinite;
+        }
+        
+        @keyframes slide{
+          100%{
+          top:-450px;
+            }
+        }
+        
+        .dynamic-txt li span {
+            position: relative;
+        }
+        
+        .dynamic-txt li::after{
+          content:"";
+          position: absolute;
+          left: 0;
+          background-color: #f9f9f9;
+          height: 100%;
+          width: 100%;
+          border-left: 2px solid #4CAF50;
+          animation: typing 2s steps(10);
+          animation-iteration-count: infinite;
+        }
 
-      /* Recipe Cards */
-         .recipe-grid {
-             display: grid;
-             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-             gap: 2rem;
-             margin: 3rem 0;
-         }
-         
-         .recipe-card {
-             background: var(--white);
-             border-radius: 8px;
-             overflow: hidden;
-             box-shadow: var(--shadow);
-             transition: transform 0.3s ease;
-             display: flex;
-             flex-direction: column;
-         }
-         
-         .recipe-card:hover {
-             transform: translateY(-5px);
-         }
-         
-         .recipe-image {
-             height: 200px;
-             overflow: hidden;
-         }
-         
-         .recipe-image img {
-             width: 100%;
-             height: 100%;
-             object-fit: cover;
-             transition: transform 0.5s ease;
-         }
-         
-         .recipe-card:hover .recipe-image img {
-             transform: scale(1.05);
-         }
-         
-         .recipe-content {
-             padding: 1.5rem;
-             flex-grow: 1;
-             display: flex;
-             flex-direction: column;
-         }
-         
-         .recipe-number {
-             background-color: var(--primary-light);
-             color: white;
-             width: 30px;
-             height: 30px;
-             border-radius: 50%;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             font-weight: bold;
-             margin-bottom: 0.5rem;
-         }
-         
-         .recipe-author {
-             color: #666;
-             font-size: 0.9rem;
-             margin-bottom: 0.5rem;
-         }
-         
-         .recipe-name {
-             font-size: 1.3rem;
-             font-weight: 400;
-             margin-bottom: 1rem;
-             color: var(--primary-dark);
-         }
-         
-         .recipe-description {
-             margin-bottom: 1.5rem;
-             flex-grow: 1;
-         }
-         
-         .recipe-footer {
-             border-top: 1px solid #eee;
-             padding-top: 1rem;
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-         }
-         
-         .time-badge {
-             background-color: #f5f5f5;
-             padding: 4px 8px;
-             border-radius: 4px;
-             font-size: 0.8rem;
-         }
-         
-         .read-more {
-             color: var(--primary-light);
-             text-decoration: none;
-             font-weight: bold;
-             transition: color 0.3s;
-         }
-         
-         .read-more:hover {
-             color: var(--primary-dark);
-         }
-         
-         /* Collapsible Recipe Details */
-         .collapsible {
-             background-color: var(--primary-light);
-             color: white;
-             padding: 15px 20px;
-             border: none;
-             border-radius: 5px;
-             cursor: pointer;
-             width: 100%;
-             text-align: left;
-             font-size: 1.1rem;
-             margin: 1rem 0;
-             transition: background-color 0.3s;
-         }
+        
+        @keyframes typing{
+            40%,
+            60%{
+             left: calc(100% + 30px);
+              }
+            100%{
+                left: 0;
+             }
+        }
+        
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-card img {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border-radius:0px ;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card p {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
 
-         .collapsible:hover {
-             background-color: var(--primary-dark);
-         }
-
-         .content {
-             padding: 20px;
-             display: none;
-             overflow: hidden;
-             background-color: var(--white);
-             border-radius: 0 0 5px 5px;
-             box-shadow: var(--card-shadow);
-             margin-bottom: 2rem;
-         }
-       .content h3 {
-             color: var(--primary-dark);
-             margin-top: 1.5rem;
-         }
-         
-         .content ul, .content ol {
-             padding-left: 20px;
-         }
-         
-         .content li {
-             margin-bottom: 0.5rem;
-         }
-         
-         hr {
-             border: 0;
-             height: 1px;
-             background-color: #eee;
-             margin: 1.5rem 0;
-         }
-         
-         @media (max-width: 768px) {
-             .recipe-grid {
-                 grid-template-columns: 1fr;
-             }
-             
-             .button-container {
-                 display: flex;
-                 flex-wrap: wrap;
-                 justify-content: center;
-             }
-             
-             .button {
-                 padding: 10px 15px;
-                 margin: 5px;
-                 font-size: 0.9rem;
-             }
-         }
-     </style>
- </head>
+        .circle {
+          width: 100px;
+          height: 100px;
+          background-color: rgba(76, 175, 80, 0.1);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: inline-block;
+        }
+        
+        /* Welcome Section */
+        .welcome-section {
+            max-width: 1500px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 5rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .welcome-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .button-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .button {
+                padding: 10px 15px;
+                margin: 5px;
+                font-size: 0.9rem;
+            }
+            
+            .wrapper {
+                flex-direction: column;
+            }
+            
+            .dynamic-txt {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
 <body>
     <header>
         <div class="container">
