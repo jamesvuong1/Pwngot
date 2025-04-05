@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,13 +114,23 @@
         
         /* Hero Section */
         #hero {
-            padding: 3rem 0;
+            padding: 3rem 0rem;
             text-align: center;
+        }
+
+        .home-page-top{
+            top:0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
         }
         
         .change-txt {
-            margin: 2rem 0;
+            margin: 10rem 10rem;
             font-size: 1.5rem;
+            justify-content: left;
         }
         
         .wrapper {
@@ -136,7 +145,7 @@
         }
         
         .dynamic-txt {
-            margin-left: 15px;
+            margin-left: 10px;
             height: 30px;
             line-height: 30px;
             color: #4CAF50;
@@ -184,7 +193,46 @@
                 left: 0;
              }
         }
+
+        /*Changing Image Section*/
+
+        .img-wrapper {
+            margin-right: 15rem;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+        }
         
+        .dynamic-img {
+            margin-left: 10px;
+            height: 600px;
+            line-height: 30px;
+            color: #4CAF50;
+            overflow: hidden;
+        }
+        
+        .dynamic-img li {
+            list-style: none;
+            position: relative;
+            top: 0;
+            animation: img-slide 10s steps(5) infinite, spin 7s infinite linear;
+        }
+        
+        @keyframes img-slide{
+          100%{
+          top:-3050px;
+            }
+        }
+
+        @keyframes spin {
+         0% {
+         transform: rotate(0deg);
+          }
+         100% {
+         transform: rotate(360deg);
+          }
+        }
+
         /* Stats Section */
         .stats-grid {
             display: grid;
@@ -198,6 +246,7 @@
             border-radius: 8px;
             padding: 2rem;
             text-align: center;
+            justify-content: center;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
         }
@@ -208,6 +257,7 @@
         
         .stat-card img {
             display: inline-block;
+            opacity: 1;
             width: 80px;
             height: 80px;
             border-radius:0px ;
@@ -306,23 +356,33 @@
             <span class="new-label">New</span>
         </div>
     </div>
-    
+    <div class="home-page-top">           
+    <div class="change-txt">
+        <div class="wrapper">
+            <div class="static-txt">Here For Your</div>
+            <ul class="dynamic-txt">
+                <li><span>Creativity</span></li>
+                <li><span>Passions</span></li>
+                <li><span>Hobbies</span></li>
+                <li><span>Learning</span></li>
+                <li><span>Family</span></li>
+            </ul>
+        </div>
+    </div>
+
+        <div class="img-wrapper">
+            <ul class="dynamic-img">
+                <li><img src="c:\Users\vaibh\Downloads\Website Design (1).png"></li>
+                <li><img src="c:\Users\vaibh\Downloads\Website Design (2).png"></li>
+                <li><img src="c:\Users\vaibh\Downloads\Website Design (3).png"></li>
+                <li><img src="c:\Users\vaibh\Downloads\Website Design (4).png"></li>
+                <li><img src="c:\Users\vaibh\Downloads\Website Design (5).png"></li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="hero">
     <main class="container">
-        <section id="hero">
-            
-            <div class="change-txt">
-                <div class="wrapper">
-                    <div class="static-txt">Here For Your</div>
-                    <ul class="dynamic-txt">
-                        <li><span>Creativity</span></li>
-                        <li><span>Passions</span></li>
-                        <li><span>Hobbies</span></li>
-                        <li><span>Learning</span></li>
-                        <li><span>Family</span></li>
-                    </ul>
-                </div>
-            </div>
-            
             <div class="welcome-section">
                 <h1>Welcome to SpaceTime Cooking!</h1>
                 <h2>Where our recipes, your time, and our space equals perfection.</h2>
