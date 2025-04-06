@@ -118,17 +118,34 @@
             text-align: center;
         }
 
+        .mission-statement{
+            display: inline-block;
+        }
+
+        .mission{
+            display: flex;
+            flex-direction: column;            
+            margin-top: 0;
+            margin-left: 11rem;
+            justify-content: left;
+        }
+
         .home-page-top{
             top:0;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             width: 100%;
             height: 100vh;
         }
         
+        .home-page-top .change-img{
+            align-content: center;
+        }
+
         .change-txt {
             margin: 10rem 10rem;
+            margin-bottom: 0;
             font-size: 1.5rem;
             justify-content: left;
         }
@@ -145,6 +162,7 @@
         }
         
         .dynamic-txt {
+            font-size: 3.25rem;
             margin-left: 10px;
             height: 30px;
             line-height: 30px;
@@ -201,26 +219,35 @@
             display: flex;
             justify-content: right;
             align-items: center;
+            transform-origin: center;   
         }
         
         .dynamic-img {
             margin-left: 10px;
-            height: 600px;
-            line-height: 30px;
+            height: 300px;
+            line-height: 30%;
             color: #4CAF50;
             overflow: hidden;
+            transform-origin: center;   
         }
         
         .dynamic-img li {
             list-style: none;
             position: relative;
+            transform-origin: center;   
             top: 0;
             animation: img-slide 10s steps(5) infinite, spin 7s infinite linear;
         }
-        
+
+        .change-img{
+            width: 300px;
+            height: 300px; 
+            transform-origin: center center;
+        }
+
         @keyframes img-slide{
           100%{
-          top:-3050px;
+          top:-1496px;
             }
         }
 
@@ -235,8 +262,8 @@
 
         /* Stats Section */
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            justify-content: space-evenly;
             gap: 2rem;
             margin: 3rem 0;
         }
@@ -258,8 +285,8 @@
         .stat-card img {
             display: inline-block;
             opacity: 1;
-            width: 80px;
-            height: 80px;
+            width: 10vw;
+            height: 10vw;
             border-radius:0px ;
             margin-bottom: 1rem;
         }
@@ -356,7 +383,8 @@
             <span class="new-label">New</span>
         </div>
     </div>
-    <div class="home-page-top">           
+    <div class="home-page-top">       
+    <div class="mission-statement">  
     <div class="change-txt">
         <div class="wrapper">
             <div class="static-txt">Here For Your</div>
@@ -369,14 +397,18 @@
             </ul>
         </div>
     </div>
-
+    <div class="mission">
+    <h1>Our Mission</h1>
+    <h3 style="color:black;"">We exist to allow you, our members, to reach your goals in culinary arts. We strive to support you and your families learn. We're here to support your passions and hobbies. We're here to educate on the various aspects of cooking.</h3>
+    </div>
+    </div>
         <div class="img-wrapper">
             <ul class="dynamic-img">
-                <li><img src="Home-Page-Plates/Website Design (1).png"></li>
-                <li><img src="Home-Page-Plates/Website Design (2).png"></li>
-                <li><img src="Home-Page-Plates/Website Design (3).png"></li>
-                <li><img src="Home-Page-Plates/Website Design (4).png"></li>
-                <li><img src="Home-Page-Plates/Website Design (5).png"></li>
+                <li><img class="change-img" src="c:\Users\vaibh\Downloads\Website Design (1).png"></li>
+                <li><img class="change-img" src="c:\Users\vaibh\Downloads\Website Design (2).png"></li>
+                <li><img class="change-img" src="c:\Users\vaibh\Downloads\Website Design (3).png"></li>
+                <li><img class="change-img" src="c:\Users\vaibh\Downloads\Website Design (4).png"></li>
+                <li><img class="change-img" src="c:\Users\vaibh\Downloads\Website Design (5).png"></li>
             </ul>
         </div>
     </div>
@@ -389,36 +421,33 @@
                 <p>SpaceTime Cooking is a vibrant community cooking hub that offers a collaborative kitchen space for individuals to come together to create, innovate, and learn new culinary skills. Our facility is equipped with top-of-the-line kitchen tools and equipment for baking, cooking, food preservation, and more.</p>
                 <p>We have empowered many to bring their culinary dreams to life and have educated countless others on the diverse aspects of cooking and gastronomy.</p>
             </div>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="circle">
-                        <img src="food.jpg" alt="Food Donation Icon">
-                    </div>
-                    <h3>Community Impact</h3>
-                    <p>Donated over 10,000 meals to people around the world.</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="circle">
-                        <img src="person.jpg" alt="Education Icon">
-                    </div>
-                    <h3>Culinary Education</h3>
-                    <p>Taught over 1,000 people how to cook through our classes.</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="circle">
-                    <img src="chef-hat.jpg" alt="Career Development Icon">
-                    </div>
-                    <h3>Career Development</h3>
-                    <p>Helped over 500 people earn degrees in culinary arts.</p>
-                </div>
-            </div>
-            
-
-        </section>
     </main>
+    </section>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="circle">
+                <img src="food.jpg" alt="Food Donation Icon">
+            </div>
+            <h3>Community Impact</h3>
+            <p>Donated over 10,000 meals to people around the world.</p>
+        </div>
+        
+        <div class="stat-card">
+            <div class="circle">
+                <img src="person.jpg" alt="Education Icon">
+            </div>
+            <h3>Culinary Education</h3>
+            <p>Taught over 1,000 people how to cook through our classes.</p>
+        </div>
+        
+        <div class="stat-card">
+            <div class="circle">
+            <img src="chef-hat.jpg" alt="Career Development Icon">
+            </div>
+            <h3>Career Development</h3>
+            <p>Helped over 500 people earn degrees in culinary arts.</p>
+        </div>
+    </div>
     
     <footer>
         <div class="container">
