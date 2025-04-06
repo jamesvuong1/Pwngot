@@ -15,74 +15,349 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png"/>
         <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        main{
-            padding-left: 20px;
-            padding-right: 20px;
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
-       .button {
-            transition: all 0.4s;
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .button {
+            transition: all 0.3s ease;
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            margin: 10px;
+            margin: 8px;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
+        
         .button:hover {
-            transform: scale(1.1);
-            display: inline-block;
-            filter: drop-shadow(0 0 10px #4CAF50);
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
-
+        
         .button-container {
             text-align: center;
-            margin: 10px;
-        }    
-            
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        
+        .new-button-container {
+            justify-content: center;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .new-label {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #FF5722;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
 
+        /*Image Carousel*/
+        .image-carousel{
+            width: 85%;
+            max-width: 1536px;
+            margin-inline: auto;
+            position: relative;
+            height: 100px;
+            margin-top: 5rem;
+            overflow: hidden;
+            mask-image: linear-gradient(
+                to right,
+                rgba(0,0,0,0),
+                rgba(0,0,0,1) 20%,
+                rgba(0,0,0,1) 80%,
+                rgba(0,0,0,0)
+                );
+        }
+
+        @keyframes scrollLeft{
+            to{
+                left: -100px;
+            }
+        }
+
+        .item{
+            position: absolute;
+            left: max(calc(150px * 8), 100%);
+            animation-name: scrollLeft;
+            animation-duration: 30s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        
+        .carousel-img{
+            width: 100px;
+            height: 100px;
+        }
+
+        .item1{
+            animation-delay: calc(30s / 8 * (8 - 1) * -1);
+        }
+
+        .item2{
+            animation-delay: calc(30s / 8 * (8 - 2) * -1);
+        }
+
+        .item3{
+            animation-delay: calc(30s / 8 * (8 - 3) * -1);
+        }
+
+        .item4{
+            animation-delay: calc(30s / 8 * (8 - 4) * -1);
+        }
+
+        .item5{
+            animation-delay: calc(30s / 8 * (8 - 5) * -1);
+        }
+
+        .item6{
+            animation-delay: calc(30s / 8 * (8 - 6) * -1);
+        }
+
+        .item7{
+            animation-delay: calc(30s / 8 * (8 - 7) * -1);
+        }
+
+        .item8{
+            animation-delay: calc(30s / 8 * (8 - 8) * -1);
+        }
+
+
+        /*About Us Cards Section*/
+        .card-image{
+        position: relative;
+        height: 150px;
+        width: 150px;
+        border: 50px;
+        background: var(--primary-color);
+        padding: 3px;
+        }
+
+
+        .card{
+        border-radius: 25px;
+        background-color:var(--text-color);
+        }
+
+
+        .slide-container{
+        max-width:1120px;
+        width:100%;
+        padding: 40px 0;
+        }
+
+
+        .slide-content{
+        margin:0 40px;
+        overflow:hidden;
+        border-radius: 25px;
+        }
+
+
+        .image-content,
+        .card-content{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        padding: 10px 14px;
+        }
+
+
+        .card-image .card-img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        }
+
+
+        .card-img {
+        display: inline-block;
+        filter: drop-shadow(0 0 10px #ffffff);
+        }
+
+
+        .name{
+        font-size: 18px;
+        font-weight:500;
+        color:var(--white);
+        }
+
+
+        .image-content{
+        position:relative;
+        row-gap: 5px;
+        padding:25px 0;
+        }
+
+
+        .overlay{
+        position: absolute;
+        left:0;
+        top:0;
+        height: 100%;
+        width: 100%;
+        background-color:var(--primary-color);
+        border-radius: 20px 20px 0 20px;
+        }
+
+
+        .overlay::before,
+        .overlay::after{
+        content:'';
+        position:absolute;
+        right:0;
+        bottom:-40px;
+        height: 40px;
+        width: 40px;
+        background-color:var(--primary-color);
+        }
+
+
+        .overlay::after{
+        border-radius: 0 25px 0 0;
+        background-color: var(--text-color);
+        }
+
+
+        .description{
+        font-size: 16px;
+        color: var(--white);
+        text-align:center;
+        }
+
+
+        .chefs{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--light-bg);
+        }
+
+
+        .v-button{
+        border:none;
+        font-size: 16px;
+        color: var(--white);
+        padding: 8px 16px;
+        background-color:#4caf50;
+        border-radius: 6px;
+        margin: 14px;
+        cursor: pointer;
+        transition:all 0.3s ease;
+        }
+        .v-button:hover{
+        transform: scale(1.1);
+        display: inline-block;
+        filter: drop-shadow(0 0 10px #4CAF50);
+        }
+
+
+        .swiper-navBtn{
+        color:#4CAF50;
+        }
+
+
+        .swiper-navBtn:hover{
+        display: inline-block;
+        filter: drop-shadow(0 0 10px #4CAF50);
+        }
+
+
+        .swiper-pagination-bullet{
+        background-color: var(--primary-light);
+        opacity:1;
+        }
+
+
+        .swiper-pagination-bullet{
+        display: inline-block;
+        filter: drop-shadow(0 0 10px #29682b);
+        opacity:1;
+        }
 
     </style>
 </head>
 <body>
     <header>
-        <h1>SpaceTime Online Kitchen</h1>
-        <h3>About Us</h3>
+        <div class="container">
+            <h1>SpaceTime Online Kitchen</h1>
+            <h3>About Us</h3>
+        </div>
+    </header>
+    
     <div class="button-container">
-         <a href="index.html" class="button">Home</a>
-         <a href="about-us.html" class="button">About Us</a>
-         <a href="quick-eats.html" class="button">Quick Eats</a>
-         <a href="Recipes.html" class="button">Recipes</a>
-         <a href="events.html" class="button">Events</a>
-         <a href="membership.html" class="button">Membership</a>
-         <a href="calendar.html" class="button">Calendar</a>
-         <a href="contact-us.html" class="button">Contact Us</a>
-         <div class="new-button-container">
+        <a href="index.html" class="button">Home</a>
+        <a href="about-us.html" class="button">About Us</a>
+        <a href="quick-eats.html" class="button">Quick Eats</a>
+        <a href="Recipes.html" class="button">Recipes</a>
+        <a href="events.html" class="button">Events</a>
+        <a href="membership.html" class="button">Membership</a>
+        <a href="calendar.html" class="button">Calendar</a>
+        <a href="contact-us.html" class="button">Contact Us</a>
+        <div class="new-button-container">
             <a href="recipe.html" class="button">Recipe Finder</a>
             <span class="new-label">New</span>
-             <h3>Need help?</h3>
-        <p>Want to know what a tool is? Or need help operating it? Use our built-in search mechanism!</p>
-        <form action="https://www.google.com/search" method="get">
-          <input name="q" type="search" placeholder="e.g. What is... / How to...">
-          <button>Search</button>
-        </form>
-      </div>
-     </div>
-    </header>
+        </div>
+    </div>
     <main>
         <h4>
             At SpacteTime Online Kitchen, we offer the best of the best recipes that and your family can enjoy.
         </h4>
+        <div class="image-carousel">
+            <div class="item item1"><img class="carousel-img" src="Home-Page-Plates/Website Design (1).png"></div>
+            <div class="item item2"><img class="carousel-img" src="Home-Page-Plates/Website Design (2).png"></div>
+            <div class="item item3"><img class="carousel-img" src="Home-Page-Plates/Website Design (3).png"></div>
+            <div class="item item4"><img class="carousel-img" src="Home-Page-Plates/Website Design (4).png"></div>
+            <div class="item item5"><img class="carousel-img" src="Home-Page-Plates/Website Design (5).png"></div>
+            <div class="item item6"><img class="carousel-img" src="Home-Page-Plates/Website Design (6).png"></div>
+            <div class="item item7"><img class="carousel-img" src="Home-Page-Plates/Website Design (7).png"></div>
+            <div class="item item8"><img class="carousel-img" src="Home-Page-Plates/Website Design.png"></div>
+        </div>
         <div class="chefs">
         <div class="slide-container swiper">
             <div class="slide-content">
@@ -249,14 +524,6 @@
                             <button class="v-button">View More</button>
                         </div>
                     </div>
-                    <div class="equipment">
-        <h3>Need help?</h3>
-        <p>Want to know what a tool is? Or need help operating it? Use our built-in search mechanism!</p>
-        <form action="https://www.google.com/search" method="get">
-          <input name="q" type="search" placeholder="e.g. What is... / How to...">
-          <button>Search</button>
-        </form>
-      </div>
                     
                 </div>
             </div>
@@ -268,8 +535,24 @@
     </main>
 
 </body>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 
     <script src="swiper-bundle.min.js"></script>
     <script src="script.js"></script>
-
 </html>
