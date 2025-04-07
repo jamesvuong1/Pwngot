@@ -9,85 +9,310 @@
     <script src="script.js" defer></script>
 </head>
      <style>
-                body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
-       .button {
-            transition: all 0.4s;
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+        }
+        
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 300;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            color: #4CAF50;
+            margin: 1rem 0;
+        }
+        
+        .button {
+            transition: all 0.3s ease;
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            margin: 10px;
+            margin: 8px;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
+        
         .button:hover {
-            transform: scale(1.1);
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        
+        .new-button-container {
+            justify-content: center;
+            position: relative;
             display: inline-block;
-            filter: drop-shadow(0 0 10px #4CAF50)
         }
 
-       .button-container {
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .contact{
+            position: relative;
+            min-height: 100vh;
+            padding: 50px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .contact .contact-content{
+            max-width: 800px;
             text-align: center;
-            margin: 10px;
+        }
+
+        .contact-container{
+            width:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .contact-container .contactInfo{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-container .contactInfo .contact-box{
+            position: relative;
+            padding: 20px 0px;
+            display: flex;
         }  
-        
-       .collapsible {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+
+        .contact-container .contactInfo .contact-box .icon{
+            min-width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 22px;
+        }  
+
+        .contact-container .contactInfo .contact-box .contact-text{
+            display: flex;
+            margin-left: 20px;
+            font-size: 16px;
+            flex-direction: column;
+        }  
+
+        .contactForm{
+            width: 40%;
+            padding: 40px;
+            background: var(--white);
+        }
+
+        .contactForm .inputBox{
+            position: relative;
             width: 100%;
-            text-align: left;
+            margin-top: 10px;
         }
         
-       .collapsible:hover {
-            background-color: #3e8e41;
+        .contactForm .inputBox input, 
+        .contactForm .inputBox textarea{
+            width: 100%;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid var(--primary-color);
+            outline: none;
+            resize: none;
         }
-        
-       .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #f1f1f1;
+
+        .contactForm .inputBox span{
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            pointer-events: none;
+            transition: 0.5s;
         }
+
+        .contactForm .inputBox input:focus ~  span,
+        .contactForm .inputBox input:valid ~  span,
+        .contactForm .inputBox textarea:focus ~  span,
+        .contactForm .inputBox textarea:valid ~  span{
+            color: var(--primary-dark);
+            font-size: 12px;
+            transform: translateY(-20px);
+        }
+
         
+        .contactForm .inputBox input[type="submit"]{
+            width: 100px;
+            border: none;
+            cursor: pointer;
+            background-color: var(--primary-color);
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 7%;
+        }
+
+        @media (max-width: 991px){
+            .contact{
+                padding: 50px;
+            }
+            .contact-container{
+                flex-direction: column;
+            }
+            .contact-container .contactInfo{
+                margin-bottom: 40px;
+                width: 100%;
+            }
+            .contact-container .contactInfo{
+                margin-bottom: 40px;
+            }
+            .contact-container .contactInfo
+            .contactForm{
+                width: 100%;
+            }
+        }
+
     </style>
+</head>
 <body>
     <header>
-        <h1>SpaceTime Online Kitchen</h1>
-        <h3>Contact Us</h3>
+        <div class="container">
+            <h1>SpaceTime Online Kitchen</h1>
+            <h3>Contact Us</h3>
+        </div>
+    </header>
     <div class="button-container">
-         <a href="index.html" class="button">Home</a>
-         <a href="about-us.html" class="button">About Us</a>
-         <a href="quick-eats.html" class="button">Quick Eats</a>
-         <a href="Recipes.html" class="button">Recipes</a>
-         <a href="events.html" class="button">Events</a>
-         <a href="membership.html" class="button">Membership</a>
-         <a href="calendar.html" class="button">Calendar</a>
-         <a href="contact-us.html" class="button">Contact Us</a>
-         <div class="new-button-container">
+        <a href="index.html" class="button">Home</a>
+        <a href="about-us.html" class="button">About Us</a>
+        <a href="quick-eats.html" class="button">Quick Eats</a>
+        <a href="Recipes.html" class="button">Recipes</a>
+        <a href="events.html" class="button">Events</a>
+        <a href="membership.html" class="button">Membership</a>
+        <a href="calendar.html" class="button">Calendar</a>
+        <a href="contact-us.html" class="button">Contact Us</a>
+        <div class="new-button-container">
             <a href="recipe.html" class="button">Recipe Finder</a>
             <span class="new-label">New</span>
-        </div>    
-     </div>
-    </header>
-
+        </div>
+    </div>
     <main>
-    <h4>
-        At SpacteTime Online Kitchen
-    </h4>
-
-
+    <div class="page-content">
+    <div class="contact">
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <p> Have a question that you need answered? Want to inquire about our membership program? Whatever the reason may be, feel free to call us!</p>
+        </div>
+        <div class="contact-container">
+            <div class="contactInfo">
+                <div class="contact-box">
+                    <div class="icon"><img class="icon-img" src="" alt="Address Symbol"></div>
+                    <div class="contact-text">
+                        <h3>Address</h3>
+                        <p>123 Somewhere Dr <br> Virginia,<br> 12345</p>
+                    </div>
+                </div>
+                <div class="contact-box">
+                    <div class="icon"><img class="icon-img" src="" alt="Phone Symbol"></div>
+                    <div class="contact-text">
+                        <h3>Phone</h3>
+                        <p>123-456-7890</p>
+                    </div>
+                </div>
+                <div class="contact-box">
+                    <div class="icon"><img class="icon-img" src="" alt="Email Symbol"></div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <p>SpaceTimeKitchen@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form>
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="date" name="" required="required">
+                        <span>Date</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea required="required"></textarea>
+                        <span>Message</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
     </main>
     
 </body>
