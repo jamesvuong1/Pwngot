@@ -317,6 +317,223 @@
     </div>
     </div>
     </main>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration | SpaceTime Online Kitchen</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            font-size: 18px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 300;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .registration-form {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .button {
+            transition: all 0.3s ease;
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .event-info {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-light);
+        }
+        
+        .event-title {
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-date {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .registration-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SpaceTime Online Kitchen</h1>
+            <h3>Event Registration</h3>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="event-info">
+            <h2 class="event-title" id="event-title">Event Title</h2>
+            <p class="event-date" id="event-date">Event Date</p>
+            <p id="event-description">Event description will appear here</p>
+        </div>
+        
+        <div class="registration-form">
+            <h2>Registration Form</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="membership">Membership Status</label>
+                    <select id="membership" name="membership" required>
+                        <option value="">Select...</option>
+                        <option value="none">Non-Member</option>
+                        <option value="basic">Basic Member</option>
+                        <option value="premium">Premium Member</option>
+                        <option value="corporate">Corporate Member</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests">Number of Guests (including yourself)</label>
+                    <input type="number" id="guests" name="guests" min="1" value="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Special Requests or Dietary Restrictions</label>
+                    <textarea id="notes" name="notes" rows="4"></textarea>
+                </div>
+                
+                <button type="submit" class="button">Complete Registration</button>
+            </form>
+        </div>
+    </main>
+    
+    <script>
+        // Get event details from URL parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventTitle = urlParams.get('title') || 'Selected Event';
+            const eventDate = urlParams.get('date') || 'Date not specified';
+            const eventDesc = urlParams.get('desc') || 'Event details not available';
+            
+            document.getElementById('event-title').textContent = eventTitle;
+            document.getElementById('event-date').textContent = eventDate;
+            document.getElementById('event-description').textContent = eventDesc;
+            
+            // Form submission handler
+            document.getElementById('registrationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for registering! We will send confirmation details to your email shortly.');
+                // In a real application, you would send the form data to a server here
+            });
+        });
+    </script>
+</body>
+</html>
     
 </body>
 
