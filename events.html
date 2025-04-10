@@ -27,7 +27,6 @@
             line-height: 1.6;
         }
         
-        /* Updated Button Styles to match membership page */
         .button {
             transition: all 0.3s ease;
             background-color: var(--primary-light);
@@ -122,16 +121,17 @@
             max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
+        }
+        
+        .month {
+            margin-bottom: 30px;
             background-color: white;
             border-radius: 10px;
             box-shadow: var(--shadow);
         }
         
-        .month {
-            margin-bottom: 30px;
-        }
-        
         .month-title {
+        	padding-left: 10px;
             color: var(--primary-color);
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
@@ -142,6 +142,7 @@
             background-color: white;
             border-left: 4px solid var(--primary-light);
             padding: 15px;
+            padding-bottom: 20px;
             margin: 10px 0;
             border-radius: 0 5px 5px 0;
             box-shadow: var(--card-shadow);
@@ -183,10 +184,7 @@
     <header>
         <h1>SpaceTime Online Kitchen</h1>
         <h3>Events Calendar</h3>
-            </div>    
-        </div>
-    </header>
-            <div class="button-container">
+        <div class="button-container">
             <a href="index.html" class="button">Home</a>
             <a href="about-us.html" class="button">About Us</a>
             <a href="quick-eats.html" class="button">Quick Eats</a>
@@ -198,6 +196,10 @@
             <div class="new-button-container">
                 <a href="recipe.html" class="button">Recipe Finder</a>
                 <span class="new-label">New</span>
+            </div>    
+        </div>
+    </header>
+    
     <div class="calendar-container">
         <h4>Upcoming Culinary Events at SpaceTime Online Kitchen</h4>
         
@@ -241,7 +243,7 @@
         </div>
         
         <div class="month">
-            <h3 class="month-title">July 2024</h3>
+            <h3 class="month-title" float: right>July 2024</h3>
             
             <div class="event">
                 <h4 class="event-title">Space-Themed Cocktail Mixology</h4>
