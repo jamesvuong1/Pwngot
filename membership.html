@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,6 +145,7 @@
             box-shadow: var(--card-shadow);
             border-top: 4px solid var(--primary-light);
             transition: transform 0.3s ease;
+            max-width: 20vw;
         }
         
         .tier-card:hover {
@@ -162,11 +164,13 @@
         }
         
         .tier-card li {
+            list-style-type: none;
             margin-bottom: 0.8rem;
             position: relative;
             padding-left: 25px;
+            color: #000;   
         }
-        
+
         .tier-card li:before {
             content: "•";
             color: var(--primary-light);
@@ -174,7 +178,10 @@
             position: absolute;
             left: 0;
         }
-        
+
+        .tier-card-link{
+            text-decoration: none;
+        }
         /* Pricing Tables */
         .pricing-section {
             margin: 3rem 0;
@@ -275,6 +282,7 @@
             <p class="intro-text">Join our culinary community and unlock exclusive benefits tailored to fit your needs. Choose the membership tier that best suits your passion for cooking and learning.</p>
             
             <h2>Membership Tiers</h2>
+            <a class="tier-card-link" href="https://ljmstsastudent.github.io/Pwngo/contact-us.html">
             <div href="contact-us.html" class="tiers-container">
                 <div class="tier-card">
                     <h3>Basic Membership</h3>
@@ -286,8 +294,11 @@
                         <li>Access to members-only online content</li>
                     </ul>
                 </div>
+            </div>
+            </a>
                 
-                <div href="contact-us.html" class="tier-card">
+                <a class="tier-card-link" href="https://ljmstsastudent.github.io/Pwngo/contact-us.html">
+                <div class="tier-card">
                     <h3>Premium Membership</h3>
                     <ul>
                         <li>All Basic benefits plus:</li>
@@ -298,8 +309,10 @@
                         <li>Free access to partner facilities</li>
                     </ul>
                 </div>
+                </a>
                 
-                <div href="contact-us.html" class="tier-card">
+                <a class="tier-card-link" href="https://ljmstsastudent.github.io/Pwngo/contact-us.html">
+                <div class="tier-card">
                     <h3>Corporate Membership</h3>
                     <ul>
                         <li>All Premium benefits plus:</li>
@@ -310,6 +323,7 @@
                         <li>Dedicated account manager</li>
                     </ul>
                 </div>
+                </a>
             </div>
             
             <div class="pricing-section">
