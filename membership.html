@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +29,7 @@
         }
         
         .container {
-            max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -145,7 +143,6 @@
             box-shadow: var(--card-shadow);
             border-top: 4px solid var(--primary-light);
             transition: transform 0.3s ease;
-            max-width: 20vw;
         }
         
         .tier-card:hover {
@@ -181,6 +178,7 @@
 
         .tier-card-link{
             text-decoration: none;
+            display: block;
         }
         /* Pricing Tables */
         .pricing-section {
@@ -282,8 +280,8 @@
             <p class="intro-text">Join our culinary community and unlock exclusive benefits tailored to fit your needs. Choose the membership tier that best suits your passion for cooking and learning.</p>
             
             <h2>Membership Tiers</h2>
-            <a class="tier-card-link" href="https://ljmstsastudent.github.io/Pwngo/contact-us.html">
-            <div href="contact-us.html" class="tiers-container">
+            <div class="tiers-container">
+                <a class="tier-card-link" href="https://ljmstsastudent.github.io/Pwngo/contact-us.html">
                 <div class="tier-card">
                     <h3>Basic Membership</h3>
                     <ul>
@@ -294,8 +292,7 @@
                         <li>Access to members-only online content</li>
                     </ul>
                 </div>
-            </div>
-            </a>
+                </a>
                 
                 <a class="tier-card-link" href="https://ljmstsastudent.github.io/Pwngo/contact-us.html">
                 <div class="tier-card">
