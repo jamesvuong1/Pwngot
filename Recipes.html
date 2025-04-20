@@ -399,6 +399,22 @@
             background-color: var(--primary-dark);
         }
 
+        .ai-redirect-button{
+            transition: all 0.3s ease;
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .ai-redirect-button:hover{
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+        }
+
         form {
       display: flex;
       flex-direction: column;
@@ -714,8 +730,8 @@
         });
 
         const grids = {
-            recipes: { items: 9, content: 'Product' },
-            quickEats: { items: 3, content: 'Feature' },
+            recipes: { items: 12, content: 'Product' },
+            quickEats: { items: 6, content: 'Feature' },
             recipeFinder: { items: 3, content: 'Service' }
         };
 
@@ -741,25 +757,28 @@
                             item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==4){
-                            item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                            item.innerHTML = '<!-- Recipe 4 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==5){
-                            item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                            item.innerHTML = '<!-- Recipe 5 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==6){
-                            item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                            item.innerHTML = '<!-- Recipe 6 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==7){
-                            item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                            item.innerHTML = '<!-- Recipe 7 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==8){
-                            item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                            item.innerHTML = '<!-- Recipe 8 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==9){
-                            item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                            item.innerHTML = '<!-- Recipe 9 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                        }
+                        else if(i==11){
+                            item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
                         }
                         else{
-                            item.textContent = gridId;
+                            item.innerHTML = ' ';
                         }
                     }
 
@@ -771,22 +790,22 @@
                             item.innerHTML = '<!-- Recipe 2 --><div class="recipe-card" data-recipe="avocado-toast"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Gourmet-Avacado.jpeg" alt="Avocado Toast"></div><div class="recipe-content"><div class="recipe-number">2</div><div class="recipe-author">By Maria Garcia</div><div class="recipe-name">Gourmet Avocado Toast</div><div class="recipe-description">Creamy avocado on toasted artisan bread with cherry tomatoes, feta, and a drizzle of balsamic glaze.</div><div class="recipe-footer"><span class="time-badge">10 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
                         }
                         else if(i==3){
-                            item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="vegetable-stir-fry"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Vegetable-Fry.jpg" alt="Vegetable Stir Fry"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Chen Wei</div><div class="recipe-name">Speedy Vegetable Stir Fry</div>                    <div class="recipe-description">Colorful veggies in a savory garlic-ginger sauce, ready in minutes. Serve over rice or noodles.</div><div class="recipe-footer"><span class="time-badge">20 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                            item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="vegetable-stir-fry"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Vegetable-Fry.jpg" alt="Vegetable Stir Fry"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Chen Wei</div><div class="recipe-name">Speedy Vegetable Stir Fry</div><div class="recipe-description">Colorful veggies in a savory garlic-ginger sauce, ready in minutes. Serve over rice or noodles.</div><div class="recipe-footer"><span class="time-badge">20 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }
+                        else if(i==5){
+                            item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
                         }
                         else{
-                            item.textContent = gridId;
+                            item.innerHTML = ' ';
                         }
                     }
 
                     if (gridId == 'recipeFinder') {
-                        if(i==1){
-                            item.innerHTML = ' '
-                        }
-                        else if(i==2){
+                        if(i==2){
                             item.innerHTML = '<section id="recipe-finder"><h2>Recipe Finder AI</h2><form id="recipe-form"><label for="ingredients">Enter Ingredients (comma-separated):</label><input type="text" id="ingredients" name="ingredients" placeholder="e.g., chicken, tomato, basil" required><button type="submit">Find Recipe</button></form><div id="results"></div></section>'
                         }
-                        else if(i==3){
-                            item.innerHTML = ' '
+                        else{
+                            item.innerHTML = ' ';
                         }
                     }
                     
