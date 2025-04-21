@@ -25,7 +25,7 @@
             margin: 0;
             padding: 0;
             color: var(--text-color);
-            background-color: var(--light-bg);
+            background-color: rgba(0,0,0,0.1);
             line-height: 1.6;
         }
         
@@ -189,7 +189,7 @@
         height: 150px;
         width: 150px;
         border: 50px;
-        background: var(--primary-color);
+        background: #79a480;
         padding: 3px;
         }
 
@@ -211,6 +211,7 @@
         margin:0 40px;
         overflow:hidden;
         border-radius: 25px;
+        margin-bottom: 0;
         }
 
 
@@ -257,7 +258,7 @@
         top:0;
         height: 100%;
         width: 100%;
-        background-color:var(--primary-color);
+        background-color:#79a480;
         border-radius: 20px 20px 0 20px;
         }
 
@@ -270,7 +271,7 @@
         bottom:-40px;
         height: 40px;
         width: 40px;
-        background-color:var(--primary-color);
+        background-color: #79a480;
         }
 
 
@@ -284,6 +285,7 @@
         font-size: 16px;
         color: var(--white);
         text-align:center;
+        margin-bottom: 2rem;
         }
 
 
@@ -292,7 +294,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--light-bg);
+        background-color: var(--shadow);
         }
 
 
@@ -337,6 +339,233 @@
         opacity:1;
         }
 
+        .registration-form {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .button {
+            transition: all 0.3s ease;
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .event-info {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-light);
+        }
+        
+        .event-title {
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-date {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .registration-form {
+                padding: 1.5rem;
+            }
+        }
+
+        .curved{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 10rem;
+            height: 30vh;
+            background: #79a480;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .contact{
+            position: relative;
+            min-height: 100vh;
+            padding: 50px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .contact .contact-content{
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .contact-container{
+            width:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .contact-container .contactInfo{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-container .contactInfo .contact-box{
+            position: relative;
+            padding: 20px 0px;
+            display: flex;
+        }  
+
+        .contact-container .contactInfo .contact-box .icon{
+            min-width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 22px;
+        }  
+
+        .contact-container .contactInfo .contact-box .contact-text{
+            display: flex;
+            margin-left: 20px;
+            font-size: 16px;
+            flex-direction: column;
+        }  
+
+        .contactForm{
+            width: 40%;
+            padding: 40px;
+            background: var(--white);
+        }
+
+        .contactForm .inputBox{
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .contactForm .inputBox input, 
+        .contactForm .inputBox textarea{
+            width: 100%;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid var(--primary-color);
+            outline: none;
+            resize: none;
+        }
+
+        .contactForm .inputBox span{
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        .contactForm .inputBox input:focus ~  span,
+        .contactForm .inputBox input:valid ~  span,
+        .contactForm .inputBox textarea:focus ~  span,
+        .contactForm .inputBox textarea:valid ~  span{
+            color: var(--primary-dark);
+            font-size: 12px;
+            transform: translateY(-20px);
+        }
+
+        
+        .contactForm .inputBox input[type="submit"]{
+            width: 100px;
+            border: none;
+            cursor: pointer;
+            background-color: var(--primary-color);
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 7%;
+        }
+
+        @media (max-width: 991px){
+            .contact{
+                padding: 50px;
+            }
+            .contact-container{
+                flex-direction: column;
+            }
+            .contact-container .contactInfo{
+                margin-bottom: 40px;
+                width: 100%;
+            }
+            .contact-container .contactInfo{
+                margin-bottom: 40px;
+            }
+            .contact-container .contactInfo
+            .contactForm{
+                width: 100%;
+            }
+        }
+    .icon-img{
+        width: 3vw;
+        height: 3vw;
+    }
     </style>
 </head>
 <body>
@@ -388,7 +617,7 @@
                             </h2>
                             <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
                             
-                            <button class="v-button">View More</button>
+  
                         </div>
                     </div>
                     <div class="card swiper-slide"> 
@@ -406,7 +635,23 @@
                             </h2>
                             <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
                             
-                            <button class="v-button">View More</button>
+  
+                        </div>
+                    </div>
+                    <div class="card swiper-slide"> 
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                                <img src="1674067002189.jpeg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <h2 class="name">
+                                Abdul Dell
+                            </h2>
+                            <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
                         </div>
                     </div>
                     <div class="card swiper-slide"> 
@@ -424,7 +669,7 @@
                             </h2>
                             <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
                             
-                            <button class="v-button">View More</button>
+  
                         </div>
                     </div>
                     <div class="card swiper-slide"> 
@@ -442,7 +687,7 @@
                             </h2>
                             <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
                             
-                            <button class="v-button">View More</button>
+  
                         </div>
                     </div>
                     <div class="card swiper-slide"> 
@@ -460,7 +705,7 @@
                             </h2>
                             <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
                             
-                            <button class="v-button">View More</button>
+  
                         </div>
                     </div>
                     <div class="card swiper-slide"> 
@@ -478,7 +723,7 @@
                             </h2>
                             <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
                             
-                            <button class="v-button">View More</button>
+  
                         </div>
                     </div>
                     <div class="card swiper-slide"> 
@@ -496,7 +741,7 @@
                             </h2>
                             <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
                             
-                            <button class="v-button">View More</button>
+  
                         </div>
                     </div>
                     <div class="card swiper-slide"> 
@@ -514,39 +759,157 @@
                             </h2>
                             <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
                             
-                            <button class="v-button">View More</button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide"> 
-                        <div class="image-content">
-                            <span class="overlay"></span>
-
-                            <div class="card-image">
-                                <img src="1674067002189.jpeg" alt="" class="card-img">
-                            </div>
-                        </div>
-                        
-                        <div class="card-content">
-                            <h2 class="name">
-                                Abdul Dell
-                            </h2>
-                            <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                            
-                            <button class="v-button">View More</button>
+  
                         </div>
                     </div>
                     
                 </div>
             </div>
             <div class="swiper-button-next swiper-navBtn"></div>
-            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class=
+            "swiper-button-prev swiper-navBtn"></div>
             <div class="swiper-pagination"></div>
         </div>
         </div>
+        <div class="page-content">
+            <div class="contact">
+                <div class="contact-content">
+                    <h1 style="color:var(--primary-dark)">Contact Us</h2>
+                    <h3 style="color:var(--text-color)"> Have a question that you need answered? Want to inquire about our membership program? Contact us with the form provided below.</h3>
+                </div>
+                <div class="contact-container">
+                    <div class="contactInfo">
+                        <div class="contact-box">
+                            <div class="icon"><img class="icon-img" src="Home-Page-Plates/Website Design (10).png" alt="Address Symbol"></div>
+                            <div class="contact-text">
+                                <h1>Address</h1>
+                                <h3>123 Somewhere Dr., Virginia, 12345</h3>
+                            </div>
+                        </div>
+                        <div class="contact-box">
+                            <div class="icon"><img class="icon-img" src="Home-Page-Plates/Website Design (8).png" alt="Phone Symbol"></div>
+                            <div class="contact-text">
+                                <h1>Phone</h1>
+                                <h3>123-456-7890</h3>
+                            </div>
+                        </div>
+                        <div class="contact-box">
+                            <div class="icon"><img class="icon-img" src="Home-Page-Plates/Website Design (9).png" alt="Email Symbol"></div>
+                            <div class="contact-text">
+                                <h1>Email</h1>
+                                <h3>SpaceTimeKitchen@gmail.com</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contactForm">
+                        <form>
+                            <h2>Send Message</h2>
+                            <div class="inputBox">
+                                <input type="text" name="" required="required">
+                                <span>Full Name</span>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="" required="required">
+                                <span>Email</span>
+                            </div>
+                            <div class="inputBox">
+                                <input type="date" name="" required="required">
+                                <span>Date</span>
+                            </div>
+                            <div class="inputBox">
+                                <textarea required="required"></textarea>
+                                <span>Message</span>
+                            </div>
+                            <div class="inputBox">
+                                <input type="submit" name="" value="Send">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </main>
+
+            <div class="background-img">
+                <div class="curved">
+                <h1>SpaceTime Online Kitchen</h1>
+                <h3 style="color: white;">Event Registration</h3>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="event-info">
+                    <h2 class="event-title" id="event-title">Event Title</h2>
+                    <p class="event-date" id="event-date">Event Date</p>
+                    <p id="event-description">Event description will appear here</p>
+                </div>
+                
+                <div class="registration-form">
+                    <h2>Registration Form</h2>
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="membership">Membership Status</label>
+                            <select id="membership" name="membership" required>
+                                <option value="">Select...</option>
+                                <option value="none">Non-Member</option>
+                                <option value="basic">Basic Member</option>
+                                <option value="premium">Premium Member</option>
+                                <option value="corporate">Corporate Member</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">Number of Guests (including yourself)</label>
+                            <input type="number" id="guests" name="guests" min="1" value="1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notes">Special Requests or Dietary Restrictions</label>
+                            <textarea id="notes" name="notes" rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="button">Complete Registration</button>
+                    </form>
+                </div>
+            </div>
     </main>
 
 </body>
 <script>
+        // Get event details from URL parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventTitle = urlParams.get('title') || 'Selected Event';
+            const eventDate = urlParams.get('date') || 'Date not specified';
+            const eventDesc = urlParams.get('desc') || 'Event details not available';
+            
+            document.getElementById('event-title').textContent = eventTitle;
+            document.getElementById('event-date').textContent = eventDate;
+            document.getElementById('event-description').textContent = eventDesc;
+            
+            // Form submission handler
+            document.getElementById('registrationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for registering! We will send confirmation details to your email shortly.');
+                // In a real application, you would send the form data to a server here
+            });
+        });
+
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 3,
       spaceBetween: 30,
