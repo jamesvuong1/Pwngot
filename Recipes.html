@@ -702,31 +702,6 @@
 
     
     <script>
-        // Recipe Modal functionality
-        document.querySelectorAll('.view-recipe').forEach(button => {
-            button.addEventListener('click', function() {
-                const recipeId = this.closest('.recipe-card').dataset.recipe;
-                const modal = document.getElementById(recipeId);
-                modal.style.display = "block";
-                document.body.style.overflow = "hidden"; // Prevent scrolling
-            });
-        });
-        
-        // Close modals
-        document.querySelectorAll('.close-modal').forEach(button => {
-            button.addEventListener('click', function() {
-                this.closest('.recipe-modal').style.display = "none";
-                document.body.style.overflow = "auto"; // Re-enable scrolling
-            });
-        });
-        
-        // Close modal when clicking outside content
-        window.addEventListener('click', function(event) {
-            if (event.target.classList.contains('recipe-modal')) {
-                event.target.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-        });
 
         const grids = {
             recipes: { items: 12, content: 'Product' },
@@ -815,6 +790,36 @@
                     container.classList.add('visible');
                 }
             });
+            
+            openModal();
+        }
+        
+                  // Recipe Modal functionality
+          function openModal() {
+            document.querySelectorAll('.view-recipe').forEach(button => {
+                button.addEventListener('click', function() {
+                    const recipeId = this.closest('.recipe-card').dataset.recipe;
+                    const modal = document.getElementById(recipeId);
+                    modal.style.display = "block";
+                    document.body.style.overflow = "hidden"; // Prevent scrolling
+                });
+            });
+        
+        // Close modals
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.recipe-modal').style.display = "none";
+                document.body.style.overflow = "auto"; // Re-enable scrolling
+            });
+        });
+        
+        // Close modal when clicking outside content
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('recipe-modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
         }
 
         function animateGrid(gridId) {
@@ -850,6 +855,7 @@
 
         // Initialize grids
         populateGrids();
+        openModal();
 
 
         //Javascript Code For The Recipe Finder AI
