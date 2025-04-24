@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -146,7 +145,7 @@
         }
 
         .change-txt {
-            margin: 10rem 10rem;
+            margin-left: 10rem;
             margin-bottom: 0;
             font-size: 1.5rem;
             justify-content: left;
@@ -317,12 +316,18 @@
         .hero-section{
             align-content: center;
         }
-        
-        .welcome-section {
-            max-width: 100%;
-            text-align: right;
-            padding-left: 1rem;
+
+        .welcome-section{
             background-color: rgba(46, 125, 50, 0.5);
+            max-width: 100%;
+        }
+        
+        .welcome-section-text {
+            max-width: 60%;
+            text-align: left;
+            margin-left: 4rem;
+            padding-bottom: 1rem;
+            padding-top: 1rem;
         }
         
         .welcome-section p {
@@ -367,13 +372,37 @@
             }
         }
 
+        .newletter-announcement{
+            margin-top: 10rem;
+            margin-left: 5rem;
+            margin-right: 5rem;
+            max-width: 60%;
+        }
+
+        .pop-up-button{
+            transition: all 0.3s ease;
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 8px;
+            font-size: 1rem;
+        }
+
+        .pop-up-button:hover{
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <h1>SpaceTime Online Kitchen</h1>
-            <h3>Home Page</h3>
+            <h3 style="color: var(--white);">Home Page</h3>
         </div>
     </header>
     
@@ -388,13 +417,13 @@
 
 
     <main class="hero-section">
-            <div class="welcome-section">
-                <center>
+        <div class="welcome-section">
+            <div class="welcome-section-text">
                 <h1>Welcome to SpaceTime Cooking!</h1>
-                <h2>Where our recipes, your time, and our space equals perfection.</h2>
+                <h2 style="color: var(--white);">Where our recipes, your time, and our space equals perfection.</h2>
                 <p>SpaceTime Cooking is a vibrant community cooking hub that offers a collaborative kitchen space for individuals to come together to create, innovate, and learn new culinary skills. Our facility is equipped with top-of-the-line kitchen tools and equipment for baking, cooking, food preservation, and more.We have empowered many to bring their culinary dreams to life and have educated countless others on the diverse aspects of cooking and gastronomy.</p>
-                </center>
             </div>
+        </div>    
     </main>
     <div class="stats-grid">
         <div class="stat-card">
@@ -449,6 +478,17 @@
                 <li><img class="change-img" src="Home-Page-Plates/Website Design (4).png"></li>
                 <li><img class="change-img" src="Home-Page-Plates/Website Design (5).png"></li>
             </ul>
+        </div>
+    </div>
+
+    <div class="newletter-announcement">
+        <div class="announcment-img">
+
+        </div>
+        <div class="announcement-text">
+            <h1>Get All The Lastest Information</h1>
+            <h2>SpaceTime Online Kitchen is proud to announce our new weekly newletter; Flavor Fussion! For no cost at all you can sign up for our new newsletter! Every week you'll get new recipes, what's going on in the culinary world, and much more!</h2>
+                <button class="pop-up-button">Sign Up Now!</button>
         </div>
     </div>
 
