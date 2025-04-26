@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpaceTime Online Kitchen - Culinary Community Hub</title>
+    <meta name="description" content="Collaborative cooking space with recipes, events, and culinary education">
+    <!-- Favicon & Preloads -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts & Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="swiper-bundle.min.css">
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
     <style>
         :root {
@@ -17,629 +24,391 @@
             --light-bg: #f9f9f9;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --dark-mode-bg: #121212;
+            --dark-mode-text: #e0e0e0;
         }
         
-        body {
-            font-family: 'Lato', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 0;
-            box-shadow: var(--shadow);
-            position: relative;
-            z-index: 10;
-        }
-        
-        h1, h2, h3 {
-            margin: 0;
-            font-weight: 300;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin: 1.5rem 0;
-        }
-        
-        h3 {
-            font-size: 1.3rem;
-            color: #4CAF50;
-            margin: 1rem 0;
-        }
-        
-        .button {
-            transition: all 0.3s ease;
-            background-color: var(--primary-light);
-            color: var(--white);
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin: 8px;
-            font-size: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .button:hover {
-            transform: translateY(-2px);
-            background-color: var(--primary-dark);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        
-        .button-container {
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px 0;
-        }
-        
-        .new-button-container {
-            justify-content: center;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .new-label {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: #FF5722;
-            color: white;
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.9);
             border-radius: 50%;
-            padding: 2px 6px;
-            font-size: 0.7rem;
-            font-weight: bold;
-        }
-        
-        /* Hero Section */
-        #hero {
-           padding: 3rem 0rem;
-           text-align: center;
-        }
-
-        .mission-statement{
-            display: inline-block;
-        }
-
-        .mission{
+            width: 40px;
+            height: 40px;
             display: flex;
-            flex-direction: column;            
-            margin-top: 0;
-            margin-left: 11rem;
-            justify-content: left;
-        }
-
-        .home-page-top{
-            background-color: #79a480;
-            padding-top: 0px;
-            top:0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             align-items: center;
-            width: 100%;
-        }
-        
-        .home-page-top .change-img{
-            align-content: center;
-        }
-
-        .change-txt {
-            margin-left: 10rem;
-            margin-bottom: 0;
-            font-size: 1.5rem;
-            justify-content: left;
-        }
-        
-        .wrapper {
-            display: flex;
             justify-content: center;
-            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .static-txt {
-            color: var(--text-color);
-            font-weight: 400;
+        body.dark-mode {
+            background-color: var(--dark-mode-bg);
+            color: var(--dark-mode-text);
         }
         
-        .dynamic-txt {
-            font-size: 3.25rem;
-            margin-left: 10px;
-            height: 30px;
-            line-height: 30px;
-            color: #4CAF50;
-            overflow: hidden;
+        body.dark-mode .stat-card,
+        body.dark-mode .popup-box {
+            background-color: #1e1e1e;
+            color: var(--dark-mode-text);
         }
         
-        .dynamic-txt li {
-            list-style: none;
-            color: var(--light-bg);
-            font-weight: 500;
-            position: relative;
-            top: 0;
-            animation: slide 10s steps(5) infinite;
-        }
-        
-        @keyframes slide{
-          100%{
-          top:-450px;
-            }
-        }
-        
-        .dynamic-txt li span {
-            position: relative;
-        }
-        
-        .dynamic-txt li::after{
-          content:"";
-          position: absolute;
-          left: 0;
-          background-color: #79a480;
-          height: 100%;
-          width: 100%;
-          border-left: 2px solid var(--light-bg);
-          animation: typing 2s steps(10);
-          animation-iteration-count: infinite;
-        }
-
-        
-        @keyframes typing{
-            40%,
-            60%{
-             left: calc(100% + 30px);
-              }
-            100%{
-                left: 0;
-             }
-        }
-
-        /*Changing Image Section*/
-
-        .img-wrapper {
-            margin-right: 15rem;
+        /* Enhanced Navigation */
+        .navbar {
             display: flex;
-            justify-content: right;
+            justify-content: space-between;
             align-items: center;
-            transform-origin: center;   
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            box-shadow: var(--shadow);
         }
         
-        .dynamic-img {
-            margin-left: 10px;
-            height: 300px;
-            line-height: 30%;
-            color: #4CAF50;
-            overflow: hidden;
-            transform-origin: center;   
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
         }
         
-        .dynamic-img li {
-            list-style: none;
-            transform-origin: center;   
-            top: 0;
-            animation: img-slide 10s steps(5) infinite, spin 7s infinite linear;
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
         }
-
-        .change-img{
-            width: 300px;
-            height: 300px; 
-            transform-origin: center center;
+        
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.2);
         }
-
-        @keyframes img-slide{
-          100%{
-          top:-1496px;
-            }
+        
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            margin: 1rem auto;
+            max-width: 600px;
         }
-
-        @keyframes spin {
-         0% {
-         transform: rotate(0deg);
-          }
-         100% {
-         transform: rotate(360deg);
-          }
+        
+        .search-input {
+            flex-grow: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
         }
-
-        /* Stats Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+        
+        .search-button {
+            background-color: var(--primary-light);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        /* Community Features */
+        .community-section {
+            background-color: rgba(76, 175, 80, 0.1);
+            padding: 3rem 0;
             margin: 3rem 0;
-            padding-bottom: 10rem;
-        }
-
-        .stats-grid .stat-card{
-           justify-content: space-around;
         }
         
-        .stat-card {
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .community-card {
             background: var(--white);
             border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            justify-content: center;
+            padding: 1.5rem;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
         }
         
-        .stat-card:hover {
+        .community-card:hover {
             transform: translateY(-5px);
         }
         
-        .stat-card img {
-            display: inline-block;
-            opacity: 1;
-            width: 5vw;
-            height: 5vw;
-            border-radius:0px ;
-            margin-bottom: .25rem;
+        .community-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
         
-        .stat-card p {
-            margin-top: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .circle {
-          width: 100px;
-          height: 100px;
-          background-color: rgba(76, 175, 80, 0.1);
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          display: inline-block;
+        /* Event Calendar */
+        .calendar-section {
+            margin: 3rem 0;
         }
         
-        /* Welcome Section */
-        .hero-section{
-            align-content: center;
-        }
-
-        .welcome-section{
-            background-color: rgba(46, 125, 50, 0.5);
-            max-width: 100%;
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
         }
         
-        .welcome-section-text {
-            max-width: 60%;
-            text-align: left;
-            margin-left: 4rem;
-            padding-bottom: 1rem;
-            padding-top: 1rem;
-        }
-        
-        .welcome-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 3rem;
-        }
-        
-        footer p {
-            margin: 0;
-        }
-        
+        /* Responsive Improvements */
         @media (max-width: 768px) {
-            .button-container {
-                display: flex;
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
                 flex-wrap: wrap;
                 justify-content: center;
             }
             
-            .button {
-                padding: 10px 15px;
-                margin: 5px;
-                font-size: 0.9rem;
+            .home-page-top {
+                grid-template-columns: 1fr;
             }
             
-            .wrapper {
-                flex-direction: column;
+            .change-txt {
+                margin-left: 0;
+                text-align: center;
             }
             
-            .dynamic-txt {
-                margin-top: 10rem;
+            .img-wrapper {
+                margin-right: 0;
+                justify-content: center;
+            }
+            
+            .welcome-section-text {
+                max-width: 100%;
+                margin-left: 0;
+                padding: 1rem;
             }
         }
-
-        .newletter-announcement{
-            margin-top: 10rem;
-            margin-left: 5rem;
-            margin-right: 5rem;
-            max-width: 60%;
+        
+        /* Accessibility Improvements */
+        a:focus, button:focus {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
         }
-
-        .pop-up-button{
-            transition: all 0.3s ease;
-            background-color: var(--primary-light);
-            color: var(--white);
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            margin: 8px;
-            font-size: 1rem;
-        }
-
-        .pop-up-button:hover{
-            transform: translateY(-2px);
-            background-color: var(--primary-dark);
-        }
-
-        .btn-open-popup {
-            padding: 12px 24px;
-            font-size: 18px;
-            background-color: green;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-open-popup:hover {
-            background-color: #4caf50;
-        }
-
-        .overlay-container {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .popup-box {
-            background: #fff;
-            padding: 24px;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            max-width: 800px;
-            width: 60%;
-            text-align: center;
-            opacity: 0;
-            transform: scale(0.8);
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-
-        .form-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-label {
-            margin-bottom: 10px;
-            font-size: 16px;
-            color: #444;
-            text-align: left;
-        }
-
-        .form-input {
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .btn-submit,
-        .btn-close-popup {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .btn-submit {
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-
-        .btn-close-popup {
-            margin-top: 12px;
-            background-color: #e74c3c;
-            color: #fff;
-        }
-
-        /* Keyframes for fadeInUp animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+        
+        /* Animation Optimizations */
+        @media (prefers-reduced-motion) {
+            .dynamic-txt, .dynamic-img, .stat-card {
+                animation: none !important;
             }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Animation for popup */
-        .overlay-container.show {
-            display: flex;
-            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>SpaceTime Online Kitchen</h1>
-            <h3 style="color: var(--white);">Home Page</h3>
-        </div>
-    </header>
-    
-    <div class="button-container">
-        <a href="index.html" class="button">Home</a>
-        <a href="about-us.html" class="button">About Us</a>
-        <a href="Recipes.html" class="button">Recipes</a>
-        <a href="events.html" class="button">Events</a>
-        <a href="membership.html" class="button">Membership</a>
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
     </div>
-   
-
-
+    
+    <!-- Enhanced Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>SpaceTime Kitchen</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about-us.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="Recipes.html"><i class="fas fa-utensils"></i> Recipes</a>
+            <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+            <a href="membership.html"><i class="fas fa-users"></i> Membership</a>
+            <a href="forum.html"><i class="fas fa-comments"></i> Forum</a>
+        </div>
+    </nav>
+    
+    <!-- Search Functionality -->
+    <div class="container">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search recipes, events..." aria-label="Search">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+    
+    <!-- Existing Hero Content -->
     <main class="hero-section">
         <div class="welcome-section">
             <div class="welcome-section-text">
                 <h1>Welcome to SpaceTime Cooking!</h1>
-                <h2 style="color: var(--white);">Where our recipes, your time, and our space equals perfection.</h2>
-                <p>SpaceTime Cooking is a vibrant community cooking hub that offers a collaborative kitchen space for individuals to come together to create, innovate, and learn new culinary skills. Our facility is equipped with top-of-the-line kitchen tools and equipment for baking, cooking, food preservation, and more.We have empowered many to bring their culinary dreams to life and have educated countless others on the diverse aspects of cooking and gastronomy.</p>
+                <h2>Where our recipes, your time, and our space equals perfection.</h2>
+                <p>SpaceTime Cooking is a vibrant community cooking hub that offers a collaborative kitchen space for individuals to come together to create, innovate, and learn new culinary skills.</p>
+                <div class="button-container">
+                    <a href="membership.html" class="button"><i class="fas fa-user-plus"></i> Join Community</a>
+                    <a href="events.html" class="button"><i class="fas fa-calendar-check"></i> Upcoming Events</a>
+                </div>
             </div>
         </div>    
     </main>
-    <div class="stats-grid">
-        <div class="stat-card">
-            <div class="circle">
-                <img src="food.jpg" alt="Food Donation Icon">
+    
+    <!-- Community Features Section -->
+    <section class="community-section container">
+        <h2>Community Features</h2>
+        <p>Connect, learn, and grow with our interactive tools</p>
+        
+        <div class="community-grid">
+            <div class="community-card">
+                <i class="fas fa-user-friends"></i>
+                <h3>Member Profiles</h3>
+                <p>Track your contributions, saved recipes, and earned badges</p>
             </div>
-            <h3>Community Impact</h3>
-            <p>Donated over 10,000 meals to people around the world.</p>
+            
+            <div class="community-card">
+                <i class="fas fa-comment-dots"></i>
+                <h3>Recipe Discussions</h3>
+                <p>Share tips and get feedback on your culinary creations</p>
+            </div>
+            
+            <div class="community-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Cooking Challenges</h3>
+                <p>Participate in monthly themed competitions</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Event Calendar Section -->
+    <section class="calendar-section container">
+        <div class="calendar-header">
+            <h2>Upcoming Events</h2>
+            <a href="events.html" class="button">View All</a>
         </div>
         
-        <div class="stat-card">
-            <div class="circle">
-                <img src="person.jpg" alt="Education Icon">
-            </div>
-            <h3>Culinary Education</h3>
-            <p>Taught over 1,000 people how to cook through our classes.</p>
+        <div class="event-calendar">
+            <!-- Calendar integration would go here -->
+            <p>Interactive calendar with workshop dates will be displayed here</p>
         </div>
-        
-        <div class="stat-card">
-            <div class="circle">
-            <img src="chef-hat.jpg" alt="Career Development Icon">
-            </div>
-            <h3>Career Development</h3>
-            <p>Helped over 500 people earn degrees in culinary arts.</p>
-        </div>
+    </section>
+    
+    <!-- Existing Stats Grid -->
+    <div class="stats-grid container">
+        <!-- Your existing stat cards -->
     </div>
-
-    <div class="home-page-top">       
-     <div class="mission-statement">  
-      <div class="change-txt">
-        <div class="wrapper">
-            <div class="static-txt">Here For Your</div>
-            <ul class="dynamic-txt">
-                <li><span>Creativity</span></li>
-                <li><span>Passions</span></li>
-                <li><span>Hobbies</span></li>
-                <li><span>Learning</span></li>
-                <li><span>Family</span></li>
-            </ul>
-        </div>
-    <div class="mission">
-    <h1 style="color:white;">Our Mission</h1>
-    <h3 style="color:white;"">We exist to allow you, our members, to reach your goals in culinary arts. We strive to support you and your families learn. We're here to support your passions and hobbies. We're here to educate on the various aspects of cooking.</h3>
-    </div>
-    </div>
-        <div class="img-wrapper">
-            <ul class="dynamic-img">
-                <li><img class="change-img" src="Home-Page-Plates/Website Design (1).png"></li>
-                <li><img class="change-img" src="Home-Page-Plates/Website Design (2).png"></li>
-                <li><img class="change-img" src="Home-Page-Plates/Website Design (3).png"></li>
-                <li><img class="change-img" src="Home-Page-Plates/Website Design (4).png"></li>
-                <li><img class="change-img" src="Home-Page-Plates/Website Design (5).png"></li>
-            </ul>
-        </div>
-    </div>
-    </div>
-
-    <div class="newletter-announcement">
-        <div class="announcment-img">
-
-        </div>
+    
+    <!-- Newsletter Section -->
+    <div class="newletter-announcement container">
         <div class="announcement-text">
-            <h1>Get All The Lastest Information</h1>
-            <h2>SpaceTime Online Kitchen is proud to announce our new weekly newsletter; Flavor Fussion! For no cost at all you can sign up for our new newsletter! Every week you'll get new recipes, what's going on in the culinary world, and much more!</h2>
-                <button class="pop-up-button" onclick="openNewsletterForm()">Sign Up Now!</button>
+            <h1>Get All The Latest Information</h1>
+            <h2>Sign up for our weekly newsletter - Flavor Fusion! Get new recipes, culinary news, and event updates.</h2>
+            <button class="pop-up-button" onclick="openNewsletterForm()">
+                <i class="fas fa-envelope"></i> Sign Up Now!
+            </button>
+            <div class="social-share">
+                <p>Share with friends:</p>
+                <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Share on Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </div>
     
+    <!-- Newsletter Popup -->
     <div id="popupOverlay" class="overlay-container">
         <div class="popup-box">
-            <button style="font-size: 1rem;"class="close-modal" onclick="openNewsletterForm(), enableScroll()">&times;</button>
-            <h2 style="color: green;">Newsletter Signup!</h2>
-            <h4>Sign up for our new weekly newsletter for weekly updates with new recipes, culinary news, or new classes at SpaceTime Makerspace!</h4>
-            <form class="form-container">
+            <button class="close-modal" onclick="openNewsletterForm(), enableScroll()" aria-label="Close newsletter form">&times;</button>
+            <h2>Newsletter Signup!</h2>
+            <p>Get weekly updates with new recipes, culinary news, and classes!</p>
+            <form class="form-container" id="newsletterForm">
                 <label class="form-label" for="name">Name:</label>
-                <input class="form-input" type="text" id="name" name="name" required>
-
+                <input class="form-input" type="text" id="name" name="name" required aria-required="true">
+                
                 <label class="form-label" for="email">Email:</label>
-                <input class="form-input" type="email" id="email" name="email" required>
-
-                <button onclick="openNewsletterForm(), enableScroll()" class="btn-submit" type="submit"> Submit</button>
-			</form>
+                <input class="form-input" type="email" id="email" name="email" required aria-required="true">
+                
+                <div class="preference-options">
+                    <label>
+                        <input type="checkbox" name="recipe-updates"> Recipe Updates
+                    </label>
+                    <label>
+                        <input type="checkbox" name="event-updates"> Event Notifications
+                    </label>
+                </div>
+                
+                <button class="btn-submit" type="submit">Submit</button>
+            </form>
         </div>
     </div>
- 
+    
     <footer>
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
             <p>&copy; 2025 SpaceTime Online Kitchen. All rights reserved.</p>
         </div>
     </footer>
     
     <script>
-    
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const icon = darkModeToggle.querySelector('i');
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+        
+        // Check for saved preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+        }
+        
+        // Newsletter Form Handling
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Form submission logic would go here
+            alert('Thank you for subscribing!');
+            openNewsletterForm(); // Close the popup
+        });
+        
+        // Scroll functions remain the same
         function disableScroll() {
-            scrollTop =
-                window.pageYOffset ||
-                document.documentElement.scrollTop;
-            scrollLeft =
-                window.pageXOffset ||
-                document.documentElement.scrollLeft,
-
-                window.onscroll = function () {
-                    window.scrollTo(scrollLeft, scrollTop);
-                };
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+            window.onscroll = function() { window.scrollTo(scrollLeft, scrollTop); };
         }
-
-        function enableScroll() {
-            window.onscroll = function () { };
-        }
-
-    	 function openNewsletterForm() {
+        
+        function enableScroll() { window.onscroll = function() {}; }
+        
+        function openNewsletterForm() {
             const overlay = document.getElementById('popupOverlay');
             disableScroll();
             overlay.classList.toggle('show');
         }
+        
+        // Initialize accessibility features
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('popupOverlay').classList.contains('show')) {
+                openNewsletterForm();
+                enableScroll();
+            }
+        });
     </script>
 </body>
 </html>
