@@ -15,6 +15,33 @@
     <link rel="stylesheet" href="swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
+        .collapsible {
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            margin: 5px 0;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .collapsible:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            border-radius: 0 0 5px 5px;
+        }
         
         .calendar-container {
             max-width: 1000px;
