@@ -295,6 +295,33 @@
             left: 0;
         }
         
+        @media (max-width: 768px) {
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .button-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .button {
+                padding: 10px 15px;
+                margin: 5px;
+                font-size: 0.9rem;
+            }
+            
+            .modal-content {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .modal-image {
+                height: 200px;
+            }
+        }
+
         .recipe-info-card-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -479,7 +506,7 @@
         <div class="container">
         <div class="membership-content">
             <h1>Recipes</h1>
-            <h3 style="color: #000;" class="intro-text">Recipes that are made for you! Check out the quick eats section if you need a quick meal! Or if you have a bit of extra time, check out the recipes section for longer recipes! If you just can't find the recipe your looking for then turn to the Recipe Finder AI for more suggestions! Whatever you make rest assured that all of our recipes will taste amazing!</h3>
+            <h3 style="color: #000;" class="intro-text">Recipes that are made for you! Check out the quick eats section if you need a quick meal! Or if you have a bit of extra time, check out the recipes section for longer recipes! If you just can't find the recipe your looking for then turn to the Recipe Finder AI for more suggestions! Whatever you make rest assured that all of our recipes will taste amazing!</p>
         </div>   
             <div class="recipe-info-card-container">
                 <div class="recipe-info-card">
@@ -664,244 +691,229 @@
                         </ul>
                     </div>
                 </div>
-            </div>
 
-            <!-- Additional Recipe Modals -->
-            <div id="Tomato-Soup" class="recipe-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <img src="Recipe-Thumbnail-Images/Tomato-Soup.jpeg" alt="Toasty Tomato Soup" class="modal-image">
-                    <h2>Toasty Tomato Soup</h2>
-                    <p class="recipe-author">By Geronimo Wilson | 1.5 hours</p>
-                    
-                    <div class="modal-section">
-                        <h3>Description</h3>
-                        <p>Roasted seasoned pureed tomatoes with smoked paprika and garlic chives. Serve with cream and basil for extra taste.</p>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Ingredients</h3>
-                        <ul class="ingredients-list">
-                            <li>3 lbs ripe tomatoes, halved</li>
-                            <li>1 onion, chopped</li>
-                            <li>4 cloves garlic</li>
-                            <li>2 tbsp olive oil</li>
-                            <li>1 tsp smoked paprika</li>
-                            <li>4 cups vegetable broth</li>
-                            <li>1/2 cup heavy cream</li>
-                            <li>Fresh basil leaves</li>
-                            <li>Salt and pepper to taste</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Instructions</h3>
-                        <ol class="instructions-list">
-                            <li>Preheat oven to 400°F (200°C).</li>
-                            <li>Arrange tomatoes, onion and garlic on baking sheet. Drizzle with olive oil.</li>
-                            <li>Roast for 45 minutes until vegetables are soft and slightly charred.</li>
-                            <li>Transfer to blender, add paprika and broth. Blend until smooth.</li>
-                            <li>Strain through sieve into pot, simmer for 20 minutes.</li>
-                            <li>Stir in cream, season with salt and pepper.</li>
-                            <li>Garnish with fresh basil before serving.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
+    
+    <script>
 
-            <div id="pumpkin-pie" class="recipe-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <img src="Recipe-Thumbnail-Images/Pumpkin-Pie.jpeg" alt="Pumpkin Pie" class="modal-image">
-                    <h2>Pumpkin Pie</h2>
-                    <p class="recipe-author">By Jessica Monroe | 1.5 hours</p>
-                    
-                    <div class="modal-section">
-                        <h3>Description</h3>
-                        <p>This creamy pumpkin filling with a crunchy, golden, flaky outer crust.</p>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Ingredients</h3>
-                        <ul class="ingredients-list">
-                            <li>1 pie crust</li>
-                            <li>15 oz pumpkin puree</li>
-                            <li>14 oz sweetened condensed milk</li>
-                            <li>2 eggs</li>
-                            <li>1 tsp cinnamon</li>
-                            <li>1/2 tsp ginger</li>
-                            <li>1/2 tsp nutmeg</li>
-                            <li>1/2 tsp salt</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Instructions</h3>
-                        <ol class="instructions-list">
-                            <li>Preheat oven to 425°F (220°C).</li>
-                            <li>Mix pumpkin puree, condensed milk, eggs, spices and salt in bowl.</li>
-                            <li>Pour into pie crust.</li>
-                            <li>Bake for 15 minutes, then reduce temperature to 350°F (175°C).</li>
-                            <li>Bake for additional 35-40 minutes until center is set.</li>
-                            <li>Cool completely before serving.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
+        const grids = {
+            recipes: { items: 12, content: 'Product' },
+            quickEats: { items: 6, content: 'Feature' },
+            recipeFinder: { items: 3, content: 'Service' }
+        };
 
-            <div id="beef-stew" class="recipe-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew" class="modal-image">
-                    <h2>Slow-Cooked Beef Stew</h2>
-                    <p class="recipe-author">By Nelson Uganda | 2 hours</p>
-                    
-                    <div class="modal-section">
-                        <h3>Description</h3>
-                        <p>Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</p>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Ingredients</h3>
-                        <ul class="ingredients-list">
-                            <li>2 lbs beef chuck, cubed</li>
-                            <li>2 tbsp flour</li>
-                            <li>2 tbsp olive oil</li>
-                            <li>1 onion, chopped</li>
-                            <li>3 carrots, sliced</li>
-                            <li>3 potatoes, cubed</li>
-                            <li>4 cups beef broth</li>
-                            <li>2 tbsp tomato paste</li>
-                            <li>1 tsp thyme</li>
-                            <li>1 bay leaf</li>
-                            <li>Salt and pepper to taste</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Instructions</h3>
-                        <ol class="instructions-list">
-                            <li>Toss beef cubes with flour, salt and pepper.</li>
-                            <li>Heat oil in Dutch oven, brown beef in batches.</li>
-                            <li>Add onion, cook until soft.</li>
-                            <li>Return beef to pot, add remaining ingredients.</li>
-                            <li>Bring to boil, then reduce heat to low.</li>
-                            <li>Simmer covered for 1.5-2 hours until beef is tender.</li>
-                            <li>Remove bay leaf before serving.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
+        function populateGrids() {
 
-            <div id="jalapeno-poppers" class="recipe-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <img src="Recipe-Thumbnail-Images/pexels-salman-khan-358690166-14332857 (1).jpg" alt="Jalapeno Poppers" class="modal-image">
-                    <h2>Cheesy Jalapeno Poppers</h2>
-                    <p class="recipe-author">By Tina Gomez | 45 mins</p>
-                    
-                    <div class="modal-section">
-                        <h3>Description</h3>
-                        <p>Spicy jalapenos stuffed with cream cheese and cheddar, wrapped in crispy breadcrumbs.</p>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Ingredients</h3>
-                        <ul class="ingredients-list">
-                            <li>12 jalapeno peppers</li>
-                            <li>8 oz cream cheese</li>
-                            <li>1 cup shredded cheddar</li>
-                            <li>1/2 tsp garlic powder</li>
-                            <li>1 cup breadcrumbs</li>
-                            <li>2 eggs, beaten</li>
-                            <li>Oil for frying</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Instructions</h3>
-                        <ol class="instructions-list">
-                            <li>Cut jalapenos in half lengthwise, remove seeds.</li>
-                            <li>Mix cream cheese, cheddar and garlic powder.</li>
-                            <li>Fill jalapeno halves with cheese mixture.</li>
-                            <li>Dip in egg, then breadcrumbs.</li>
-                            <li>Fry in 350°F oil for 2-3 minutes until golden.</li>
-                            <li>Drain on paper towels before serving.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
+            Object.keys(grids).forEach(gridId => {
+                const container = document.getElementById(gridId);
+                container.innerHTML = '';
+                for (let i = 1; i <= grids[gridId].items; i++) {
+                    const item = document.createElement('div');
+                    item.className = 'grid-item';
+                    //item.textContent = `${grids[gridId].content} ${i}`;
 
-            <div id="avocado-tacos" class="recipe-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <img src="Sweet-Spicy-Mango-Tacos_done.webp" alt="Spicy Mango Avocado Tacos" class="modal-image">
-                    <h2>Spicy Mango Avocado Tacos</h2>
-                    <p class="recipe-author">By Hernando Cucho De Stefano | 45 mins</p>
-                    
-                    <div class="modal-section">
-                        <h3>Description</h3>
-                        <p>Spicy Mango Avocado Tacos are a fresh, vibrant dish with sweet mango, creamy avocado, crunchy veggies, and a zesty lime dressing, perfect for a light meal or appetizer.</p>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Ingredients</h3>
-                        <ul class="ingredients-list">
-                            <li>8 small corn tortillas</li>
-                            <li>2 ripe avocados, sliced</li>
-                            <li>1 mango, diced</li>
-                            <li>1/2 red onion, thinly sliced</li>
-                            <li>1 cup shredded purple cabbage</li>
-                            <li>1/4 cup chopped cilantro</li>
-                            <li>1 jalapeno, sliced</li>
-                            <li>2 limes, juiced</li>
-                            <li>2 tbsp olive oil</li>
-                            <li>1 tsp honey</li>
-                            <li>Salt to taste</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Instructions</h3>
-                        <ol class="instructions-list">
-                            <li>Whisk together lime juice, olive oil, honey and salt for dressing.</li>
-                            <li>Warm tortillas according to package directions.</li>
-                            <li>Assemble tacos with avocado, mango, onion, cabbage and jalapeno.</li>
-                            <li>Drizzle with dressing and garnish with cilantro.</li>
-                            <li>Serve immediately.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
+                    item.textContent = gridId;
+                    if (gridId == 'recipes') {
+                        if(i==1){
+                            item.innerHTML =  '<!-- Recipe 1 --><div class="recipe-card" data-recipe="Tomato-Soup"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Tomato-Soup.jpeg" alt="Toasty Tomato Soup"></div><div class="recipe-content"><div class="recipe-number">1</div><div class="recipe-author">By Geronimo Wilson</div><div class="recipe-name">Toasty Tomato Soup</div><div class="recipe-description">Roasted seasoned pureed tomatoes with smoked paprika and garlic chives. Serve with cream and basil for extra taste.</div><div class="recipe-footer"><span class="time-badge">1.5 hours</span><span class="view-recipe">View Recipe</span></div></div></div>'
+                        }
+                        else if(i==2){
+                            item.innerHTML = '<!-- Recipe 2 --><div class="recipe-card" data-recipe="pumpkin-pie"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Pumpkin-Pie.jpeg" alt="Avocado Toast"></div><div class="recipe-content"><div class="recipe-number">2</div><div class="recipe-author">By Jessica Monroe </div><div class="recipe-name">Pumpkin Pie</div><div class="recipe-description">This creamy pumpkin filling with a crunchy, golden, flaky outer crust.</div><div class="recipe-footer"><span class="time-badge">1.5 Hours</span><span class="view-recipe">View Recipe</span></div></div></div>'
+                        }
+                        else if(i==3){
+                            item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Nelson Uganda</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                        }
+                        else if(i==4){
+                            item.innerHTML = '<!-- Recipe 4 --><div class="recipe-card" data-recipe="jalapeno-poppers"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-salman-khan-358690166-14332857 (1).jpg" alt="Jalapeno Popppers"></div><div class="recipe-content"><div class="recipe-number">4</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Cheesy Jalapeno Poppers</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">45 mins</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                        }
+                        else if(i==5){
+                            item.innerHTML = '<!-- Recipe 5 --><div class="recipe-card" data-recipe="avacado-Tacos"><div class="recipe-image"><img src="Sweet-Spicy-Mango-Tacos_done.webp" alt="avocado-tacos"></div><div class="recipe-content"><div class="recipe-number">5</div><div class="recipe-author">By Hernando Cucho De Stefano</div><div class="recipe-name">Spicy Mango Avocado Tacos</div><div class="recipe-description">Spicy Mango Avocado Tacos are a fresh, vibrant dish with sweet mango, creamy avocado, crunchy veggies, and a zesty lime dressing, perfect for a light meal or appetizer.</div><div class="recipe-footer"><span class="time-badge">45 mins</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                        }
+                        else if(i==6){
+                            item.innerHTML = '<!-- Recipe 6 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                        }
+                        else if(i==7){
+                            item.innerHTML = '<!-- Recipe 7 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                        }
+                        else if(i==8){
+                            item.innerHTML = '<!-- Recipe 8 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                        }
+                        else if(i==9){
+                            item.innerHTML = '<!-- Recipe 9 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                        }
+                        else if(i==11){
+                            item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
+                        }
+                        else{
+                            item.innerHTML = ' ';
+                        }
+                    }
 
-            <div id="chicken-curry" class="recipe-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <img src="Recipe-Thumbnail-Images/chicken-curry.jpg" alt="Fragrant Chicken Curry" class="modal-image">
-                    <h2>Fragrant Chicken Curry</h2>
-                    <p class="recipe-author">By Raj Patel | 1 hour</p>
+                    if (gridId == 'quickEats') {
+                        if(i==1){
+                            item.innerHTML = '<!-- Recipe 1 --><div class="recipe-card" data-recipe="chicken-tenders"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Crispy-Chicken.jpeg" alt="Crispy Chicken Tenders"></div><div class="recipe-content"><div class="recipe-number">1</div><div class="recipe-author">By James Smith</div><div class="recipe-name">Crispy Chicken Tenders</div><div class="recipe-description">Golden-brown chicken tenders with a crunchy exterior and juicy interior. Perfect with your favorite dipping sauce!</div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }
+                        else if(i==2){
+                            item.innerHTML = '<!-- Recipe 2 --><div class="recipe-card" data-recipe="avocado-toast"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Gourmet-Avacado.jpeg" alt="Avocado Toast"></div><div class="recipe-content"><div class="recipe-number">2</div><div class="recipe-author">By Maria Garcia</div><div class="recipe-name">Gourmet Avocado Toast</div><div class="recipe-description">Creamy avocado on toasted artisan bread with cherry tomatoes, feta, and a drizzle of balsamic glaze.</div><div class="recipe-footer"><span class="time-badge">10 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }
+                        else if(i==3){
+                            item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="vegetable-stir-fry"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Vegetable-Fry.jpg" alt="Vegetable Stir Fry"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Chen Wei</div><div class="recipe-name">Speedy Vegetable Stir Fry</div><div class="recipe-description">Colorful veggies in a savory garlic-ginger sauce, ready in minutes. Serve over rice or noodles.</div><div class="recipe-footer"><span class="time-badge">20 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }
+                        else if(i==5){
+                            item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
+                        }
+                        else{
+                            item.innerHTML = ' ';
+                        }
+                    }
+
+                    if (gridId == 'recipeFinder') {
+                        if(i==2){
+                            item.innerHTML = '<section id="recipe-finder"><h2>Recipe Finder AI</h2><form id="recipe-form"><label for="ingredients">Enter Ingredients (comma-separated):</label><input type="text" id="ingredients" name="ingredients" placeholder="e.g., chicken, tomato, basil" required><button type="submit">Find Recipe</button></form><div id="results"></div></section>'
+                        }
+                        else{
+                            item.innerHTML = ' ';
+                        }
+                    }
                     
-                    <div class="modal-section">
-                        <h3>Description</h3>
-                        <p>Aromatic chicken curry with coconut milk and traditional Indian spices.</p>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Ingredients</h3>
-                        <ul class="ingredients-list">
-                            <li>2 lbs chicken thighs</li>
-                            <li>1 onion, chopped</li>
-                            <li>3 cloves garlic</li>
-                            <li>1 tbsp ginger</li>
-                            <li>2 tbsp curry powder</li>
-                            <li>1 can coconut milk</li>
-                            <li>2 tbsp vegetable oil</li>
-                            <li>1 tsp turmeric</li>
-                            <li>1 tsp cumin</li>
-                            <li>Salt to taste</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Instructions</h3>
-                        <ol class
+                    container.appendChild(item);
+                }
+                // Show first grid by default
+                if (gridId === 'recipes') {
+                    container.classList.add('visible');
+                }
+            });
+            
+            openModal();
+        }
+        
+                  // Recipe Modal functionality
+          function openModal() {
+            document.querySelectorAll('.view-recipe').forEach(button => {
+                button.addEventListener('click', function() {
+                    const recipeId = this.closest('.recipe-card').dataset.recipe;
+                    const modal = document.getElementById(recipeId);
+                    modal.style.display = "block";
+                    document.body.style.overflow = "hidden"; // Prevent scrolling
+                });
+            });
+        
+        // Close modals
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.recipe-modal').style.display = "none";
+                document.body.style.overflow = "auto"; // Re-enable scrolling
+            });
+        });
+        
+        // Close modal when clicking outside content
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('recipe-modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+        }
+
+        function animateGrid(gridId) {
+            const container = document.getElementById(gridId);
+            // Reset animation
+            container.classList.remove('visible');
+            // Trigger reflow to restart animation
+            void container.offsetWidth;
+            // Start animation
+            container.classList.add('visible');
+        }
+
+        function showGrid(gridId, button) {
+            // Hide all grids
+            document.querySelectorAll('.grid-container').forEach(container => {
+                container.classList.add('hidden');
+                container.classList.remove('visible');
+            });
+
+            // Show selected grid
+            const selectedGrid = document.getElementById(gridId);
+            selectedGrid.classList.remove('hidden');
+
+            // Animate the grid
+            animateGrid(gridId);
+
+            // Update button states
+            document.querySelectorAll('button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+        }
+
+        // Initialize grids
+        populateGrids();
+        openModal();
+
+
+        //Javascript Code For The Recipe Finder AI
+        const SPOONACULAR_API_KEY = "145f2f6c9b31454d9fdc12426fa6e04e";
+
+        document.getElementById('recipe-form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const ingredients = document.getElementById('ingredients').value.trim();
+        const resultsDiv = document.getElementById('results');
+
+        resultsDiv.innerHTML = '<p>Searching for recipes...</p>';
+
+        try {
+            const findUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${encodeURIComponent(ingredients)}&number=1&ranking=1&ignorePantry=true&apiKey=${SPOONACULAR_API_KEY}`;
+            const findResponse = await fetch(findUrl);
+            if (!findResponse.ok) {
+            throw new Error(`Error fetching recipe: ${findResponse.statusText}`);
+            }
+            const recipes = await findResponse.json();
+
+            if (recipes.length === 0) {
+            resultsDiv.innerHTML = '<p>No recipes found for the provided ingredients. Try different ingredients.</p>';
+            return;
+            }
+
+            const recipe = recipes[0];
+            const recipeId = recipe.id;
+
+            const infoUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${SPOONACULAR_API_KEY}`;
+            const infoResponse = await fetch(infoUrl);
+            if (!infoResponse.ok) {
+            throw new Error(`Error fetching recipe details: ${infoResponse.statusText}`);
+            }
+            const recipeDetails = await infoResponse.json();
+
+            let html = `<div class="recipe-card">`;
+            html += `<h2>${recipeDetails.title}</h2>`;
+            if (recipeDetails.image) {
+            html += `<img src="${recipeDetails.image}" alt="${recipeDetails.title}" style="max-width:100%; border-radius:8px; margin:1rem 0;">`;
+            }
+            html += `<p><strong>Ready in:</strong> ${recipeDetails.readyInMinutes} minutes</p>`;
+            html += `<p><strong>Servings:</strong> ${recipeDetails.servings}</p>`;
+            html += `<h3>Ingredients:</h3><ul>`;
+            recipeDetails.extendedIngredients.forEach(ingredient => {
+            html += `<li>${ingredient.original}</li>`;
+            });
+            html += `</ul>`;
+            html += `<h3>Instructions:</h3>`;
+            if (recipeDetails.instructions) {
+            html += `<div>${recipeDetails.instructions}</div>`;
+            } else {
+            html += `<p>No instructions available. Please visit the <a href="${recipeDetails.sourceUrl}" target="_blank">original recipe</a> for instructions.</p>`;
+            }
+            if (recipeDetails.sourceUrl) {
+            html += `<p style="margin-top:1.5rem;"><a href="${recipeDetails.sourceUrl}" target="_blank" class="button">View Original Recipe</a></p>`;
+            }
+            html += `</div>`;
+            resultsDiv.innerHTML = html;
+        } catch (error) {
+            resultsDiv.innerHTML = `<div class="error" style="color: #d32f2f; padding:1rem; background:#ffebee; border-radius:4px;">
+            <p><strong>Error:</strong> ${error.message}</p>
+            <p>Please try again later or check your ingredients.</p>
+            </div>`;
+        }
+        });
+    </script>
+</body>
+</html>
