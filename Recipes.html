@@ -333,8 +333,10 @@
         }
 
         .recipe-info-card-container {
-            display: flex;
-            justify-content: space-evenly;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem auto;
             gap: 2rem;
             margin: 2rem 0;
         }
@@ -468,9 +470,9 @@
         .grid-container {
             display: grid;
             width: auto;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem auto;
             opacity: 0;
             transform: translateY(100%);
             transition: opacity 0.5s ease, transform 0.5s ease;
