@@ -13,108 +13,7 @@
         html{
           scroll-behavior: smooth;
         }
-        :root {
-            --primary-color: #2E7D32;
-            --primary-light: #4CAF50;
-            --primary-dark: #1B5E20;
-            --text-color: #333;
-            --light-bg: #f9f9f9;
-            --white: #ffffff;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        body {
-            font-family: 'Lato', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            background-color: rgba(0,0,0,0.1);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 0;
-            box-shadow: var(--shadow);
-            position: relative;
-            z-index: 10;
-        }
-        
-        h1, h2, h3 {
-            margin: 0;
-            font-weight: 300;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin: 1.5rem 0;
-        }
-        
-        h3 {
-            font-size: 1.3rem;
-            color: #4CAF50;
-            margin: 1rem 0;
-        }
-        
-        .button {
-            transition: all 0.3s ease;
-            background-color: var(--primary-light);
-            color: var(--white);
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin: 8px;
-            font-size: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .button:hover {
-            transform: translateY(-2px);
-            background-color: var(--primary-dark);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        
-        .button-container {
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px 0;
-        }
-        
-        .new-button-container {
-            justify-content: center;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .new-label {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: #FF5722;
-            color: white;
-            border-radius: 50%;
-            padding: 2px 6px;
-            font-size: 0.7rem;
-            font-weight: bold;
-        }
-
+	    
         /*Image Carousel*/
         .image-carousel{
             width: 85%;
@@ -592,16 +491,16 @@
     <header>
         <div class="container">
             <h1>SpaceTime Online Kitchen</h1>
-            <h3>About Us</h3>
+            <h3 style="color: var(--white);">About Us</h3>
         </div>
     </header>
     
     <div class="button-container">
-        <a href="index.html" class="button">Home</a>
-        <a href="about-us.html" class="button">About Us</a>
-        <a href="Recipes.html" class="button">Recipes</a>
-        <a href="events.html" class="button">Events</a>
-        <a href="membership.html" class="button">Membership</a>
+        <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
+        <a href="about-us.html" class="button"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="Recipes.html" class="button"><i class="fas fa-utensils"></i> Recipes</a>
+        <a href="events.html" class="button"><i class="fas fa-calendar-alt"></i> Events</a>
+        <a href="membership.html" class="button"><i class="fas fa-users"></i> Membership</a>
     </div>
     <main>
        <div class="story-container">
