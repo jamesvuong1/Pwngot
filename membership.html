@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpaceTime Online Kitchen - Culinary Community Hub</title>
+    <meta name="description" content="Join our collaborative cooking community with recipes, events, and culinary education">
+    <!-- Favicon & Preloads -->
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts & Libraries -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -17,6 +23,7 @@
             --light-bg: #f9f9f9;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --round: 12px;
         }
         
         body {
@@ -72,7 +79,7 @@
             color: var(--white);
             padding: 12px 24px;
             border: none;
-            border-radius: 5px;
+            border-radius: var(--rounded);
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
@@ -91,24 +98,6 @@
             text-align: center;
             margin: 20px 0;
             padding: 10px 0;
-        }
-        
-        .new-button-container {
-            justify-content: center;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .new-label {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: #FF5722;
-            color: white;
-            border-radius: 50%;
-            padding: 2px 6px;
-            font-size: 0.7rem;
-            font-weight: bold;
         }
         
         /* Membership Content */
@@ -261,11 +250,11 @@
     </header>
     
     <div class="button-container">
-        <a href="index.html" class="button">Home</a>
-        <a href="about-us.html" class="button">About Us</a>
-        <a href="Recipes.html" class="button">Recipes</a>
-        <a href="events.html" class="button">Events</a>
-        <a href="membership.html" class="button">Membership</a>
+        <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
+        <a href="about-us.html" class="button"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="Recipes.html" class="button"><i class="fas fa-utensils"></i> Recipes</a>
+        <a href="events.html" class="button"><i class="fas fa-calendar-alt"></i> Events</a>
+        <a href="membership.html" class="button"><i class="fas fa-users"></i> Membership</a>
     </div>
     
     <main class="container">
