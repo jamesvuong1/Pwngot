@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes | SpaceTime Online Kitchen</title>
+    <!-- Favicon & Preloads -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts & Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         :root {
             --primary-color: #2E7D32;
@@ -333,8 +337,8 @@
         }
 
         .recipe-info-card-container {
-            display: flex;
-            justify-content: space-evenly;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
@@ -468,7 +472,7 @@
         .grid-container {
             display: grid;
             width: auto;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 10px;
             padding: 20px;
             opacity: 0;
@@ -497,16 +501,16 @@
     <header>
         <div class="container">
             <h1>SpaceTime Online Kitchen</h1>
-        <h3 style="color: var(--white);">Recipes</h3>
+            <h3>Recipes</h3>
         </div>
     </header>
     
     <div class="button-container">
-        <a href="index.html" class="button">Home</a>
-        <a href="about-us.html" class="button">About Us</a>
-        <a href="Recipes.html" class="button">Recipes</a>
-        <a href="events.html" class="button">Events</a>
-        <a href="membership.html" class="button">Membership</a>
+        <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
+        <a href="about-us.html" class="button"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="Recipes.html" class="button"><i class="fas fa-utensils"></i> Recipes</a>
+        <a href="events.html" class="button"><i class="fas fa-calendar-alt"></i> Events</a>
+        <a href="membership.html" class="button"><i class="fas fa-users"></i> Membership</a>
     </div>
     
     
@@ -519,7 +523,7 @@
             <div class="recipe-info-card-container">
                 <div class="recipe-info-card">
                     <h3>Recipes</h3>
-                    <h4>Our 30+ Minute Meals are perfect for when you have a bit more time and want to create hearty, flavorful dishes. These recipes let you enjoy the cooking process while making satisfying, delicious meals for any occasion.</h4>
+                    <h4>Running late for work? In a hurry? Need a quick meal? Check out our quick eats recipes, designed to be prepared in no time. Each recipe takes no more than 30 minutes to cook, and they all taste fantastic!</h4>
                     <button class="active tab-button" onclick="showGrid('recipes', this)">View Recipes</button>
                 </div>
 
@@ -734,7 +738,7 @@
                             item.innerHTML = '<!-- Recipe 4 --><div class="recipe-card" data-recipe="jalapeno-poppers"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-salman-khan-358690166-14332857 (1).jpg" alt="Jalapeno Popppers"></div><div class="recipe-content"><div class="recipe-number">4</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Cheesy Jalapeno Poppers</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">45 mins</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==5){
-                            item.innerHTML = '<!-- Recipe 5 --><div class="recipe-card" data-recipe="avacado-Tacos"><div class="recipe-image"><img src="Sweet-Spicy-Mango-Tacos_done.webp" alt="avocado-tacos"></div><div class="recipe-content"><div class="recipe-number">5</div><div class="recipe-author">By Hernando Cucho De Stefano</div><div class="recipe-name">Spicy Mango Avocado Tacos</div><div class="recipe-description">Spicy Mango Avocado Tacos are a fresh, vibrant dish with sweet mango, creamy avocado, crunchy veggies, and a zesty lime dressing, perfect for a light meal or appetizer.</div><div class="recipe-footer"><span class="time-badge">45 mins</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                            item.innerHTML = '<!-- Recipe 5 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==6){
                             item.innerHTML = '<!-- Recipe 6 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
@@ -777,6 +781,9 @@
                     if (gridId == 'recipeFinder') {
                         if(i==2){
                             item.innerHTML = '<section id="recipe-finder"><h2>Recipe Finder AI</h2><form id="recipe-form"><label for="ingredients">Enter Ingredients (comma-separated):</label><input type="text" id="ingredients" name="ingredients" placeholder="e.g., chicken, tomato, basil" required><button type="submit">Find Recipe</button></form><div id="results"></div></section>'
+                        }
+                        else if(i==4){
+                            item.innerHTML = '<div style="grid-column: span 3;" id="results"></div>';
                         }
                         else{
                             item.innerHTML = ' ';
