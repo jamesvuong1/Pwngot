@@ -1,3 +1,15 @@
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --rounded: 12px;
+        }
+
         body {
             font-family: 'Lato', Arial, sans-serif;
             margin: 0;
