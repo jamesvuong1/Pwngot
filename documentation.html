@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SpaceTime Online Kitchen - Work Log</title>
   <meta name="description" content="SpaceTime Online Kitchen Work Log">
-  
+
   <!-- Favicon & Preloads -->
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
+
   <!-- Fonts & Libraries -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -71,6 +71,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       margin-bottom: 20px;
+      display: none; /* Hidden initially */
     }
 
     .action-buttons {
@@ -91,6 +92,7 @@
       align-items: center;
       gap: 8px;
       transition: 0.3s;
+      cursor: pointer;
     }
 
     .action-buttons a i {
@@ -127,11 +129,11 @@
     <h4>Team Work Log</h4>
 
     <!-- Work Log Image -->
-    <img src="Screenshot%202025-04-28%20144809.png" alt="Work Log" class="worklog-image">
+    <img id="worklogImage" src="Screenshot%202025-04-28%20144809.png" alt="Work Log" class="worklog-image">
 
     <!-- Action Buttons -->
     <div class="action-buttons">
-      <a href="Screenshot%202025-04-28%20144809.png" target="_blank">
+      <a onclick="showImage()">
         <i class="fas fa-eye"></i> View Full Size
       </a>
       <a href="Screenshot%202025-04-28%20144809.png" download="SpaceTime_WorkLog.png">
@@ -139,5 +141,14 @@
       </a>
     </div>
   </div>
+
+  <!-- JavaScript to show the image -->
+  <script>
+    function showImage() {
+      document.getElementById('worklogImage').style.display = 'block';
+      // Scroll to the image smoothly
+      document.getElementById('worklogImage').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
