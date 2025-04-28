@@ -455,7 +455,7 @@
                     <!-- This Grid Will Get Created By The Javascript, Leave It Empty -->
                 </div>
             </div>
-
+	    <!--Quick Eats Modals -->
             <div id="chicken-tenders" class="recipe-modal">
                 <div class="modal-content">
                     <span class="close-modal">&times;</span>
@@ -613,7 +613,7 @@
 
         const grids = {
             recipes: { items: 12, content: 'Product' },
-            quickEats: { items: 6, content: 'Feature' },
+            quickEats: { items: 9, content: 'Feature' },
             recipeFinder: { items: 3, content: 'Service' }
         };
 
@@ -645,7 +645,7 @@
                             item.innerHTML = '<!-- Recipe 5 --><div class="recipe-card" data-recipe="avacado-Tacos"><div class="recipe-image"><img src="Sweet-Spicy-Mango-Tacos_done.webp" alt="avocado-tacos"></div><div class="recipe-content"><div class="recipe-number">5</div><div class="recipe-author">By Hernando Cucho De Stefano</div><div class="recipe-name">Spicy Mango Avocado Tacos</div><div class="recipe-description">Spicy Mango Avocado Tacos are a fresh, vibrant dish with sweet mango, creamy avocado, crunchy veggies, and a zesty lime dressing, perfect for a light meal or appetizer.</div><div class="recipe-footer"><span class="time-badge">45 mins</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==6){
-                            item.innerHTML = '<!-- Recipe 6 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                            item.innerHTML = '<!-- Recipe 6 --><div class="recipe-card" data-recipe="garlic-pasta"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==7){
                             item.innerHTML = '<!-- Recipe 7 --><div class="recipe-card" data-recipe="beef-stew"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Beef Stew"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Tina Gomez</div><div class="recipe-name">Slow-Cooked Beef Stew</div><div class="recipe-description">Beef stew has tender beef, carrots, and potatoes in a rich, savory broth. Add peas, celery, or parsnips for extra flavor and texture.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
@@ -666,7 +666,7 @@
 
                     if (gridId == 'quickEats') {
                         if(i==1){
-                            item.innerHTML = '<!-- Recipe 1 --><div class="recipe-card" data-recipe="chicken-tenders"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Crispy-Chicken.jpeg" alt="Crispy Chicken Tenders"></div><div class="recipe-content"><div class="recipe-number">1</div><div class="recipe-author">By James Smith</div><div class="recipe-name">Crispy Chicken Tenders</div><div class="recipe-description">Golden-brown chicken tenders with a crunchy exterior and juicy interior. Perfect with your favorite dipping sauce!</div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                            item.innerHTML = '<!-- Recipe 1 --><div class="recipe-card" data-recipe="chicken-tenders"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Crispy-Chicken.jpeg" alt="Crispy Chicken Tenders"></div><div class="recipe-content"><div class="recipe-number">1</div><div class="recipe-author">By James Smith</div><div class="recipe-name">Crispy Chicken Tenders</div><div class="recipe-description">Golden-brown chicken tenders with a crunchy exterior and juicy interior. Perfect with your favorite sauce!</div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
                         }
                         else if(i==2){
                             item.innerHTML = '<!-- Recipe 2 --><div class="recipe-card" data-recipe="avocado-toast"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Gourmet-Avacado.jpeg" alt="Avocado Toast"></div><div class="recipe-content"><div class="recipe-number">2</div><div class="recipe-author">By Maria Garcia</div><div class="recipe-name">Gourmet Avocado Toast</div><div class="recipe-description">Creamy avocado on toasted artisan bread with cherry tomatoes, feta, and a drizzle of balsamic glaze.</div><div class="recipe-footer"><span class="time-badge">10 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
@@ -674,9 +674,18 @@
                         else if(i==3){
                             item.innerHTML = '<!-- Recipe 3 --><div class="recipe-card" data-recipe="vegetable-stir-fry"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Vegetable-Fry.jpg" alt="Vegetable Stir Fry"></div><div class="recipe-content"><div class="recipe-number">3</div><div class="recipe-author">By Chen Wei</div><div class="recipe-name">Speedy Vegetable Stir Fry</div><div class="recipe-description">Colorful veggies in a savory garlic-ginger sauce, ready in minutes. Serve over rice or noodles.</div><div class="recipe-footer"><span class="time-badge">20 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
                         }
-                        else if(i==5){
-                            item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
+                        else if(i==4){
+                            item.innerHTML = '<!-- Recipe 4 --><div class="recipe-card" data-recipe="garlic-pasta"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Crispy-Chicken.jpeg" alt="Garlic Parmesan Pasta"></div><div class="recipe-content"><div class="recipe-number">4</div><div class="recipe-author">By Helen Smith</div><div class="recipe-name">Creamy Garlic Parmesan Pasta</div><div class="recipe-description">Garlic Parmesan pasta is rich, creamy, and flavorful made with butter, garlic, cream, and cheese.</div><div class="recipe-footer"><span class="time-badge">20 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
                         }
+                        else if(i==5){
+                            item.innerHTML = '<!-- Recipe 5 --><div class="recipe-card" data-recipe="glazed-salmon"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Gourmet-Avacado.jpeg" alt="Glazed Salmon"></div><div class="recipe-content"><div class="recipe-number">5</div><div class="recipe-author">By Jackson Huang</div><div class="recipe-name">Honey Soy Glazed Salmon</div><div class="recipe-description">Honey soy salmon is sweet, savory, quick, and pan-seared with a sticky glaze. Serve with rice or veggies.</div><div class="recipe-footer"><span class="time-badge">20 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }
+                        else if(i==6){
+                            item.innerHTML = '<!-- Recipe 6 --><div class="recipe-card" data-recipe="chocolate-mug-cake"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Vegetable-Fry.jpg" alt="Chocolate Mug Cake"></div><div class="recipe-content"><div class="recipe-number">6</div><div class="recipe-author">By Geronimo Wilson</div><div class="recipe-name">Chocolate Mug Cake</div><div class="recipe-description">Chocolate mug cake is rich, soft, and ready in minutes. Customize with chips, peanut butter, or whipped cream.</div><div class="recipe-footer"><span class="time-badge">5 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }
+                        else if(i==8){
+                            item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
+                        }				
                         else{
                             item.innerHTML = ' ';
                         }
