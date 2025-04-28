@@ -43,6 +43,16 @@
       display: none; /* Hidden initially */
     }
 
+    .copyright-form {
+      width: 70vw;
+      height: 90vh;
+      justify-self: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+      display: none; /* Hidden initially */
+    }
+
     .action-buttons {
       display: flex;
       justify-content: center;
@@ -99,14 +109,31 @@
     <h4>Team Work Log</h4>
 
     <!-- Work Log Image -->
-    <iframe id="worklogImage" src="Documents/WorkLog.pdf" class="worklog-image"></iframe>
+    <iframe id="workLogImage" src="Documents/WorkLog.pdf" class="worklog-image"></iframe>
 
     <!-- Action Buttons -->
     <div class="action-buttons">
-      <a id="toggleButton" onclick="toggleImage()">
+      <a id="toggleWorkLogButton" onclick="toggleWorkLogImage()">
         <i class="fas fa-eye"></i> View Full Size
       </a>
-      <a href="Documents/WorkLog.pdf" download="SpaceTime_WorkLog.png">
+      <a href="Documents/WorkLog.pdf" download="SpaceTime_WorkLog.pdf">
+        <i class="fas fa-download"></i> Download
+      </a>
+    </div>
+  </div>
+
+    <div class="calendar-container">
+    <h4>Copyright Form</h4>
+
+    <!-- Copyright Form Image -->
+    <iframe id="copyrightFormImg" src="Documents/Copyright-Form.pdf" class="copyright-form"></iframe>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <a id="toggleCopyrightFormButton" onclick="toggleCoprightFormImage()">
+        <i class="fas fa-eye"></i> View Full Size
+      </a>
+      <a href="Documents/Copyright-Form.pdf download="SpaceTime_CopyrightForm.pdf">
         <i class="fas fa-download"></i> Download
       </a>
     </div>
@@ -114,9 +141,23 @@
 
   <!-- JavaScript to toggle the image -->
   <script>
-    function toggleImage() {
-      const img = document.getElementById('worklogImage');
+    function toggleWorkLogImage() {
+      const img = document.getElementById('workLogImage');
       const button = document.getElementById('toggleButton');
+
+      if (img.style.display === 'block') {
+        img.style.display = 'none';
+        button.innerHTML = '<i class="fas fa-eye"></i> View Full Size';
+      } else {
+        img.style.display = 'block';
+        img.scrollIntoView({ behavior: 'smooth' });
+        button.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Image';
+      }
+    }
+    
+    function toggleCoprightFormImage() {
+      const img = document.getElementById('copyrightFormImg');
+      const button = document.getElementById('toggleCopyrightFormButton');
 
       if (img.style.display === 'block') {
         img.style.display = 'none';
