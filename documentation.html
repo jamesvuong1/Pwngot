@@ -1,17 +1,117 @@
-<!-- Button -->
-<button id="openModal" style="padding: 10px 20px; font-size: 16px; border-radius: 8px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">
-  View Work Log
-</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Log</title>
+  <meta name="description" content="View our project work log">
+  
+  <!-- Fonts & Libraries -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Link your main styles -->
+  
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
 
-<!-- Modal Structure -->
-<div id="workLogModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.6);">
-  <div style="background-color:#fff; margin:10% auto; padding:20px; border:1px solid #888; width:80%; max-width:700px; border-radius:10px; position:relative;">
-    <span id="closeModal" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
-    <img src="Screenshot 2025-04-28 144809.png" alt="Work Log" style="width:100%; height:auto; border-radius:8px;">
+    /* Button Style */
+    .button {
+      background-color: var(--primary-light, #4CAF50);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: var(--primary-dark, #388E3C);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      box-shadow: var(--shadow, 0 4px 8px rgba(0,0,0,0.2));
+      animation: zoom 0.3s;
+      position: relative;
+    }
+
+    @keyframes zoom {
+      from {transform: scale(0)}
+      to {transform: scale(1)}
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Work Log Button -->
+<div style="text-align: center; margin-top: 50px;">
+  <button class="button" id="openModal"><i class="fas fa-book-open"></i> View Work Log</button>
+</div>
+
+<!-- Modal -->
+<div id="workLogModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <img src="YOUR_IMAGE_PATH_HERE.png" alt="Work Log">
   </div>
 </div>
 
-<!-- Script -->
+<!-- Modal Script -->
 <script>
   const modal = document.getElementById('workLogModal');
   const btn = document.getElementById('openModal');
@@ -31,3 +131,6 @@
     }
   }
 </script>
+
+</body>
+</html>
