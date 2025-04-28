@@ -1,10 +1,138 @@
-<h2>Citations</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceTime Online Kitchen - Citations</title>
+  <meta name="description" content="SpaceTime Online Kitchen Citations Page">
 
-<ul>
-  <li>
-    Spoonacular. (n.d.). <em>Food and Recipe API</em>. Retrieved from 
-    <a href="https://spoonacular.com/food-api" target="_blank" rel="noopener noreferrer">https://spoonacular.com/food-api</a>
-  </li>
-  <!-- Add other citations below -->
-</ul>
+  <!-- Favicon & Preloads -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Fonts & Libraries -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: var(--primary-color, #4CAF50);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      background-color: transparent;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .button-container a {
+      background-color: var(--primary-color, #4CAF50);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .button-container a:hover {
+      background-color: var(--primary-dark, #388E3C);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .content-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: white;
+      background-color: var(--primary-color, #4CAF50);
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    h3 {
+      color: #333;
+      margin-top: 40px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 40px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #555;
+      word-break: break-word;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>SpaceTime Online Kitchen</h1>
+    <h2>Citations</h2>
+  </header>
+
+  <div class="button-container">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="about-us.html"><i class="fas fa-info-circle"></i> About Us</a>
+    <a href="Recipes.html"><i class="fas fa-utensils"></i> Recipes</a>
+    <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+    <a href="membership.html"><i class="fas fa-users"></i> Membership</a>
+    <a href="documentation.html"><i class="fas fa-clipboard-list"></i> Documentation</a>
+    <a href="citations.html"><i class="fas fa-quote-right"></i> Citations</a> <!-- New button -->
+  </div>
+
+  <div class="content-container">
+    <h3>🍽️ Recipe Images</h3>
+    <ul>
+      <li>Pexels. (n.d.). Cooked Meat on Plate. Retrieved from https://www.pexels.com/photo/cooked-meat-on-plate-2313686/</li>
+      <li>Pexels. (n.d.). Bread on White Ceramic Plate. Retrieved from https://www.pexels.com/photo/bread-on-white-ceramic-plate-351962/</li>
+      <li>Pexels. (n.d.). Overhead Shot of Fried Chicken on a White Plate. Retrieved from https://www.pexels.com/photo/overhead-shot-of-fried-chicken-on-a-white-plate-7172748/</li>
+      <li>PickPik. (n.d.). Egg Avocado Toast. Retrieved from https://www.pickpik.com/egg-avocado-toast-food-drink-food-healthy-76788</li>
+      <li>Pexels. (n.d.). Pumpkin Pie Images. Retrieved from https://www.pexels.com/search/pumpkin%20pie/</li>
+      <li>Dinner at the Zoo. (n.d.). Vegetable Stir Fry Recipe. Retrieved from https://www.dinneratthezoo.com/vegetable-stir-fry/</li>
+      <li>Pexels. (n.d.). Deep Fried Coated Green Pepper in a Plate. Retrieved from https://www.pexels.com/photo/deep-fried-coated-green-pepper-in-a-plate-14332857/</li>
+    </ul>
+
+    <h3>👨‍🍳 Chef Images</h3>
+    <ul>
+      <li>Pexels (Chloekalaartist). (n.d.). Portrait of Chef Holding Basket of Vegetables. Retrieved from https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg</li>
+      <li>Pexels. (n.d.). Headshot of an Afro-Haired Woman in Black Top. Retrieved from https://www.pexels.com/photo/headshot-of-an-afro-haired-woman-in-black-top-7623663/</li>
+    </ul>
+
+    <h3>🔗 API</h3>
+    <ul>
+      <li>Spoonacular. (n.d.). Food and Recipe API. Retrieved from https://spoonacular.com/food-api</li>
+    </ul>
+  </div>
+
+</body>
+</html>
