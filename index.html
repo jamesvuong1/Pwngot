@@ -105,49 +105,6 @@
             font-weight: 400;
         }
         
-        .dynamic-txt {
-            font-size: 3.25rem;
-            margin-left: 10px;
-            height: 30px;
-            line-height: 30px;
-            color: #4CAF50;
-            overflow: hidden;
-        }
-        
-        .dynamic-txt li {
-            list-style: none;
-            color: var(--light-bg);
-            font-weight: 500;
-            position: relative;
-            top: 0;
-            animation: slide 10s steps(5) infinite;
-        }
-        
-        @keyframes slide {
-            100% { top: -450px; }
-        }
-        
-        .dynamic-txt li span {
-            position: relative;
-        }
-        
-        .dynamic-txt li::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            background-color: #79a480;
-            height: 100%;
-            width: 100%;
-            border-left: 2px solid var(--light-bg);
-            animation: typing 2s steps(10);
-            animation-iteration-count: infinite;
-        }
-        
-        @keyframes typing {
-            40%, 60% { left: calc(100% + 30px); }
-            100% { left: 0; }
-        }
-        
         /* Changing Image Section */
         .img-wrapper {
             display: flex;
@@ -164,6 +121,7 @@
             color: #4CAF50;
             overflow: hidden;
             transform-origin: center;
+	        animation: spin 5s linear infinite;
         }
         
         .change-img {
@@ -172,6 +130,15 @@
             transform-origin: center center;
             border-radius: var(--rounded);
         }
+
+	@keyframes spin {
+	  from {
+	    transform: rotate(0deg);
+	  }
+	  to {
+	    transform: rotate(360deg);
+	  }
+	}
         
         /* Newsletter Section */
         .newletter-announcement {
@@ -322,14 +289,7 @@
             <div class="mission-statement">
                 <div class="change-txt">
                     <div class="wrapper">
-                        <div style="font-size: 2.5rem;"class="static-txt">Here For Your</div>
-                        <ul class="dynamic-txt">
-                            <li><span>Creativity</span></li>
-                            <li><span>Passions</span></li>
-                            <li><span>Hobbies</span></li>
-                            <li><span>Learning</span></li>
-                            <li><span>Family</span></li>
-                        </ul>
+                        <div style="font-size: 2.5rem;"class="static-txt">Here For You And Your Needs</div>
                     </div>
                 </div>
                 
@@ -342,10 +302,6 @@
             <div class="img-wrapper">
                 <ul class="dynamic-img">
                     <li><img class="change-img" src="Home-Page-Plates/Website Design (1).png" alt="Culinary Creation"></li>
-                    <li><img class="change-img" src="Home-Page-Plates/Website Design (2).png" alt="Cooking Workshop"></li>
-                    <li><img class="change-img" src="Home-Page-Plates/Website Design (3).png" alt="Recipe Sharing"></li>
-                    <li><img class="change-img" src="Home-Page-Plates/Website Design (4).png" alt="Community Dining"></li>
-                    <li><img class="change-img" src="Home-Page-Plates/Website Design (5).png" alt="Culinary Education"></li>
                 </ul>
             </div>
         </div>
