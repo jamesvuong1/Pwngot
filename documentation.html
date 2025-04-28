@@ -1,1 +1,21 @@
+<button id="showWorkLog" style="padding: 10px 20px; font-size: 16px; border-radius: 8px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">
+  View Work Log
+</button>
+
+<div id="workLogImage" style="margin-top: 20px; display: none; text-align: center;">
+  <img src="YOUR_IMAGE_PATH_HERE.png" alt="Work Log" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+</div>
+
+<script>
+document.getElementById('showWorkLog').addEventListener('click', function() {
+  const log = document.getElementById('workLogImage');
+  if (log.style.display === 'none') {
+    log.style.display = 'block';
+    this.textContent = 'Hide Work Log';
+  } else {
+    log.style.display = 'none';
+    this.textContent = 'View Work Log';
+  }
+});
+</script>
 
