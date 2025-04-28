@@ -133,7 +133,7 @@
 
     <!-- Action Buttons -->
     <div class="action-buttons">
-      <a onclick="showImage()">
+      <a id="toggleButton" onclick="toggleImage()">
         <i class="fas fa-eye"></i> View Full Size
       </a>
       <a href="Screenshot%202025-04-28%20144809.png" download="SpaceTime_WorkLog.png">
@@ -142,12 +142,20 @@
     </div>
   </div>
 
-  <!-- JavaScript to show the image -->
+  <!-- JavaScript to toggle the image -->
   <script>
-    function showImage() {
-      document.getElementById('worklogImage').style.display = 'block';
-      // Scroll to the image smoothly
-      document.getElementById('worklogImage').scrollIntoView({ behavior: 'smooth' });
+    function toggleImage() {
+      const img = document.getElementById('worklogImage');
+      const button = document.getElementById('toggleButton');
+
+      if (img.style.display === 'block') {
+        img.style.display = 'none';
+        button.innerHTML = '<i class="fas fa-eye"></i> View Full Size';
+      } else {
+        img.style.display = 'block';
+        img.scrollIntoView({ behavior: 'smooth' });
+        button.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Image';
+      }
     }
   </script>
 </body>
