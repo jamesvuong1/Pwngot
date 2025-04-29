@@ -18,6 +18,72 @@
   <link rel="stylesheet" href="styles.css"/>
 
   <style>
+    :root {
+      --primary-color: #4CAF50;
+      --primary-dark: #388E3C;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header h3 {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+      padding: 10px 20px;
+    }
+
+    .button-container a {
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+
+    .button-container a i {
+      transition: transform 0.3s;
+    }
+
+    .button-container a:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .button-container a:hover i {
+      transform: rotate(20deg);
+    }
+
     .content-container {
       max-width: 1000px;
       margin: 30px auto;
@@ -25,6 +91,16 @@
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: white;
+      background-color: var(--primary-color);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
     }
 
     details {
@@ -58,7 +134,7 @@
 <body>
   <header>
     <h1>SpaceTime Online Kitchen</h1>
-    <h3 style="color: var(--white);">Citations</h3>
+    <h3>Citations</h3>
   </header>
 
   <div class="button-container">
