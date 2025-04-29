@@ -613,7 +613,7 @@
 
         const grids = {
             recipes: { items: 12, content: 'Product' },
-            quickEats: { items: 9, content: 'Feature' },
+            quickEats: { items: 12, content: 'Feature' },
             recipeFinder: { items: 3, content: 'Service' }
         };
 
@@ -681,9 +681,18 @@
                             item.innerHTML = '<!-- Recipe 5 --><div class="recipe-card" data-recipe="glazed-salmon"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-almapapi-2374946.jpg" alt="Glazed Salmon"></div><div class="recipe-content"><div class="recipe-number">5</div><div class="recipe-author">By Jackson Huang</div><div class="recipe-name">Honey Soy Glazed Salmon</div><div class="recipe-description">Honey soy salmon is sweet, savory, quick, and pan-seared with a sticky glaze. Serve with rice or veggies.</div><div class="recipe-footer"><span class="time-badge">20 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
                         }
                         else if(i==6){
-                            item.innerHTML = '<!-- Recipe 6 --><div class="recipe-card" data-recipe="chocolate-mug-cake"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/Vegetable-Fry.jpg" alt="Chocolate Mug Cake"></div><div class="recipe-content"><div class="recipe-number">6</div><div class="recipe-author">By Geronimo Wilson</div><div class="recipe-name">Chocolate Mug Cake</div><div class="recipe-description">Chocolate mug cake is rich, soft, and ready in minutes. Customize with chips, peanut butter, or whipped cream.</div><div class="recipe-footer"><span class="time-badge">5 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                            item.innerHTML = '<!-- Recipe 6 --><div class="recipe-card" data-recipe="chocolate-mug-cake"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-nastyasensei-66707-2267871.jpg" alt="Chocolate Mug Cake"></div><div class="recipe-content"><div class="recipe-number">6</div><div class="recipe-author">By Geronimo Wilson</div><div class="recipe-name">Chocolate Mug Cake</div><div class="recipe-description">Chocolate mug cake is rich, soft, and ready in minutes. Customize with chips, peanut butter, or whipped cream.</div><div class="recipe-footer"><span class="time-badge">5 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }
+                        else if(i==7){
+                            item.innerHTML = '<!-- Recipe 4 --><div class="recipe-card" data-recipe="garlic-pasta"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-adriano-bragi-1288014591-31779533.jpg" alt="Garlic Parmesan Pasta"></div><div class="recipe-content"><div class="recipe-number">4</div><div class="recipe-author">By Helen Smith</div><div class="recipe-name">Creamy Garlic Parmesan Pasta</div><div class="recipe-description">Garlic Parmesan pasta is rich, creamy, and flavorful made with butter, garlic, cream, and cheese.</div><div class="recipe-footer"><span class="time-badge">20 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
                         }
                         else if(i==8){
+                            item.innerHTML = '<!-- Recipe 5 --><div class="recipe-card" data-recipe="glazed-salmon"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-almapapi-2374946.jpg" alt="Glazed Salmon"></div><div class="recipe-content"><div class="recipe-number">5</div><div class="recipe-author">By Jackson Huang</div><div class="recipe-name">Honey Soy Glazed Salmon</div><div class="recipe-description">Honey soy salmon is sweet, savory, quick, and pan-seared with a sticky glaze. Serve with rice or veggies.</div><div class="recipe-footer"><span class="time-badge">20 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }
+                        else if(i==9){
+                            item.innerHTML = '<!-- Recipe 6 --><div class="recipe-card" data-recipe="chocolate-mug-cake"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-nastyasensei-66707-2267871.jpg" alt="Chocolate Mug Cake"></div><div class="recipe-content"><div class="recipe-number">6</div><div class="recipe-author">By Geronimo Wilson</div><div class="recipe-name">Chocolate Mug Cake</div><div class="recipe-description">Chocolate mug cake is rich, soft, and ready in minutes. Customize with chips, peanut butter, or whipped cream.</div><div class="recipe-footer"><span class="time-badge">5 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }				
+                        else if(i==11){
                             item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
                         }				
                         else{
