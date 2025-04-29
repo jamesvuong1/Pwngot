@@ -18,6 +18,11 @@
   <link rel="stylesheet" href="styles.css"/>
 
   <style>
+    :root {
+      --primary-color: #4CAF50;
+      --primary-dark: #388E3C;
+    }
+
     body {
       font-family: 'Lato', sans-serif;
       margin: 0;
@@ -26,7 +31,7 @@
     }
 
     header {
-      background-color: var(--primary-color, #4CAF50);
+      background-color: var(--primary-color);
       color: white;
       padding: 20px;
       text-align: center;
@@ -40,6 +45,7 @@
     header h3 {
       margin-top: 10px;
       font-size: 1.5rem;
+      color: white;
     }
 
     .button-container {
@@ -52,7 +58,7 @@
     }
 
     .button-container a {
-      background-color: var(--primary-color, #4CAF50);
+      background-color: var(--primary-color);
       color: white;
       text-decoration: none;
       padding: 12px 20px;
@@ -69,7 +75,7 @@
     }
 
     .button-container a:hover {
-      background-color: var(--primary-dark, #388E3C);
+      background-color: var(--primary-dark);
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
@@ -89,7 +95,7 @@
 
     h2 {
       color: white;
-      background-color: var(--primary-color, #4CAF50);
+      background-color: var(--primary-color);
       padding: 15px;
       border-radius: 10px;
       text-align: center;
@@ -108,7 +114,7 @@
       font-size: 1.3rem;
       font-weight: bold;
       cursor: pointer;
-      color: #4CAF50;
+      color: var(--primary-color);
     }
 
     ul {
