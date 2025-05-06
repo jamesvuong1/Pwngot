@@ -29,6 +29,7 @@ header {
   color: var(--white);
   text-align: center;
   padding: 2rem 0;
+  height: 1rem;
   box-shadow: var(--shadow);
   position: relative;
   z-index: 10;
