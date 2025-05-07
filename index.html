@@ -14,23 +14,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
-    <style>        
+    <style>
         /* Hero Section */
-        .welcome-section {
-            background-image: url("Miscellaneous-Images/pexels-askar-abayev-5638752.jpg");
-            background-repeat: no-repeat;
-  	    	background-size: 100% 100%;		
+        .welcome-section {	
             padding: 3rem 0;
             border-radius: var(--rounded);
             margin: 2rem auto;
             max-width: 1200px;
         }
         
+        .welcome-image{
+			background-image: url("Miscellaneous-Images/pexels-askar-abayev-5638752.jpg");
+            background-repeat: no-repeat;
+  	    	background-size: 100% 100%;	
+        }
+        
         .welcome-image-overlay{
         	width: 100%;
-            height: 100%;
-            
-            background-color: rgba(46, 125, 50, 0.5); 
+            height: 100%;       
+            background-color: rgba(46, 125, 50, 0.6); 
         }
         
         .welcome-section-text {
@@ -260,6 +262,7 @@
     
     <main>
         <div class="welcome-section">
+         <div class="welcome-image">
           <div class="welcome-image-overlay">
             <div class="welcome-section-text">
                 <h1>Welcome to SpaceTime Cooking!</h1>
@@ -270,7 +273,8 @@
                     <a href="events.html" class="button"><i class="fas fa-calendar-check"></i> Upcoming Events</a>
                 </div>
             </div>
-          </div>  
+          </div>
+         </div> 
         </div>
         
         <div class="stats-grid">
