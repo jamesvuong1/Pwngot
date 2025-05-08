@@ -23,7 +23,7 @@
             margin: 3rem auto;
             justify-content: space-between;
         }
-        
+       
         .recipe-card {
             background: var(--white);
             border-radius: 8px;
@@ -33,34 +33,34 @@
             display: flex;
             flex-direction: column;
         }
-        
+       
         .recipe-card:hover {
             transform: translateY(-5px);
         }
-        
+       
         .recipe-image {
             height: 200px;
             overflow: hidden;
         }
-        
+       
         .recipe-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
+       
         .recipe-card:hover .recipe-image img {
             transform: scale(1.05);
         }
-        
+       
         .recipe-content {
             padding: 1.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        
+       
         .recipe-number {
             background-color: var(--primary-light);
             color: white;
@@ -73,25 +73,25 @@
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
-        
+       
         .recipe-author {
             color: #666;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
-        
+       
         .recipe-name {
             font-size: 1.3rem;
             font-weight: 400;
             margin-bottom: 1rem;
             color: var(--primary-dark);
         }
-        
+       
         .recipe-description {
             margin-bottom: 1.5rem;
             flex-grow: 1;
         }
-        
+       
         .recipe-footer {
             border-top: 1px solid #eee;
             padding-top: 1rem;
@@ -99,14 +99,14 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+       
         .time-badge {
             background-color: #f5f5f5;
             padding: 4px 8px;
             border-radius: 4px;
             font-size: 0.8rem;
         }
-        
+       
         .view-recipe {
             color: var(--primary-light);
             text-decoration: none;
@@ -114,11 +114,11 @@
             transition: color 0.3s;
             cursor: pointer;
         }
-        
+       
         .view-recipe:hover {
             color: var(--primary-dark);
         }
-        
+       
         /* Recipe Modal */
         .recipe-modal {
             display: none;
@@ -131,7 +131,7 @@
             z-index: 100;
             overflow-y: auto;
         }
-        
+       
         .modal-content {
             background-color: var(--white);
             margin: 2rem auto;
@@ -141,7 +141,7 @@
             box-shadow: var(--shadow);
             position: relative;
         }
-        
+       
         .close-modal {
             position: absolute;
             top: 15px;
@@ -150,11 +150,11 @@
             color: #aaa;
             cursor: pointer;
         }
-        
+       
         .close-modal:hover {
             color: var(--text-color);
         }
-        
+       
         .modal-image {
             width: 100%;
             height: 300px;
@@ -162,22 +162,22 @@
             border-radius: 8px;
             margin-bottom: 1.5rem;
         }
-        
+       
         .modal-section {
             margin-bottom: 1.5rem;
         }
-        
+       
         .ingredients-list, .instructions-list {
             padding-left: 20px;
         }
-        
+       
         .ingredients-list li {
             margin-bottom: 0.5rem;
             list-style-type: none;
             position: relative;
             padding-left: 25px;
         }
-        
+       
         .ingredients-list li:before {
             content: "•";
             color: var(--primary-light);
@@ -185,7 +185,7 @@
             position: absolute;
             left: 0;
         }
-        
+       
         .instructions-list li {
             margin-bottom: 1rem;
             padding-left: 25px;
@@ -193,7 +193,7 @@
             counter-increment: step-counter;
             list-style-type: none;
         }
-        
+       
         .instructions-list li:before {
             content: counter(step-counter);
             background-color: var(--primary-light);
@@ -208,29 +208,29 @@
             position: absolute;
             left: 0;
         }
-        
+       
         @media (max-width: 768px) {
             .recipe-grid {
                 grid-template-columns: 1fr;
             }
-            
+           
             .button-container {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+           
             .button {
                 padding: 10px 15px;
                 margin: 5px;
                 font-size: 0.9rem;
             }
-            
+           
             .modal-content {
                 margin: 1rem;
                 padding: 1.5rem;
             }
-            
+           
             .modal-image {
                 height: 200px;
             }
@@ -244,7 +244,7 @@
             gap: 2rem;
             margin: 2rem 0;
         }
-        
+       
         .recipe-info-card {
             background: var(--white);
             border-radius: 8px;
@@ -254,15 +254,15 @@
             transition: transform 0.3s ease;
             height: auto;
         }
-        
+       
         .recipe-info-card h4 {
             font-size: 1rem;
             font-weight: 100;
             word-break: break-word;
-            white-space: normal; 
+            white-space: normal;
             justify-self: center;
         }
-        
+       
         .tier-card h3 {
             color: var(--primary-dark);
             margin-top: 0;
@@ -275,7 +275,7 @@
             margin-bottom: 0.8rem;
             position: relative;
             padding-left: 25px;
-            color: #000;   
+            color: #000;  
         }
 
         .recipe-info-card li:before {
@@ -327,12 +327,12 @@
       gap: 1rem;
       margin-bottom: 2rem;
     }
-    
+   
     label {
       font-weight: bold;
       font-size: 1.1rem;
     }
-    
+   
     input[type="text"] {
       padding: 12px;
       border: 1px solid #ddd;
@@ -341,7 +341,7 @@
       width: 100%;
       box-sizing: border-box;
     }
-    
+   
     button[type="submit"] {
       padding: 12px;
       background-color: #2E7D32;
@@ -352,21 +352,21 @@
       font-size: 1rem;
       transition: background-color 0.3s;
     }
-    
+   
     button[type="submit"]:hover {
       background-color: #1B5E20;
     }
-    
+   
     #results {
       margin-top: 2rem;
       padding: 1rem;
       border-top: 1px solid #eee;
     }
-    
+   
     #results ul {
       padding-left: 20px;
     }
-    
+   
     #results li {
       margin-bottom: 8px;
     }
@@ -406,24 +406,24 @@
             <h3 style="color: var(--white);">Recipes</h3>
         </div>
     </header>
-    
+   
     <div class="button-container">
     <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
         <a href="about-us.html" class="button"><i class="fas fa-info-circle"></i> About Us</a>
         <a href="Recipes.html" class="button"><i class="fas fa-utensils"></i> Recipes</a>
         <a href="events.html" class="button"><i class="fas fa-calendar-alt"></i> Events</a>
         <a href="membership.html" class="button"><i class="fas fa-users"></i> Membership</a>
-	<a href="documentation.html" class="button"><i class="fas fa-clipboard-list"></i> Documentation</a>
-	<a href="Citations.html" class="button"><i class="fas fa-quote-right"></i> Citations</a>
+<a href="documentation.html" class="button"><i class="fas fa-clipboard-list"></i> Documentation</a>
+<a href="Citations.html" class="button"><i class="fas fa-quote-right"></i> Citations</a>
     </div>
-    
-    
+   
+   
     <main>
         <div class="container">
         <div class="membership-content">
             <h1>Recipes</h1>
             <h3 style="color: #000;" class="intro-text">Recipes that are made for you! Check out the quick eats section if you need a quick meal! Or if you have a bit of extra time, check out the recipes section for longer recipes! If you just can't find the recipe your looking for then turn to the Recipe Finder AI for more suggestions! Whatever you make rest assured that all of our recipes will taste amazing!</p>
-        </div>   
+        </div>  
             <div class="recipe-info-card-container">
                 <div class="recipe-info-card">
                     <h3>Recipes</h3>
@@ -436,14 +436,14 @@
                     <h4>Running late for work? In a hurry? Need a quick meal? Check out our quick eats recipes, designed to be prepared in no time. Each recipe takes no more than 30 minutes to cook, and they all taste fantastic!</h4>
                     <button class="tab-button"onclick="showGrid('quickEats', this)">View Quick Eats</button>
                 </div>
-              
+             
 
                 <div class="recipe-info-card">
                     <h3>Recipe Finder AI</h3>
                     <h4>Not able to find that perfect dish? Got extra ingredients in the fridge you don't know what to do with? Then try our new Recipe Finder AI, its sure to help you find something that's just right for you!</h4>
                     <button class="tab-button" onclick="showGrid('recipeFinder', this)">View Recipe Finder</button>
                 </div>
-                
+               
                 </div>
                 <div id="recipes" class="grid-container">
                     <!-- This Grid Will Get Created By The Javascript, Leave It Empty -->
@@ -462,12 +462,12 @@
               <img src="Recipe-Thumbnail-Images/Tomato-Soup.jpeg" alt="Toasty Tomato Soup" class="modal-image">
               <h2>Toasty Tomato Soup</h2>
               <p class="recipe-author">By Geronimo Wilson | 1.5 hours</p>
-              
+             
               <div class="modal-section">
                 <h3>Description</h3>
                 <p>Roasted, seasoned, and pureed tomatoes infused with smoked paprika and garlic chives. A rich, velvety soup perfect for cozy meals—serve with cream and fresh basil for extra taste.</p>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Ingredients</h3>
                 <ul class="ingredients-list">
@@ -483,7 +483,7 @@
                   <li>Fresh basil leaves, for garnish</li>
                 </ul>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Instructions</h3>
                 <ol class="instructions-list">
@@ -493,7 +493,7 @@
                   <li><strong>Serve:</strong> Ladle the soup into bowls and swirl in heavy cream (optional). Garnish with fresh garlic chives and basil leaves.</li>
                 </ol>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Pro Tips</h3>
                 <ul class="ingredients-list">
@@ -504,19 +504,19 @@
               </div>
             </div>
           </div>
-          
+         
           <div id="pumpkin-pie" class="recipe-modal">
             <div class="modal-content">
               <span class="close-modal">&times;</span>
               <img src="Recipe-Thumbnail-Images/Pumpkin-Pie.jpeg" alt="Pumpkin Pie" class="modal-image">
               <h2>Pumpkin Pie</h2>
               <p class="recipe-author">By Jessica Monroe | 1.5 hours</p>
-              
+             
               <div class="modal-section">
                 <h3>Description</h3>
                 <p>A classic dessert with smooth and creamy pumpkin filling encased in a buttery, flaky crust. Perfect for any time of year.</p>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Ingredients</h3>
                 <ul class="ingredients-list">
@@ -535,7 +535,7 @@
                   <li>Whipped cream (optional, for topping)</li>
                 </ul>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Instructions</h3>
                 <ol class="instructions-list">
@@ -546,7 +546,7 @@
                   <li><strong>Cool and Serve:</strong> Allow the pie to cool completely before slicing. Top with whipped cream before serving, if desired.</li>
                 </ol>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Pro Tips</h3>
                 <ul class="ingredients-list">
@@ -557,19 +557,19 @@
               </div>
             </div>
           </div>
-          
+         
           <div id="beef-stew" class="recipe-modal">
             <div class="modal-content">
               <span class="close-modal">&times;</span>
               <img src="Recipe-Thumbnail-Images/Beef-Stew.jpeg" alt="Slow-Cooked Beef Stew" class="modal-image">
               <h2>Slow-Cooked Beef Stew</h2>
               <p class="recipe-author">By Nelson Uganda | 2 hours</p>
-              
+             
               <div class="modal-section">
                 <h3>Description</h3>
                 <p>A comforting, hearty dish with tender beef, carrots, and potatoes simmered in a rich, savory broth. Perfect for cold days, this stew can be customized with additional vegetables like peas, celery, or parsnips for extra flavor.</p>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Ingredients</h3>
                 <ul class="ingredients-list">
@@ -590,7 +590,7 @@
                   <li>1 cup parsnips, peeled and sliced (optional)</li>
                 </ul>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Instructions</h3>
                 <ol class="instructions-list">
@@ -603,7 +603,7 @@
                   <li><strong>Serve:</strong> Once the stew is ready, remove bay leaves and serve hot with crusty bread or over rice.</li>
                 </ol>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Pro Tips</h3>
                 <ul class="ingredients-list">
@@ -614,19 +614,19 @@
               </div>
             </div>
           </div>
-          
+         
           <div id="jalapeno-poppers" class="recipe-modal">
             <div class="modal-content">
               <span class="close-modal">&times;</span>
               <img src="Recipe-Thumbnail-Images/pexels-salman-khan-358690166-14332857 (1).jpg" alt="Cheesy Jalapeno Poppers" class="modal-image">
               <h2>Cheesy Jalapeno Poppers</h2>
               <p class="recipe-author">By Tina Gomez | 45 mins</p>
-              
+             
               <div class="modal-section">
                 <h3>Description</h3>
                 <p>A delicious appetizer made with fresh jalapenos stuffed with a creamy, cheesy filling, then wrapped in bacon and baked to perfection.</p>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Ingredients</h3>
                 <ul class="ingredients-list">
@@ -640,7 +640,7 @@
                   <li>Salt and pepper to taste</li>
                 </ul>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Instructions</h3>
                 <ol class="instructions-list">
@@ -652,7 +652,7 @@
                   <li><strong>Serve:</strong> Remove from the oven, let cool for a few minutes, then serve warm as a delicious appetizer!</li>
                 </ol>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Pro Tips</h3>
                 <ul class="ingredients-list">
@@ -663,19 +663,19 @@
               </div>
             </div>
           </div>
-            
+           
           <div id="avocado-tacos" class="recipe-modal">
             <div class="modal-content">
               <span class="close-modal">&times;</span>
               <img src="Sweet-Spicy-Mango-Tacos_done.webp" alt="Spicy Mango Avocado Tacos" class="modal-image">
               <h2>Spicy Mango Avocado Tacos</h2>
               <p class="recipe-author">By Hernando Cucho De Stefano | 45 mins</p>
-              
+             
               <div class="modal-section">
                 <h3>Description</h3>
                 <p>Spicy Mango Avocado Tacos are a fresh, vibrant dish with sweet mango, creamy avocado, crunchy veggies, and a zesty lime dressing. Perfect for any meal, these tacos offer a delightful balance of flavors and textures that are sure to impress your taste buds!</p>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Ingredients</h3>
                 <ul class="ingredients-list">
@@ -692,7 +692,7 @@
                   <li>8 small corn or flour tortillas</li>
                 </ul>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Instructions</h3>
                 <ol class="instructions-list">
@@ -704,7 +704,7 @@
                   <li><strong>Serve:</strong> Serve immediately and enjoy your fresh, vibrant tacos!</li>
                 </ol>
               </div>
-              
+             
               <div class="modal-section">
                 <h3>Pro Tips</h3>
                 <ul class="ingredients-list">
@@ -715,7 +715,7 @@
               </div>
             </div>
           </div>
-          
+         
 
         <div id="savory-paella" class="recipe-modal">
             <div class="modal-content">
@@ -723,12 +723,12 @@
                 <img src="Recipe-Thumbnail-Images/pexels-marceloverfe-16743486.jpg" alt="Paella with Seafood and Chorizo" class="modal-image">
                 <h2>Smoky Savory Paella</h2>
                 <p class="recipe-author">By Pranav Anand | 1.5 hours</p>
-                
+               
                 <div class="modal-section">
                     <h3>Description</h3>
                     <p>A vibrant, flavorful dish featuring tender rice, savory seafood, smoky chorizo, and aromatic saffron. Perfect for sharing with friends and family!</p>
                 </div>
-                
+               
                 <div class="modal-section">
                     <h3>Ingredients</h3>
                     <ul class="ingredients-list">
@@ -752,7 +752,7 @@
                         <li>Lemon wedges, for serving</li>
                     </ul>
                 </div>
-                
+               
                 <div class="modal-section">
                     <h3>Instructions</h3>
                     <ol class="instructions-list">
@@ -765,7 +765,7 @@
                         <li><strong>Finish and Serve:</strong> Remove from heat. Let sit uncovered for 5 minutes. Garnish with chopped parsley and serve with lemon wedges.</li>
                     </ol>
                 </div>
-        
+       
                 <div class="modal-section">
                     <h3>Pro Tips</h3>
                     <ul class="ingredients-list">
@@ -783,12 +783,12 @@
                 <img src="Recipe-Thumbnail-Images/24602038989_fa0a88748f_o.jpg" alt="Baked Moussaka with Golden Top" class="modal-image">
                 <h2>Meaty Eggplant Moussaka</h2>
                 <p class="recipe-author">By Abdul Dell | 2.5 hours</p>
-        
+       
                 <div class="modal-section">
                     <h3>Description</h3>
                     <p>A rich and comforting Mediterranean classic with layers of roasted eggplant, savory spiced meat sauce, and a creamy béchamel topping.</p>
                 </div>
-        
+       
                 <div class="modal-section">
                     <h3>Ingredients</h3>
                     <ul class="ingredients-list">
@@ -796,7 +796,7 @@
                         <li>2 large eggplants, sliced into 1/2-inch rounds</li>
                         <li>Olive oil, for brushing</li>
                         <li>Salt</li>
-                        
+                       
                         <li><strong>For the Meat Sauce:</strong></li>
                         <li>1 lb (450g) ground lamb or beef</li>
                         <li>1 onion, finely chopped</li>
@@ -808,7 +808,7 @@
                         <li>1/2 teaspoon ground allspice</li>
                         <li>1 teaspoon dried oregano</li>
                         <li>Salt and pepper, to taste</li>
-        
+       
                         <li><strong>For the Béchamel Sauce:</strong></li>
                         <li>4 tablespoons butter</li>
                         <li>1/4 cup all-purpose flour</li>
@@ -817,12 +817,12 @@
                         <li>1/2 cup grated Parmesan cheese</li>
                         <li>1 egg, lightly beaten</li>
                         <li>Salt and pepper, to taste</li>
-        
+       
                         <li><strong>For Assembly:</strong></li>
                         <li>Additional Parmesan cheese, for topping</li>
                     </ul>
                 </div>
-        
+       
                 <div class="modal-section">
                     <h3>Instructions</h3>
                     <ol class="instructions-list">
@@ -834,7 +834,7 @@
                         <li><strong>Rest and Serve:</strong> Let the moussaka rest for 20–30 minutes before slicing. Serve warm with salad or crusty bread.</li>
                     </ol>
                 </div>
-        
+       
                 <div class="modal-section">
                     <h3>Pro Tips</h3>
                     <ul class="ingredients-list">
@@ -845,21 +845,21 @@
                 </div>
             </div>
         </div>
-        
+       
         <div id="pork-tamales" class="recipe-modal">
             <div class="modal-content">
               <span class="close-modal">&times;</span>
               <img src="Recipe-Thumbnail-Images/Tamales_mexicanos.jpg" alt="Traditional Pork Tamales" class="modal-image">
               <h2>Classic Pork Tamales</h2>
               <p class="recipe-author">By Jessice Monroe | 4 hours</p>
-          
+         
               <div class="modal-section">
                 <h3>Description</h3>
                 <p>
                   Tamales are a festive, comforting dish made with tender masa dough wrapped around savory fillings like spiced meats, cheeses, or beans, all steamed in corn husks to create soft, flavorful parcels perfect for celebrations or hearty meals.
                 </p>
               </div>
-          
+         
               <div class="modal-section">
                 <h3>Ingredients</h3>
                 <ul class="ingredients-list">
@@ -870,37 +870,37 @@
                   <li>2 teaspoons salt</li>
                   <li>Water (enough to cover the pork)</li>
                   <li>2 cups red chile sauce (homemade or store-bought)</li>
-          
+         
                   <li><strong>For the Masa Dough:</strong></li>
                   <li>4 cups masa harina (for tamales)</li>
                   <li>2½ to 3 cups pork broth (from cooking the pork)</li>
                   <li>1½ teaspoons baking powder</li>
                   <li>1 teaspoon salt</li>
                   <li>1 cup lard (or vegetable shortening)</li>
-          
+         
                   <li><strong>For Assembly & Steaming:</strong></li>
                   <li>30–40 dried corn husks</li>
                   <li>Additional broth or water for steaming</li>
                 </ul>
               </div>
-          
+         
               <div class="modal-section">
                 <h3>Instructions</h3>
                 <ol class="instructions-list">
                   <li><strong>Prepare the Corn Husks:</strong> Soak the dried corn husks in very warm water for 30 minutes to 1 hour until pliable. Rinse and remove any corn silk.</li>
-          
+         
                   <li><strong>Cook the Pork:</strong> In a large pot, combine pork chunks, onion, garlic, and salt. Cover with water and bring to a boil. Simmer for 1.5 to 2 hours until pork is tender. Shred and mix with red chile sauce. Set aside.</li>
-          
+         
                   <li><strong>Make the Masa Dough:</strong> In a large bowl, beat the lard until light and fluffy (3–5 minutes). In a separate bowl, mix masa harina, baking powder, and salt. Gradually add the dry mixture and pork broth to the lard, mixing until the dough is soft and spreadable but not sticky.</li>
-          
+         
                   <li><strong>Assemble the Tamales:</strong> Spread about 2 tablespoons of masa onto the center of a corn husk, about ⅛ to ¼ inch thick. Add a spoonful of pork filling. Fold the sides of the husk inward, then fold up the bottom. Optionally, tie with a strip of husk.</li>
-          
+         
                   <li><strong>Steam the Tamales:</strong> Arrange tamales upright (open end up) in a steamer basket over boiling water. Cover with a damp cloth or more husks. Steam for 1.5 to 2 hours, checking water level occasionally and adding hot water as needed.</li>
-          
+         
                   <li><strong>Check for Doneness:</strong> Tamales are done when the masa easily pulls away from the husk and feels firm to the touch.</li>
                 </ol>
               </div>
-          
+         
               <div class="modal-section">
                 <h3>Pro Tips</h3>
                 <ul class="ingredients-list">
@@ -911,19 +911,19 @@
               </div>
             </div>
           </div>
-          
+         
           <div id="lamb-tagine" class="recipe-modal">
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
                 <img src="Recipe-Thumbnail-Images/5974003219_8ea2382680_o.jpg" alt="Moroccan Lamb Tagine" class="modal-image">
                 <h2>Moroccan Lamb Tagine</h2>
                 <p class="recipe-author">By Hellen Smith | 2.5 hours</p>
-        
+       
                 <div class="modal-section">
                     <h3>Description</h3>
                     <p>Aromatic, spiced, and soul-warming—this North African classic is slow-cooked to perfection with sweet dried fruit, tender lamb, and a rich, savory sauce.</p>
                 </div>
-        
+       
                 <div class="modal-section">
                     <h3>Ingredients</h3>
                     <ul class="ingredients-list">
@@ -949,7 +949,7 @@
                         <li>Fresh cilantro or parsley, for garnish</li>
                     </ul>
                 </div>
-        
+       
                 <div class="modal-section">
                     <h3>Instructions</h3>
                     <ol class="instructions-list">
@@ -960,7 +960,7 @@
                         <li><strong>Serve:</strong> Garnish with chopped herbs and serve hot with couscous, rice, or flatbread.</li>
                     </ol>
                 </div>
-        
+       
                 <div class="modal-section">
                     <h3>Tips</h3>
                     <ul class="ingredients-list">
@@ -971,21 +971,21 @@
                 </div>
             </div>
         </div>
-        
+       
 
-	    <!--Quick Eats Modals -->
+   <!--Quick Eats Modals -->
             <div id="chicken-tenders" class="recipe-modal">
                 <div class="modal-content">
                     <span class="close-modal">&times;</span>
                     <img src="Recipe-Thumbnail-Images/Crispy-Chicken.jpeg" alt="Crispy Chicken Tenders" class="modal-image">
                     <h2>Crispy Chicken Tenders</h2>
                     <p class="recipe-author">By James Smith | 25 mins</p>
-                    
+                   
                     <div class="modal-section">
                         <h3>Description</h3>
                         <p>Golden-brown chicken tenders with a crunchy exterior and juicy interior. Perfect with your favorite dipping sauce!</p>
                     </div>
-                    
+                   
                     <div class="modal-section">
                         <h3>Ingredients</h3>
                         <ul class="ingredients-list">
@@ -999,7 +999,7 @@
                             <li>Oil for frying (preferably canola oil)</li>
                         </ul>
                     </div>
-                    
+                   
                     <div class="modal-section">
                         <h3>Instructions</h3>
                         <ol class="instructions-list">
@@ -1011,7 +1011,7 @@
                             <li><strong>Drain and serve:</strong> Transfer to paper towel-lined plate to drain excess oil. Serve immediately with dipping sauces.</li>
                         </ol>
                     </div>
-                    
+                   
                     <div class="modal-section">
                         <h3>Tips</h3>
                         <ul class="ingredients-list">
@@ -1022,19 +1022,19 @@
                     </div>
                 </div>
             </div>
-            
+           
             <div id="avocado-toast" class="recipe-modal">
                 <div class="modal-content">
                     <span class="close-modal">&times;</span>
                     <img src="Recipe-Thumbnail-Images/Gourmet-Avacado.jpeg" alt="Avocado Toast" class="modal-image">
                     <h2>Gourmet Avocado Toast</h2>
                     <p class="recipe-author">By Maria Garcia | 10 mins</p>
-                    
+                   
                     <div class="modal-section">
                         <h3>Description</h3>
                         <p>Creamy avocado on toasted artisan bread with cherry tomatoes, feta, and a drizzle of balsamic glaze.</p>
                     </div>
-                    
+                   
                     <div class="modal-section">
                         <h3>Ingredients</h3>
                         <ul class="ingredients-list">
@@ -1048,7 +1048,7 @@
                             <li>Red pepper flakes (optional)</li>
                         </ul>
                     </div>
-                    
+                   
                     <div class="modal-section">
                         <h3>Instructions</h3>
                         <ol class="instructions-list">
@@ -1060,7 +1060,7 @@
                             <li><strong>Serve immediately</strong> while bread is still warm and crisp.</li>
                         </ol>
                     </div>
-                    
+                   
                     <div class="modal-section">
                         <h3>Variations</h3>
                         <ul class="ingredients-list">
@@ -1071,19 +1071,19 @@
                     </div>
                 </div>
             </div>
-            
+           
             <div id="chocolate-mug-cake" class="recipe-modal">
                 <div class="modal-content">
                     <span class="close-modal">&times;</span>
                     <img src="Recipe-Thumbnail-Images/pexels-nastyasensei-66707-2267871.jpg" alt="Chocolate Mug Cake" class="modal-image">
                     <h2>Chocolate Mug Cake</h2>
                     <p class="recipe-author">By Geronimo Wilson | 5 mins</p>
-                    
+                   
                     <div class="modal-section">
                         <h3>Description</h3>
                         <p>Chocolate mug cake is rich, soft, and ready in minutes. Customize with chips, peanut butter, or whipped cream.</p>
                     </div>
-                    
+                   
                     <div class="modal-section">
                         <h3>Ingredients</h3>
                         <ul class="ingredients-list">
@@ -1098,7 +1098,7 @@
                             <li>Optional: chocolate chips, whipped cream for topping</li>
                         </ul>
                     </div>
-                    
+                   
                     <div class="modal-section">
                         <h3>Instructions</h3>
                         <ol class="instructions-list">
@@ -1109,7 +1109,7 @@
                             <li><strong>Cool and serve:</strong> Let cool for a minute. Top with whipped cream, more chocolate chips, or your favorite toppings.</li>
                         </ol>
                     </div>
-                    
+                   
                     <div class="modal-section">
                         <h3>Baking Tips</h3>
                         <ul class="ingredients-list">
@@ -1127,12 +1127,12 @@
                         <img src="Recipe-Thumbnail-Images/pexels-almapapi-2374946.jpg" alt="Honey Soy Glazed Salmon" class="modal-image">
                         <h2>Honey Soy Glazed Salmon</h2>
                         <p class="recipe-author">By Jackson Huang | 20 mins</p>
-                
+               
                         <div class="modal-section">
                             <h3>Description</h3>
                             <p>Honey soy salmon is sweet, savory, quick, and pan-seared with a sticky glaze. Serve with rice or veggies.</p>
                         </div>
-                
+               
                         <div class="modal-section">
                             <h3>Ingredients</h3>
                             <ul class="ingredients-list">
@@ -1146,7 +1146,7 @@
                                 <li>Sesame seeds (optional, for garnish)</li>
                             </ul>
                         </div>
-                
+               
                         <div class="modal-section">
                             <h3>Instructions</h3>
                             <ol class="instructions-list">
@@ -1156,7 +1156,7 @@
                                 <li><strong>Serve:</strong> Garnish with sesame seeds if desired and serve with rice or steamed vegetables.</li>
                             </ol>
                         </div>
-                
+               
                         <div class="modal-section">
                             <h3>Pro Tips</h3>
                             <ul class="ingredients-list">
@@ -1174,12 +1174,12 @@
                         <img src="Recipe-Thumbnail-Images/Vegetable-Fry.jpg" alt="Vegetable Stir Fry" class="modal-image">
                         <h2>Speedy Vegetable Stir Fry</h2>
                         <p class="recipe-author">By Chen Wei | 20 mins</p>
-                        
+                       
                         <div class="modal-section">
                             <h3>Description</h3>
                             <p>Colorful veggies in a savory garlic-ginger sauce, ready in minutes. Serve over rice or noodles.</p>
                         </div>
-                        
+                       
                         <div class="modal-section">
                             <h3>Ingredients</h3>
                             <ul class="ingredients-list">
@@ -1197,7 +1197,7 @@
                                 <li>Sesame seeds for garnish</li>
                             </ul>
                         </div>
-                        
+                       
                         <div class="modal-section">
                             <h3>Instructions</h3>
                             <ol class="instructions-list">
@@ -1211,7 +1211,7 @@
                                 <li><strong>Garnish and serve:</strong> Sprinkle with sesame seeds and serve immediately over rice or noodles.</li>
                             </ol>
                         </div>
-                        
+                       
                         <div class="modal-section">
                             <h3>Pro Tips</h3>
                             <ul class="ingredients-list">
@@ -1220,8 +1220,8 @@
                                 <li>Add protein like tofu, chicken, or shrimp for a complete meal</li>
                             </ul>
                         </div>
-                    </div>   
-                </div> 
+                    </div>  
+                </div>
 
                 <div id="garlic-pasta" class="recipe-modal">
                     <div class="modal-content">
@@ -1229,12 +1229,12 @@
                       <img src="Recipe-Thumbnail-Images/pexels-adriano-bragi-1288014591-31779533.jpg" alt="Creamy Garlic Parmesan Pasta" class="modal-image">
                       <h2>Creamy Garlic Parmesan Pasta</h2>
                       <p class="recipe-author">By Helen Smith | 20 mins</p>
-                  
+                 
                       <div class="modal-section">
                         <h3>Description</h3>
                         <p>Garlic Parmesan pasta is rich, creamy, and flavorful made with butter, garlic, cream, and cheese.</p>
                       </div>
-                  
+                 
                       <div class="modal-section">
                         <h3>Ingredients</h3>
                         <ul class="ingredients-list">
@@ -1248,7 +1248,7 @@
                           <li>Chopped parsley (optional, for garnish)</li>
                         </ul>
                       </div>
-                  
+                 
                       <div class="modal-section">
                         <h3>Instructions</h3>
                         <ol class="instructions-list">
@@ -1259,7 +1259,7 @@
                           <li><strong>Finish:</strong> Season with salt and pepper to taste. Garnish with parsley and serve warm.</li>
                         </ol>
                       </div>
-                  
+                 
                       <div class="modal-section">
                         <h3>Tips</h3>
                         <ul class="ingredients-list">
@@ -1277,12 +1277,12 @@
                         <img src="Recipe-Thumbnail-Images/pexels-makafood-82669418-8984408.jpg" alt="Kimchi Fried Rice" class="modal-image">
                         <h2>Korean Kimchi Fried Rice</h2>
                         <p class="recipe-author">By Archie Harper | 20 minutes</p>
-                
+               
                         <div class="modal-section">
                             <h3>Description</h3>
                             <p>Korean Kimchi Fried Rice is bold, spicy, and savory, made with fermented kimchi, steamed rice, vegetables, and a touch of sesame oil for deep, satisfying flavor.</p>
                         </div>
-                
+               
                         <div class="modal-section">
                             <h3>Ingredients</h3>
                             <ul class="ingredients-list">
@@ -1300,7 +1300,7 @@
                                 <li>Nori (seaweed) strips, for garnish (optional)</li>
                             </ul>
                         </div>
-                
+               
                         <div class="modal-section">
                             <h3>Instructions</h3>
                             <ol class="instructions-list">
@@ -1312,7 +1312,7 @@
                                 <li><strong>Top with an Egg (Optional):</strong> In a separate small pan, fry an egg sunny-side up. Top the kimchi fried rice with the egg, sprinkle with sesame seeds, and garnish with green onion tops or nori strips if desired.</li>
                             </ol>
                         </div>
-                
+               
                         <div class="modal-section">
                             <h3>Tips</h3>
                             <ul class="ingredients-list">
@@ -1330,12 +1330,12 @@
                       <img src="Recipe-Thumbnail-Images/pasta-carbonara-spaghetti-a0883a.jpg" alt="Italian Spaghetti Carbonara" class="modal-image"></img>
                       <h2>Italian Spaghetti Carbonara</h2>
                       <p class="recipe-author">By Nelson Uganda | 25 minutes</p>
-                  
+                 
                       <div class="modal-section">
                         <h3>Description</h3>
                         <p>Italian Spaghetti Carbonara is creamy, savory, and comforting, made with eggs, Pecorino Romano cheese, crispy pancetta, and black pepper.</p>
                       </div>
-                  
+                 
                       <div class="modal-section">
                         <h3>Ingredients</h3>
                         <ul class="ingredients-list">
@@ -1347,7 +1347,7 @@
                           <li>Salt, for pasta water</li>
                         </ul>
                       </div>
-                  
+                 
                       <div class="modal-section">
                         <h3>Instructions</h3>
                         <ol class="instructions-list">
@@ -1358,7 +1358,7 @@
                           <li><strong>Serve:</strong> Plate immediately with extra cheese and black pepper on top.</li>
                         </ol>
                       </div>
-                  
+                 
                       <div class="modal-section">
                         <h3>Tips</h3>
                         <ul class="ingredients-list">
@@ -1376,12 +1376,12 @@
                         <img src="Recipe-Thumbnail-Images/pexels-valeriya-15913640.jpg" alt="Buffalo Chicken Wraps" class="modal-image">
                         <h2>Buffalo Chicken Wraps</h2>
                         <p class="recipe-author">By Geronimo Wilson | 25 minutes</p>
-                
+               
                         <div class="modal-section">
                             <h3>Description</h3>
                             <p>Buffalo Chicken Wraps are spicy, tangy, and satisfying, made with crispy or grilled chicken tossed in buffalo sauce, wrapped in a soft tortilla with fresh lettuce, creamy ranch or blue cheese dressing, and shredded cheese for a bold and easy meal.</p>
                         </div>
-                
+               
                         <div class="modal-section">
                             <h3>Ingredients</h3>
                             <ul class="ingredients-list">
@@ -1396,7 +1396,7 @@
                                 <li>1 tablespoon butter (if reheating chicken)</li>
                             </ul>
                         </div>
-                
+               
                         <div class="modal-section">
                             <h3>Instructions</h3>
                             <ol class="instructions-list">
@@ -1408,7 +1408,7 @@
                                 <li><strong>Serve:</strong> Slice in half and serve with extra dressing or celery sticks if desired.</li>
                             </ol>
                         </div>
-                
+               
                         <div class="modal-section">
                             <h3>Pro Tips</h3>
                             <ul class="ingredients-list">
@@ -1419,8 +1419,8 @@
                         </div>
                     </div>
                 </div>
-                
-                
+               
+               
     <script>
         const grids = {
             recipes: { items: 12},
@@ -1501,19 +1501,19 @@
                         }
                         else if(i==9){
                             item.innerHTML = '<!-- Recipe 9 --><div class="recipe-card" data-recipe="buffalo-chicken"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-valeriya-15913640.jpg" alt="Buffalo Chicken"></div><div class="recipe-content"><div class="recipe-number">9</div><div class="recipe-author">By Geronimo Wilson</div><div class="recipe-name">Buffalo Chicken Wraps</div><div class="recipe-description">Buffalo Chicken Wraps are spicy, tangy, and satisfying, made with crispy or grilled chicken tossed in buffalo sauce, wrapped in a soft tortilla.</div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
-                        }				
-                        else if(i==11){
-                            item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
-                        }	
-                        else if(i==12){
+                        }
+                        else if(i==10){
                             item.innerHTML = '<!-- Recipe 8 --><div class="recipe-card" data-recipe="spaghetti-carbonara"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pasta-carbonara-spaghetti-a0883a.jpg" alt="Spaghetti Carbonara"></div><div class="recipe-content"><div class="recipe-number">8</div><div class="recipe-author">By Nelson Uganda</div><div class="recipe-name">Italian Spaghetti Carbonara</div><div class="recipe-description">Italian Spaghetti Carbonara is creamy, savory, and comforting, made with eggs, Pecorino Romano cheese, crispy pancetta, and black pepper.</div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
                         }
-                        else if(i==13){
+                        else if(i==11){
+                            item.innerHTML = '<!-- Recipe 8 --><div class="recipe-card" data-recipe="spaghetti-carbonara"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pasta-carbonara-spaghetti-a0883a.jpg" alt="Spaghetti Carbonara"></div><div class="recipe-content"><div class="recipe-number">8</div><div class="recipe-author">By Nelson Uganda</div><div class="recipe-name">Italian Spaghetti Carbonara</div><div class="recipe-description">Italian Spaghetti Carbonara is creamy, savory, and comforting, made with eggs, Pecorino Romano cheese, crispy pancetta, and black pepper.</div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }
+                        else if(i==12){
                             item.innerHTML = '<!-- Recipe 9 --><div class="recipe-card" data-recipe="buffalo-chicken"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-valeriya-15913640.jpg" alt="Buffalo Chicken"></div><div class="recipe-content"><div class="recipe-number">9</div><div class="recipe-author">By Geronimo Wilson</div><div class="recipe-name">Buffalo Chicken Wraps</div><div class="recipe-description">Buffalo Chicken Wraps are spicy, tangy, and satisfying, made with crispy or grilled chicken tossed in buffalo sauce, wrapped in a soft tortilla.</div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
-                        }				
+                        }
                         else if(i==14){
                             item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
-                        }				
+                        }
                         else{
                             item.innerHTML = ' ';
                         }
@@ -1527,7 +1527,7 @@
                             item.innerHTML = ' ';
                         }
                     }
-                    
+                   
                     container.appendChild(item);
                 }
                 // Show first grid by default
@@ -1535,10 +1535,10 @@
                     container.classList.add('visible');
                 }
             });
-            
+           
             openModal();
         }
-        
+       
                   // Recipe Modal functionality
           function openModal() {
             document.querySelectorAll('.view-recipe').forEach(button => {
@@ -1549,7 +1549,7 @@
                     document.body.style.overflow = "hidden"; // Prevent scrolling
                 });
             });
-        
+       
         // Close modals
         document.querySelectorAll('.close-modal').forEach(button => {
             button.addEventListener('click', function() {
@@ -1557,7 +1557,7 @@
                 document.body.style.overflow = "auto"; // Re-enable scrolling
             });
         });
-        
+       
         // Close modal when clicking outside content
         window.addEventListener('click', function(event) {
             if (event.target.classList.contains('recipe-modal')) {
