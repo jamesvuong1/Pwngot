@@ -1076,7 +1076,7 @@
                 <div class="modal-content">
                     <span class="close-modal">&times;</span>
                     <img src="Recipe-Thumbnail-Images/pexels-nastyasensei-66707-2267871.jpg" alt="Chocolate Mug Cake" class="modal-image">
-                    <h2>Speedy Vegetable Stir Fry</h2>
+                    <h2>Chocolate Mug Cake</h2>
                     <p class="recipe-author">By Geronimo Wilson | 5 mins</p>
                     
                     <div class="modal-section">
@@ -1422,12 +1422,10 @@
                 
                 
     <script>
-      
-
         const grids = {
-            recipes: { items: 12, content: 'Product' },
-            quickEats: { items: 12, content: 'Feature' },
-            recipeFinder: { items: 3, content: 'Service' }
+            recipes: { items: 12},
+            quickEats: { items: 15},
+            recipeFinder: { items: 3}
         };
 
         function populateGrids() {
@@ -1438,7 +1436,6 @@
                 for (let i = 1; i <= grids[gridId].items; i++) {
                     const item = document.createElement('div');
                     item.className = 'grid-item';
-                    //item.textContent = `${grids[gridId].content} ${i}`;
 
                     item.textContent = gridId;
                     if (gridId == 'recipes') {
@@ -1506,6 +1503,15 @@
                             item.innerHTML = '<!-- Recipe 9 --><div class="recipe-card" data-recipe="buffalo-chicken"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-valeriya-15913640.jpg" alt="Buffalo Chicken"></div><div class="recipe-content"><div class="recipe-number">9</div><div class="recipe-author">By Geronimo Wilson</div><div class="recipe-name">Buffalo Chicken Wraps</div><div class="recipe-description">Buffalo Chicken Wraps are spicy, tangy, and satisfying, made with crispy or grilled chicken tossed in buffalo sauce, wrapped in a soft tortilla.</div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
                         }				
                         else if(i==11){
+                            item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
+                        }	
+                        else if(i==12){
+                            item.innerHTML = '<!-- Recipe 8 --><div class="recipe-card" data-recipe="spaghetti-carbonara"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pasta-carbonara-spaghetti-a0883a.jpg" alt="Spaghetti Carbonara"></div><div class="recipe-content"><div class="recipe-number">8</div><div class="recipe-author">By Nelson Uganda</div><div class="recipe-name">Italian Spaghetti Carbonara</div><div class="recipe-description">Italian Spaghetti Carbonara is creamy, savory, and comforting, made with eggs, Pecorino Romano cheese, crispy pancetta, and black pepper.</div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }
+                        else if(i==13){
+                            item.innerHTML = '<!-- Recipe 9 --><div class="recipe-card" data-recipe="buffalo-chicken"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/pexels-valeriya-15913640.jpg" alt="Buffalo Chicken"></div><div class="recipe-content"><div class="recipe-number">9</div><div class="recipe-author">By Geronimo Wilson</div><div class="recipe-name">Buffalo Chicken Wraps</div><div class="recipe-description">Buffalo Chicken Wraps are spicy, tangy, and satisfying, made with crispy or grilled chicken tossed in buffalo sauce, wrapped in a soft tortilla.</div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div>';
+                        }				
+                        else if(i==14){
                             item.innerHTML = '<h3>Not Finding What You &rsquo;re Looking For?</h3><button class="ai-redirect-button" onclick="showGrid(\'recipeFinder\', this)">Try Our New Recipe Finder AI!</button>';
                         }				
                         else{
