@@ -87,6 +87,51 @@
     .action-buttons a:hover i {
       transform: rotate(20deg);
     }
+
+        .content-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: white;
+      background-color: var(--primary-color);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    details {
+      margin-bottom: 25px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px 15px;
+    }
+
+    summary {
+      font-size: 1.3rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--primary-color);
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 40px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #555;
+      font-style: italic;
+      word-break: break-word;
+    }
   </style>
 </head>
 
@@ -103,10 +148,9 @@
         <a href="events.html" class="button"><i class="fas fa-calendar-alt"></i> Events</a>
         <a href="membership.html" class="button"><i class="fas fa-users"></i> Membership</a>
 	<a href="documentation.html" class="button"><i class="fas fa-clipboard-list"></i> Documentation</a>
-	<a href="Citations.html" class="button"><i class="fas fa-quote-right"></i> Citations</a>
   </div>
 
-  <div class="calendar-container">
+  <div class="content-container">
     <h4>Team Work Log</h4>
 
     <!-- Work Log Image -->
@@ -121,9 +165,7 @@
         <i class="fas fa-download"></i> Download
       </a>
     </div>
-  </div>
 
-    <div class="calendar-container">
     <h4>Copyright Form</h4>
 
     <!-- Copyright Form Image -->
@@ -138,6 +180,42 @@
         <i class="fas fa-download"></i> Download
       </a>
     </div>
+  </div>
+
+    <div class="content-container">
+    <h2>References</h2>
+
+    <details>
+      <summary>🍽️ Recipe Images</summary>
+      <ul>
+        <li>Commons Wikimedia. (n.d.). Tamales Mexicanos. Retrieved from https://commons.wikimedia.org/wiki/File:Tamales_mexicanos.jpg</li>
+        <li>Flickr (BG). (2011). Sushi Plate. Retrieved from https://www.flickr.com/photos/bg/5974003219</li>
+        <li>Flickr (Stone Soup). (n.d.). Seafood Paella. Retrieved from https://www.flickr.com/photos/stone-soup/24602038989</li>
+        <li>Flickr (Two Hungry Dudes). (n.d.). Chicken & Waffles. Retrieved from http://flickr.com/photos/twohungrydudes/5573152776</li>
+        <li>GetArchive. (n.d.). Pasta Carbonara Spaghetti. Retrieved from https://itoldya420.getarchive.net/amp/media/pasta-carbonara-spaghetti-a0883a</li>
+        <li>Pexels. (n.d.). Kimchi Fried Rice with Egg. Retrieved from https://www.pexels.com/photo/kimchi-fried-rice-with-egg-in-ceramic-bowl-8984408/</li>
+        <li>Pexels. (n.d.). Seafood Paella with Lobster. Retrieved from https://www.pexels.com/photo/seafood-paella-with-lobster-16743486/</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>👨‍🍳 Chef Images</summary>
+      <ul>
+        <li>Pexels. (n.d.). A Man in Blue Suit Wearing Eyeglasses. Retrieved from https://www.pexels.com/photo/a-man-in-blue-suit-wearing-eyeglasses-7875861/</li>
+        <li>Pexels. (n.d.). A Woman Sitting at the Table. Retrieved from https://www.pexels.com/photo/a-woman-sitting-at-the-table-6694872/</li>
+        <li>Pexels. (n.d.). Headshot of an Afro-Haired Woman in Black Top. Retrieved from https://www.pexels.com/photo/headshot-of-an-afro-haired-woman-in-black-top-7623663/</li>
+        <li>Pexels. (n.d.). Man in Black Suit Standing Near Red Wall. Retrieved from https://www.pexels.com/photo/man-in-black-suit-standing-near-red-wall-7599277/</li>
+        <li>Pexels. (n.d.). Portrait of Chef Holding Basket of Vegetables. Retrieved from https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg</li>
+        <li>Pexels. (n.d.). Woman in White Suit Jacket Sitting on Chair. Retrieved from https://www.pexels.com/photo/woman-in-white-suit-jacket-sitting-on-chair-25985727/</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>🔗 API</summary>
+      <ul>
+        <li>Spoonacular. (n.d.). Food and Recipe API. Retrieved from https://spoonacular.com/food-api</li>
+      </ul>
+    </details>
   </div>
 
   <!-- JavaScript to toggle the image -->
