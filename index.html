@@ -287,9 +287,26 @@ width: 80%;
 </head>
 <body>
 <header>
-<div class="container">
-<h1>SpaceTime Online Kitchen</h1>
-<h3 style="color: var(--white);">Home Page</h3>
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+    
+    <div style="display: flex; align-items: center;">
+      <img src="logo.png" alt="SpaceTime Logo" style="height: 60px; margin-right: 15px;">
+      <div>
+        <h1 style="margin: 0;">SpaceTime Online Kitchen</h1>
+        <h3 style="color: var(--white); margin: 0;">Home Page</h3>
+      </div>
+    </div>
+
+    <!-- Search Function -->
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search the site..." id="searchInput">
+      <button class="search-button" onclick="performSearch()">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+
+  </div>
+</header>
 
 <!-- Added Search Function -->
 <div class="search-container">
