@@ -564,41 +564,36 @@ width: 80%;
 
 <script>
 // Search Functionality
-function performSearch() {
-const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
-if (searchTerm) {
-// List of all pages to search
-const pages = [
-{ name: "Home", url: "https://ljmstsastudent.github.io/Pwngo/index.html" },
-{ name: "About Us", url: "https://ljmstsastudent.github.io/Pwngo/about-us.html" },
-{ name: "Recipes", url: "https://ljmstsastudent.github.io/Pwngo/Recipes.html" },
-{ name: "Events", url: "https://ljmstsastudent.github.io/Pwngo/events.html" },
-{ name: "Membership", url: "https://ljmstsastudent.github.io/Pwngo/membership.html" },
-{ name: "Documentation", url: "https://ljmstsastudent.github.io/Pwngo/documentation.html" },
-{ name: "Citations", url: "https://ljmstsastudent.github.io/Pwngo/Citations.html" }
-];
+async function performSearch() {
+  const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
 
-// Filter pages that might contain the search term
-const results = pages.filter(page =>
-page.name.toLowerCase().includes(searchTerm))
-.map(page => `<li><a href="${page.url}">${page.name}</a></li>`);
+  if (!searchTerm) {
+    alert("Please enter a search term");
+    return;
+  }
 
-if (results.length > 0) {
-alert(`Found ${results.length} matching pages:\n\n${results.join('\n')}`);
-} else {
-alert("No results found for your search. Try different keywords.");
-}
-} else {
-alert("Please enter a search term");
-}
-}
+  try {
+    const res = await fetch('searchIndex.json'); // Adjust path if needed
+    const data = await res.json();
 
-// Allow search on Enter key press
-document.getElementById('searchInput').addEventListener('keypress', function(e) {
-if (e.key === 'Enter') {
-performSearch();
+    const results = data.filter(entry =>
+      entry.title.toLowerCase().includes(searchTerm) ||
+      entry.content.toLowerCase().includes(searchTerm)
+    );
+
+    if (results.length > 0) {
+      let html = `Found ${results.length} matching page(s):\n\n`;
+      html += results.map(entry => `• ${entry.title}: ${entry.url}`).join('\n');
+      alert(html);
+    } else {
+      alert("No results found for your search. Try different keywords.");
+    }
+
+  } catch (error) {
+    console.error("Error loading search data:", error);
+    alert("Something went wrong while searching. Please try again later.");
+  }
 }
-});
 
 // Newsletter Form Functionality
 function disableScroll() {
