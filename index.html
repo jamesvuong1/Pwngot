@@ -319,6 +319,7 @@ width: 80%;
   </div>
 </header>
 
+<!-- Navigation Buttons -->
 <div class="button-container">
   <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
   <a href="about-us.html" class="button"><i class="fas fa-info-circle"></i> About Us</a>
@@ -338,17 +339,103 @@ width: 80%;
 </div>
 
 <style>
-  /* (Styles remain unchanged; not repeating here for brevity) */
+  .hero-banner {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    margin: 8px auto 16px;
+    border-radius: 8px;
+    max-width: 1200px;
+  }
+
+  .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .image-slide.active {
+    opacity: 1;
+  }
+
+  .image-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 5s ease;
+  }
+
+  .image-slide.zoom-in img {
+    transform: scale(1.15);
+  }
+
+  .image-slide.zoom-out img {
+    transform: scale(1);
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(46, 125, 50, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 32px;
+    z-index: 10;
+    color: white;
+  }
+
+  .overlay h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .overlay p {
+    font-size: 1.125rem;
+    max-width: 48rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (min-width: 768px) {
+    .overlay h2 {
+      font-size: 1.875rem;
+    }
+    .overlay p {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-banner {
+      height: 200px;
+    }
+  }
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const filenames = ["visualindicator1.png", "images.jpg", "visualindicator.jpg"];
   const imageList = filenames.map(src => ({ src, alt: "" }));
-
   const imageContainer = document.querySelector('.image-container');
 
-  // Create image slides
+  // Add image slides to DOM
   imageList.forEach((image, index) => {
     const slide = document.createElement('div');
     slide.className = `image-slide ${index === 0 ? 'active zoom-in' : ''}`;
@@ -366,18 +453,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeIndex = 0;
   let isZoomingIn = true;
 
-  // Toggle zoom direction
+  // Zoom toggle
   setInterval(() => {
     isZoomingIn = !isZoomingIn;
-    slides.forEach(slide => {
-      if (slide.classList.contains('active')) {
-        slide.classList.toggle('zoom-in', isZoomingIn);
-        slide.classList.toggle('zoom-out', !isZoomingIn);
-      }
-    });
+    slides[activeIndex].classList.toggle('zoom-in', isZoomingIn);
+    slides[activeIndex].classList.toggle('zoom-out', !isZoomingIn);
   }, 2500);
 
-  // Change active image
+  // Slide change
   setInterval(() => {
     slides[activeIndex].classList.remove('active');
     activeIndex = (activeIndex + 1) % slides.length;
@@ -387,7 +470,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 5000);
 });
 </script>
-
 
 <main>
 <div class="welcome-section">
