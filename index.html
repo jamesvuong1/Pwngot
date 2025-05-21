@@ -595,6 +595,11 @@ async function performSearch() {
   }
 }
 
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+performSearch();
+});
+
 // Newsletter Form Functionality
 function disableScroll() {
 scrollTop = window.pageYOffset || document.documentElement.scrollTop;
