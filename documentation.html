@@ -136,10 +136,32 @@
 </head>
 
 <body>
-  <header>
-    <h1>SpaceTime Online Kitchen</h1>
-    <h3 style="color: white;">Documentation</h3>
-  </header>
+<header>
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 100px; padding: 0 20px;">
+    
+    <!-- Logo on the Left -->
+    <div>
+      <img src="logo.png" alt="SpaceTime Logo" style="height: 80px; border-radius: 12px;">
+    </div>
+    
+    <!-- Title in the Center -->
+    <div style="position: absolute; left: 50%; transform: translateX(-50%); text-align: center;">
+      <h1 style="margin: 0;">SpaceTime Online Kitchen</h1>
+      <h3 style="margin: 0; color: var(--white);">Documentation</h3>
+    </div>
+
+    <!-- Empty space on right to balance layout -->
+    <div style="width: 45vw;"></div>
+
+    <!-- Search Function -->
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search the site..." id="searchInput">
+      <button class="search-button" onclick="performSearch()">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+</header>
 
   <div class="button-container">
   <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
