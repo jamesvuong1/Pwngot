@@ -250,6 +250,28 @@ width: 80%;
     display: block;
 }
 
+.welcome-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.shift-left, .shift-right {
+  flex: 1 1 45%;
+}
+
+.shift-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.shift-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
 </style>
 </head>
 <body>
@@ -290,140 +312,24 @@ width: 80%;
   <a href="documentation.html" class="button"><i class="fas fa-clipboard-list"></i> Documentation</a>
 </div>
 
-<div class="hero-banner">
-  <div class="image-slide slide1"></div>
-  <div class="image-slide slide2"></div>
-  <div class="image-slide slide3"></div>
-  <div class="overlay">
-    <h2>Culinary Excellence Awaits</h2>
-    <p>From expert chefs to delightful meals and shared experiences</p>
-  </div>
-</div>
-
-<style>
-.hero-banner {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  height: 250px;
-  margin: 8px auto 16px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.image-slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  transform-origin: center;
-}
-
-.slide1 {
-  background-image: url('Visualindicator1.png');
-  animation-name: fadeZoom1;
-}
-
-.slide2 {
-  background-image: url('images/images.jpg');
-  animation-name: fadeZoom2;
-}
-
-.slide3 {
-  background-image: url('images/visualindicator.jpg');
-  animation-name: fadeZoom3;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(46, 125, 50, 0.4);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 32px;
-  z-index: 10;
-  color: white;
-}
-
-.overlay h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.overlay p {
-  font-size: 1.125rem;
-  max-width: 48rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-@media (min-width: 768px) {
-  .overlay h2 {
-    font-size: 1.875rem;
-  }
-  .overlay p {
-    font-size: 1.25rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-banner {
-    height: 200px;
-  }
-}
-
-@keyframes fadeZoom1 {
-  0%   {opacity: 0; transform: scale(1);}
-  5%   {opacity: 1; transform: scale(1.15);}
-  30%  {opacity: 1; transform: scale(1.15);}
-  35%  {opacity: 0; transform: scale(1);}
-  100% {opacity: 0;}
-}
-
-@keyframes fadeZoom2 {
-  0%   {opacity: 0; transform: scale(1);}
-  35%  {opacity: 0;}
-  40%  {opacity: 1; transform: scale(1.15);}
-  65%  {opacity: 1; transform: scale(1.15);}
-  70%  {opacity: 0; transform: scale(1);}
-  100% {opacity: 0;}
-}
-
-@keyframes fadeZoom3 {
-  0%   {opacity: 0; transform: scale(1);}
-  70%  {opacity: 0;}
-  75%  {opacity: 1; transform: scale(1.15);}
-  95%  {opacity: 1; transform: scale(1.15);}
-  100% {opacity: 0; transform: scale(1);}
-}
-</style>
-
-
+<main>
 <div class="welcome-section">
-  <div class="welcome-section-text">
-    <h1 style="color: white; font-weight: bold !important;">Welcome to SpaceTime Cooking!</h1>
-    <h2 style="color: white;">Where our recipes, your time, and our space equals perfection.</h2>
-    <p style="color: white;">SpaceTime Cooking is a vibrant community cooking hub that offers a collaborative kitchen space for individuals to come together to create, innovate, and learn new culinary skills. Our facility is equipped with top-of-the-line kitchen tools and equipment for baking, cooking, food preservation, and more. We have empowered many to bring their culinary dreams to life and have educated countless others on the diverse aspects of cooking and gastronomy.</p>
-    <div class="button-container">
-      <a href="membership.html" class="button"><i class="fas fa-user-plus"></i> Join Our Community</a>
-      <a href="events.html" class="button"><i class="fas fa-calendar-check"></i> Upcoming Events</a>
-    </div>
-  </div>
+<div class="welcome-row">
+<div class="shift-right">
+<div class="welcome-section-text">
+<h1>Welcome to SpaceTime Cooking!</h1>
+<h2 style="color: var(--white);">Where our recipes, your time, and our space equals perfection.</h2>
+<p>SpaceTime Cooking is a vibrant community cooking hub that offers a collaborative kitchen space for individuals to come together to create, innovate, and learn new culinary skills. Our facility is equipped with top-of-the-line kitchen tools and equipment for baking, cooking, food preservation, and more. We have empowered many to bring their culinary dreams to life and have educated countless others on the diverse aspects of cooking and gastronomy.</p>
+<div class="button-container">
+<a href="membership.html" class="button"><i class="fas fa-user-plus"></i> Join Our Community</a>
+<a href="events.html" class="button"><i class="fas fa-calendar-check"></i> Upcoming Events</a>
 </div>
-<div class="change-txt">
-  <div class="wrapper">
-    <div style="font-size: 2.5rem; ="static-txt">Here For You And Your Needs</div>
-  </div>
+</div>
+</div>
+<div class="shift-left">
+    <img height="400px" width="280px" src="https://th.bing.com/th/id/OIP.XpTgjE_cv9JEgoZSg1buawAAAA?rs=1&pid=ImgDetMain&adlt=strict">
+</div>
+</div>
 </div>
 
 <div class="stats-grid">
