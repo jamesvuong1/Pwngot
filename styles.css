@@ -143,3 +143,18 @@ font-size: 1.2rem;
 margin-left: 10px;
 cursor: pointer;
 }
+/* Chef section spacing adjustments */
+.chefs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--shadow);
+    margin-top: 1rem;
+    padding: 20px 0;
+}
+
+.chefs-intro {
+    margin-left: 4vw;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
