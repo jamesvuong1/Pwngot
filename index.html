@@ -595,12 +595,12 @@ async function performSearch() {
   }
 }
 
-document.addEventListener('keydown', function(e) {
-if (e.key === 'Escape') {
-    preformSearch();
-}
-});
-
+  document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent form submission or page reload
+      performSearch();    // Call your search function
+    }
+  });
 // Newsletter Form Functionality
 function disableScroll() {
 scrollTop = window.pageYOffset || document.documentElement.scrollTop;
