@@ -595,9 +595,10 @@ async function performSearch() {
   }
 }
 
-document.getElementById('searchInput').addEventListener('keypress', function(e) {
-if (e.key === 'Enter') {
-performSearch();
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') {
+    preformSearch();
+}
 });
 
 // Newsletter Form Functionality
