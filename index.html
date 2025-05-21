@@ -329,10 +329,10 @@ width: 80%;
   <a href="documentation.html" class="button"><i class="fas fa-clipboard-list"></i> Documentation</a>
 </div>
 
-<!-- Hero Banner Section -->
-<!-- Hero Banner Section -->
 <div class="hero-banner">
-  <div class="image-container"></div>
+  <div class="image-slide slide1"></div>
+  <div class="image-slide slide2"></div>
+  <div class="image-slide slide3"></div>
   <div class="overlay">
     <h2>Culinary Excellence Awaits</h2>
     <p>From expert chefs to delightful meals and shared experiences</p>
@@ -340,143 +340,113 @@ width: 80%;
 </div>
 
 <style>
-  .hero-banner {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    position: relative;
-    margin: 8px auto 16px;
-    border-radius: 8px;
-    max-width: 1200px;
-  }
+.hero-banner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 250px;
+  margin: 8px auto 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
 
-  .image-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+.image-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  transform-origin: center;
+}
 
-  .image-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease;
-  }
+.slide1 {
+  background-image: url('visualindicator1.png');
+  animation-name: fadeZoom1;
+}
 
-  .image-slide.active {
-    opacity: 1;
-  }
+.slide2 {
+  background-image: url('images/images.jpg');
+  animation-name: fadeZoom2;
+}
 
-  .image-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 5s ease;
-  }
+.slide3 {
+  background-image: url('images/visualindicator.jpg');
+  animation-name: fadeZoom3;
+}
 
-  .image-slide.zoom-in img {
-    transform: scale(1.15);
-  }
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(46, 125, 50, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 32px;
+  z-index: 10;
+  color: white;
+}
 
-  .image-slide.zoom-out img {
-    transform: scale(1);
-  }
+.overlay h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
 
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(46, 125, 50, 0.4);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 32px;
-    z-index: 10;
-    color: white;
-  }
+.overlay p {
+  font-size: 1.125rem;
+  max-width: 48rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
+@media (min-width: 768px) {
   .overlay h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-size: 1.875rem;
   }
-
   .overlay p {
-    font-size: 1.125rem;
-    max-width: 48rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 1.25rem;
   }
+}
 
-  @media (min-width: 768px) {
-    .overlay h2 {
-      font-size: 1.875rem;
-    }
-
-    .overlay p {
-      font-size: 1.25rem;
-    }
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 200px;
   }
+}
 
-  @media (max-width: 768px) {
-    .hero-banner {
-      height: 200px;
-    }
-  }
+@keyframes fadeZoom1 {
+  0%   {opacity: 0; transform: scale(1);}
+  5%   {opacity: 1; transform: scale(1.15);}
+  30%  {opacity: 1; transform: scale(1.15);}
+  35%  {opacity: 0; transform: scale(1);}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeZoom2 {
+  0%   {opacity: 0; transform: scale(1);}
+  35%  {opacity: 0;}
+  40%  {opacity: 1; transform: scale(1.15);}
+  65%  {opacity: 1; transform: scale(1.15);}
+  70%  {opacity: 0; transform: scale(1);}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeZoom3 {
+  0%   {opacity: 0; transform: scale(1);}
+  70%  {opacity: 0;}
+  75%  {opacity: 1; transform: scale(1.15);}
+  95%  {opacity: 1; transform: scale(1.15);}
+  100% {opacity: 0; transform: scale(1);}
+}
 </style>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const filenames = [
-    "visualindicator1.png",              // in root
-    "images/images.jpg",                // in /images/
-    "images/visualindicator.jpg"        // in /images/
-  ];
-
-  const imageContainer = document.querySelector('.image-container');
-
-  // Create image slides
-  filenames.forEach((src, index) => {
-    const slide = document.createElement('div');
-    slide.className = `image-slide ${index === 0 ? 'active zoom-in' : ''}`;
-
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = "";
-    img.loading = "lazy";
-
-    slide.appendChild(img);
-    imageContainer.appendChild(slide);
-  });
-
-  const slides = document.querySelectorAll('.image-slide');
-  let activeIndex = 0;
-  let isZoomingIn = true;
-
-  // Toggle zoom
-  setInterval(() => {
-    const currentSlide = slides[activeIndex];
-    currentSlide.classList.toggle('zoom-in', isZoomingIn);
-    currentSlide.classList.toggle('zoom-out', !isZoomingIn);
-    isZoomingIn = !isZoomingIn;
-  }, 2500);
-
-  // Change slide
-  setInterval(() => {
-    slides[activeIndex].classList.remove('active');
-    activeIndex = (activeIndex + 1) % slides.length;
-    slides[activeIndex].classList.add('active');
-    slides[activeIndex].classList.toggle('zoom-in', isZoomingIn);
-    slides[activeIndex].classList.toggle('zoom-out', !isZoomingIn);
-  }, 5000);
-});
-</script>
 
 <main>
 <div class="welcome-section">
