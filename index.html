@@ -330,6 +330,7 @@ width: 80%;
 </div>
 
 <!-- Hero Banner Section -->
+<!-- Hero Banner Section -->
 <div class="hero-banner">
   <div class="image-container"></div>
   <div class="overlay">
@@ -417,6 +418,7 @@ width: 80%;
     .overlay h2 {
       font-size: 1.875rem;
     }
+
     .overlay p {
       font-size: 1.25rem;
     }
@@ -430,25 +432,24 @@ width: 80%;
 </style>
 
 <script>
-<script>
 document.addEventListener('DOMContentLoaded', () => {
   const filenames = [
-    "visualindicator1.png",
-    "images/images.jpg",
-    "images/visualindicator.jpg"
+    "visualindicator1.png",              // in root
+    "images/images.jpg",                // in /images/
+    "images/visualindicator.jpg"        // in /images/
   ];
 
-  const imageList = filenames.map(src => ({ src, alt: "" }));
   const imageContainer = document.querySelector('.image-container');
 
-  imageList.forEach((image, index) => {
+  // Create image slides
+  filenames.forEach((src, index) => {
     const slide = document.createElement('div');
     slide.className = `image-slide ${index === 0 ? 'active zoom-in' : ''}`;
 
     const img = document.createElement('img');
-    img.src = image.src;
-    img.alt = image.alt;
-    img.loading = 'lazy';
+    img.src = src;
+    img.alt = "";
+    img.loading = "lazy";
 
     slide.appendChild(img);
     imageContainer.appendChild(slide);
@@ -458,12 +459,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeIndex = 0;
   let isZoomingIn = true;
 
+  // Toggle zoom
   setInterval(() => {
-    slides[activeIndex].classList.toggle('zoom-in', isZoomingIn);
-    slides[activeIndex].classList.toggle('zoom-out', !isZoomingIn);
+    const currentSlide = slides[activeIndex];
+    currentSlide.classList.toggle('zoom-in', isZoomingIn);
+    currentSlide.classList.toggle('zoom-out', !isZoomingIn);
     isZoomingIn = !isZoomingIn;
   }, 2500);
 
+  // Change slide
   setInterval(() => {
     slides[activeIndex].classList.remove('active');
     activeIndex = (activeIndex + 1) % slides.length;
