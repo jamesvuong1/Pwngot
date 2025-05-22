@@ -1,118 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SpaceTime Online Kitchen - Work Log</title>
-  <meta name="description" content="SpaceTime Online Kitchen Work Log" />
+  <meta name="description" content="SpaceTime Online Kitchen Work Log">
 
   <!-- Favicon & Preloads -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Fonts & Libraries -->
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <link rel="stylesheet" href="swiper-bundle.min.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles.css">
 
   <!-- Custom CSS -->
   <style>
-    :root {
-      --primary-light: #6cb4ee;
-      --primary-dark: #005f99;
-      --primary-color: #007acc;
-      --white: #fff;
-      --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      --card-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    }
-
     body {
-      font-family: "Lato", sans-serif;
+      font-family: 'Lato', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
-      color: #333;
     }
 
-    /* Header styles */
-    header {
-      background-color: var(--primary-color);
-      color: var(--white);
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-      position: relative;
-      box-shadow: var(--shadow);
-      z-index: 10;
-    }
-
-    header img {
-      height: 80px;
-      border-radius: 12px;
-    }
-
-    header .title-container {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      pointer-events: none; /* so clicks pass through */
-    }
-
-    header .title-container h1 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: var(--white);
-    }
-
-    header .title-container h3 {
-      margin: 0;
-      font-weight: 400;
-      font-size: 1.2rem;
-      color: var(--white);
-      opacity: 0.85;
-    }
-
-    .search-container {
-      display: flex;
-      align-items: center;
-      z-index: 20;
-    }
-
-    .search-input {
-      padding: 7px 10px;
-      border-radius: 4px 0 0 4px;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-      width: 160px;
-    }
-
-    .search-button {
-      background-color: var(--primary-dark);
-      border: none;
-      color: var(--white);
-      padding: 7px 12px;
-      cursor: pointer;
-      border-radius: 0 4px 4px 0;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Existing styles */
     .calendar-container {
       max-width: 1000px;
       margin: 30px auto;
@@ -125,7 +38,7 @@
       height: 90vh;
       justify-self: center;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       margin-bottom: 20px;
       display: none; /* Hidden initially */
     }
@@ -135,7 +48,7 @@
       height: 90vh;
       justify-self: center;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       margin-bottom: 20px;
       display: none; /* Hidden initially */
     }
@@ -168,20 +81,20 @@
     .action-buttons a:hover {
       background-color: var(--primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .action-buttons a:hover i {
       transform: rotate(20deg);
     }
 
-    .content-container {
+        .content-container {
       max-width: 1000px;
       margin: 30px auto;
       padding: 20px;
       background-color: white;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     h2 {
@@ -223,53 +136,47 @@
 </head>
 
 <body>
-  <header>
+<header>
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 100px; padding: 0 20px;">
+    
+    <!-- Logo on the Left -->
     <div>
-      <img src="logo.png" alt="SpaceTime Logo" />
+      <img src="logo.png" alt="SpaceTime Logo" style="height: 80px; border-radius: 12px;">
     </div>
-    <div class="title-container">
-      <h1>SpaceTime Online Kitchen</h1>
-      <h3>Work Log</h3>
+    
+    <!-- Title in the Center -->
+    <div style="position: absolute; left: 50%; transform: translateX(-50%); text-align: center;">
+      <h1 style="margin: 0;">SpaceTime Online Kitchen</h1>
+      <h3 style="margin: 0; color: var(--white);">Documentation</h3>
     </div>
+
+    <!-- Empty space on right to balance layout -->
+    <div style="width: 45vw;"></div>
+
+    <!-- Search Function -->
     <div class="search-container">
-      <input
-        type="text"
-        class="search-input"
-        placeholder="Search the site..."
-        id="searchInput"
-      />
+      <input type="text" class="search-input" placeholder="Search the site..." id="searchInput">
       <button class="search-button" onclick="performSearch()">
         <i class="fas fa-search"></i>
       </button>
     </div>
-  </header>
+  </div>
+</header>
 
   <div class="button-container">
-    <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
-    <a href="about-us.html" class="button"
-      ><i class="fas fa-info-circle"></i> About Us</a
-    >
-    <a href="Recipes.html" class="button"><i class="fas fa-utensils"></i> Recipes</a>
-    <a href="events.html" class="button"
-      ><i class="fas fa-calendar-alt"></i> Events</a
-    >
-    <a href="membership.html" class="button"
-      ><i class="fas fa-users"></i> Membership</a
-    >
-    <a href="documentation.html" class="button"
-      ><i class="fas fa-clipboard-list"></i> Documentation</a
-    >
+  <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
+        <a href="about-us.html" class="button"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="Recipes.html" class="button"><i class="fas fa-utensils"></i> Recipes</a>
+        <a href="events.html" class="button"><i class="fas fa-calendar-alt"></i> Events</a>
+        <a href="membership.html" class="button"><i class="fas fa-users"></i> Membership</a>
+	<a href="documentation.html" class="button"><i class="fas fa-clipboard-list"></i> Documentation</a>
   </div>
 
   <div class="content-container">
     <h4>Team Work Log</h4>
 
     <!-- Work Log Image -->
-    <iframe
-      id="workLogImage"
-      src="Documents/Work-Log.pdf"
-      class="worklog-image"
-    ></iframe>
+    <iframe id="workLogImage" src="Documents/Work-Log.pdf" class="worklog-image"></iframe>
 
     <!-- Action Buttons -->
     <div class="action-buttons">
@@ -284,145 +191,83 @@
     <h4>Copyright Form</h4>
 
     <!-- Copyright Form Image -->
-    <iframe
-      id="copyrightFormImg"
-      src="Documents/Copyright-Form.pdf"
-      class="copyright-form"
-    ></iframe>
+    <iframe id="copyrightFormImg" src="Documents/Copyright-Form.pdf" class="copyright-form"></iframe>
 
     <!-- Action Buttons -->
     <div class="action-buttons">
       <a id="toggleCopyrightFormButton" onclick="toggleCoprightFormImage()">
         <i class="fas fa-eye"></i> View Full Size
       </a>
-      <a
-        href="Documents/Copyright-Form.pdf"
-        download="SpaceTime_CopyrightForm.pdf"
-      >
+      <a href="Documents/Copyright-Form.pdf" download=SpaceTime_CopyrightForm.pdf">
         <i class="fas fa-download"></i> Download
       </a>
     </div>
   </div>
 
-  <div class="content-container">
+    <div class="content-container">
     <h2>References</h2>
 
     <details>
       <summary>🍽️ Recipe Images</summary>
       <ul>
-        <li>
-          Commons Wikimedia. (n.d.). Tamales Mexicanos. Retrieved from
-          https://commons.wikimedia.org/wiki/File:Tamales_mexicanos.jpg
-        </li>
-        <li>
-          Flickr (BG). (2011). Sushi Plate. Retrieved from
-          https://www.flickr.com/photos/bg/5974003219
-        </li>
-        <li>
-          Flickr (Stone Soup). (n.d.). Seafood Paella. Retrieved from
-          https://www.flickr.com/photos/stone-soup/24602038989
-        </li>
-        <li>
-          Flickr (Two Hungry Dudes). (n.d.). Chicken & Waffles. Retrieved from
-          http://flickr.com/photos/twohungrydudes/5573152776
-        </li>
-        <li>
-          GetArchive. (n.d.). Pasta Carbonara Spaghetti. Retrieved from
-          https://itoldya420.getarchive.net/amp/media/pasta-carbonara-spaghetti-a0883a
-        </li>
-        <li>
-          Pexels. (n.d.). Kimchi Fried Rice with Egg. Retrieved from
-          https://www.pexels.com/photo/kimchi-fried-rice-with-egg-in-ceramic-bowl-8984408/
-        </li>
-        <li>
-          Pexels. (n.d.). Seafood Paella with Lobster. Retrieved from
-          https://www.pexels.com/photo/seafood-paella-with-lobster-16743486/
-        </li>
+        <li>Commons Wikimedia. (n.d.). Tamales Mexicanos. Retrieved from https://commons.wikimedia.org/wiki/File:Tamales_mexicanos.jpg</li>
+        <li>Flickr (BG). (2011). Sushi Plate. Retrieved from https://www.flickr.com/photos/bg/5974003219</li>
+        <li>Flickr (Stone Soup). (n.d.). Seafood Paella. Retrieved from https://www.flickr.com/photos/stone-soup/24602038989</li>
+        <li>Flickr (Two Hungry Dudes). (n.d.). Chicken & Waffles. Retrieved from http://flickr.com/photos/twohungrydudes/5573152776</li>
+        <li>GetArchive. (n.d.). Pasta Carbonara Spaghetti. Retrieved from https://itoldya420.getarchive.net/amp/media/pasta-carbonara-spaghetti-a0883a</li>
+        <li>Pexels. (n.d.). Kimchi Fried Rice with Egg. Retrieved from https://www.pexels.com/photo/kimchi-fried-rice-with-egg-in-ceramic-bowl-8984408/</li>
+        <li>Pexels. (n.d.). Seafood Paella with Lobster. Retrieved from https://www.pexels.com/photo/seafood-paella-with-lobster-16743486/</li>
       </ul>
     </details>
 
     <details>
       <summary>👨‍🍳 Chef Images</summary>
       <ul>
-        <li>
-          Pexels. (n.d.). A Man in Blue Suit Wearing Eyeglasses. Retrieved from
-          https://www.pexels.com/photo/a-man-in-blue-suit-wearing-eyeglasses-7875861/
-        </li>
-        <li>
-          Pexels. (n.d.). A Woman Sitting at the Table. Retrieved from
-          https://www.pexels.com/photo/a-woman-sitting-at-the-table-6694872/
-        </li>
-        <li>
-          Pexels. (n.d.). Headshot of an Afro-Haired Woman in Black Top.
-          Retrieved from
-          https://www.pexels.com/photo/headshot-of-an-afro-haired-woman-in-black-top-7623663/
-        </li>
-        <li>
-          Pexels. (n.d.). Man in Black Suit Standing Near Red Wall. Retrieved
-          from https://www.pexels.com/photo/man-in-black-suit-standing-near-red-wall-7599277/
-        </li>
-        <li>
-          Pexels. (n.d.). Portrait of Chef Holding Basket of Vegetables.
-          Retrieved from
-          https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg
-        </li>
+        <li>Pexels. (n.d.). A Man in Blue Suit Wearing Eyeglasses. Retrieved from https://www.pexels.com/photo/a-man-in-blue-suit-wearing-eyeglasses-7875861/</li>
+        <li>Pexels. (n.d.). A Woman Sitting at the Table. Retrieved from https://www.pexels.com/photo/a-woman-sitting-at-the-table-6694872/</li>
+        <li>Pexels. (n.d.). Headshot of an Afro-Haired Woman in Black Top. Retrieved from https://www.pexels.com/photo/headshot-of-an-afro-haired-woman-in-black-top-7623663/</li>
+        <li>Pexels. (n.d.). Man in Black Suit Standing Near Red Wall. Retrieved from https://www.pexels.com/photo/man-in-black-suit-standing-near-red-wall-7599277/</li>
+        <li>Pexels. (n.d.). Portrait of Chef Holding Basket of Vegetables. Retrieved from https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg</li>
+        <li>Pexels. (n.d.). Woman in White Suit Jacket Sitting on Chair. Retrieved from https://www.pexels.com/photo/woman-in-white-suit-jacket-sitting-on-chair-25985727/</li>
       </ul>
     </details>
 
     <details>
-      <summary>📚 Other References</summary>
+      <summary>🔗 API</summary>
       <ul>
-        <li>
-          Mozilla Developer Network (MDN). (n.d.). HTML iframe element.
-          Retrieved from
-          https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-        </li>
-        <li>
-          CSS-Tricks. (n.d.). Centering in CSS: A Complete Guide.
-          Retrieved from https://css-tricks.com/centering-css-complete-guide/
-        </li>
-        <li>
-          W3Schools. (n.d.). HTML & CSS Tutorials. Retrieved from
-          https://www.w3schools.com/
-        </li>
+        <li>Spoonacular. (n.d.). Food and Recipe API. Retrieved from https://spoonacular.com/food-api</li>
       </ul>
     </details>
   </div>
 
+  <!-- JavaScript to toggle the image -->
   <script>
     function toggleWorkLogImage() {
-      const img = document.getElementById("workLogImage");
-      const btn = document.getElementById("toggleWorkLogButton");
-      if (img.style.display === "block") {
-        img.style.display = "none";
-        btn.innerHTML = '<i class="fas fa-eye"></i> View Full Size';
+      const img = document.getElementById('workLogImage');
+      const button = document.getElementById('toggleButton');
+
+      if (img.style.display === 'block') {
+        img.style.display = 'none';
+        button.innerHTML = '<i class="fas fa-eye"></i> View Full Size';
       } else {
-        img.style.display = "block";
-        btn.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Full Size';
+        img.style.display = 'block';
+        img.scrollIntoView({ behavior: 'smooth' });
+        button.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Image';
       }
     }
-
+    
     function toggleCoprightFormImage() {
-      const img = document.getElementById("copyrightFormImg");
-      const btn = document.getElementById("toggleCopyrightFormButton");
-      if (img.style.display === "block") {
-        img.style.display = "none";
-        btn.innerHTML = '<i class="fas fa-eye"></i> View Full Size';
-      } else {
-        img.style.display = "block";
-        btn.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Full Size';
-      }
-    }
+      const img = document.getElementById('copyrightFormImg');
+      const button = document.getElementById('toggleCopyrightFormButton');
 
-    function performSearch() {
-      const query = document.getElementById("searchInput").value.trim();
-      if (!query) {
-        alert("Please enter a search term.");
-        return;
+      if (img.style.display === 'block') {
+        img.style.display = 'none';
+        button.innerHTML = '<i class="fas fa-eye"></i> View Full Size';
+      } else {
+        img.style.display = 'block';
+        img.scrollIntoView({ behavior: 'smooth' });
+        button.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Image';
       }
-      // Simple search redirect or alert
-      alert("Search functionality not yet implemented.\nYou searched for: " + query);
-      // TODO: Replace with real search logic or page redirect
     }
   </script>
 </body>
