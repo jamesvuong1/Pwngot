@@ -200,3 +200,97 @@ img {
     filter: none !important;
     box-shadow: none !important;
 }
+@media (max-width: 768px) {
+  /* Button container adjustments */
+  .button-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .button {
+    width: 90%;
+    margin: 0.25rem auto;
+  }
+  
+  /* Welcome section adjustments */
+  .welcome-section {
+    padding: 1.5rem 0;
+    margin: 1rem;
+  }
+  
+  .welcome-section-text {
+    padding: 0 1rem;
+  }
+  
+  /* Stats grid adjustments */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    margin: 1rem;
+  }
+  
+  /* Mission section adjustments */
+  .home-page-top {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 0;
+  }
+  
+  .change-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+/* Header Styles */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: auto;
+}
+
+.header-logo img {
+  height: 60px;
+  border-radius: 12px;
+}
+
+.header-title {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.header-title h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.header-title h3 {
+  margin: 0;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+  }
+  
+  .header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    width: auto;
+  }
+  
+  .header-logo {
+    order: 1;
+  }
+  
+  .header-title {
+    order: 2;
+  }
+}
