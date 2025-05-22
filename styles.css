@@ -544,3 +544,12 @@ img {
     font-size: 1.1rem;
   }
 }
+.static-txt {
+  font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  .static-txt {
+    font-size: 1.4rem;
+  }
+}
