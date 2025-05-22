@@ -2,513 +2,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpaceTime Online Kitchen - Culinary Community Hub</title>
-    <meta name="description" content="Join our collaborative cooking community with recipes, events, and culinary education">
-    <!-- Favicon & Preloads -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Fonts & Libraries -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="swiper-bundle.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        html{
-          scroll-behavior: smooth;
-        }
-    <link rel="stylesheet" href="styles.css">
-        /*Image Carousel*/
-        .image-carousel{
-            width: 85%;
-            max-width: 1536px;
-            margin-inline: auto;
-            position: relative;
-            height: 100px;
-            margin-top: 5rem;
-            overflow: hidden;
-            mask-image: linear-gradient(
-                to right,
-                rgba(0,0,0,0),
-                rgba(0,0,0,1) 20%,
-                rgba(0,0,0,1) 80%,
-                rgba(0,0,0,0)
-                );
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SpaceTime Online Kitchen - Culinary Community Hub</title>
+  <meta name="description" content="Join our collaborative cooking community with recipes, events, and culinary education">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        @keyframes scrollLeft{
-            to{
-                left: -100px;
-            }
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .item{
-            position: absolute;
-            left: max(calc(150px * 8), 100%);
-            animation-name: scrollLeft;
-            animation-duration: 30s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-        }
-        
-        .carousel-img{
-            width: 100px;
-            height: 100px;
-        }
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-        .item1{
-            animation-delay: calc(30s / 8 * (8 - 1) * -1);
-        }
+    /* Header */
+    header {
+      background-color: #142315;
+      color: white;
+      padding: 10px 0;
+    }
 
-        .item2{
-            animation-delay: calc(30s / 8 * (8 - 2) * -1);
-        }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
 
-        .item3{
-            animation-delay: calc(30s / 8 * (8 - 3) * -1);
-        }
+    .search-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 5px;
+    }
 
-        .item4{
-            animation-delay: calc(30s / 8 * (8 - 4) * -1);
-        }
+    .search-input {
+      padding: 6px;
+      border-radius: 5px;
+      border: none;
+      width: 130px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+    }
 
-        .item5{
-            animation-delay: calc(30s / 8 * (8 - 5) * -1);
-        }
+    .search-button {
+      background-color: #79a480;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        .item6{
-            animation-delay: calc(30s / 8 * (8 - 6) * -1);
-        }
+    .search-button:hover {
+      filter: drop-shadow(0 0 5px #79a480);
+    }
 
-        .item7{
-            animation-delay: calc(30s / 8 * (8 - 7) * -1);
-        }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
 
-        .item8{
-            animation-delay: calc(30s / 8 * (8 - 8) * -1);
-        }
+    header h3 {
+      margin: 0;
+      color: #ccc;
+      font-weight: 300;
+    }
 
+    /* Navigation Buttons */
+    .button-container {
+      background-color: #142315;
+      text-align: center;
+      padding: 10px 0;
+    }
 
-        /*About Us Cards Section*/
-        .card-image{
-        position: relative;
-        height: 150px;
-        width: 150px;
-        border: 50px;
-        background: #79a480;
-        padding: 3px;
-        }
+    .button {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 15px;
+      color: white;
+      text-decoration: none;
+      background-color: #79a480;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      font-size: 1rem;
+    }
 
+    .button:hover {
+      background-color: #6a946f;
+    }
 
-        .card{
-        border-radius: 25px;
-        background-color:#142315;
-        }
+    /* Main content styling */
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
 
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #142315;
+    }
 
-        .slide-container{
-        max-width:1120px;
-        width:100%;
-        padding: 40px 0;
-        }
+    p {
+      line-height: 1.6;
+    }
 
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
 
-        .slide-content{
-        margin:0 40px;
-        overflow:hidden;
-        border-radius: 25px;
-        margin-bottom: 0;
-        }
-
-
-        .image-content,
-        .card-content{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        padding: 10px 14px;
-        }
-
-
-        .card-image .card-img{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        }
-
-
-        .card-img {
-        display: inline-block;
-        filter: drop-shadow(0 0 10px #ffffff);
-        }
-
-
-        .name{
-        font-size: 18px;
-        font-weight:500;
-        color:var(--white);
-        }
-
-
-        .image-content{
-        position:relative;
-        row-gap: 5px;
-        padding:25px 0;
-        }
-
-
-        .overlay{
-        position: absolute;
-        left:0;
-        top:0;
-        height: 100%;
-        width: 100%;
-        background-color:#79a480;
-        border-radius: 20px 20px 0 20px;
-        }
-
-
-        .overlay::before,
-        .overlay::after{
-        content:'';
-        position:absolute;
-        right:0;
-        bottom:-40px;
-        height: 40px;
-        width: 40px;
-        background-color: #79a480;
-        }
-
-
-        .overlay::after{
-        border-radius: 0 25px 0 0;
-        background-color: #142315;
-        }
-
-
-        .description{
-        font-size: 16px;
-        color: var(--white);
-        text-align:center;
-        margin-bottom: 2rem;
-        }
-
-
-        .chefs{
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
+      .search-container {
         justify-content: center;
-        background-color: var(--shadow);
-        }
+      }
 
-
-        .v-button{
-        border:none;
-        font-size: 16px;
-        color: var(--white);
-        padding: 8px 16px;
-        background-color:#4caf50;
-        border-radius: 6px;
-        margin: 14px;
-        cursor: pointer;
-        transition:all 0.3s ease;
-        }
-        .v-button:hover{
-        transform: scale(1.1);
-        display: inline-block;
-        filter: drop-shadow(0 0 10px #4CAF50);
-        }
-
-
-        .swiper-navBtn{
-        color: #79a480;
-        }
-
-
-        .swiper-navBtn:hover{
-        display: inline-block;
-        filter: drop-shadow(0 0 10px #79a480);
-        }
-
-
-        .swiper-pagination-bullet{
-        background-color: var(--primary-light);
-        opacity:1;
-        }
-
-
-        .swiper-pagination-bullet{
-        display: inline-block;
-        filter: drop-shadow(0 0 10px #79a480);
-        opacity:1;
-        }
-
-        .registration-form {
-            background: var(--white);
-            border-radius: 8px;
-            padding: 2rem;
-            margin: 2rem auto;
-            box-shadow: var(--shadow);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-        }
-        
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-family: 'Lato', sans-serif;
-        }
-	    
-        .event-info {
-            background-color: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--primary-light);
-        }
-        
-        .event-title {
-            color: var(--primary-dark);
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .event-date {
-            color: #666;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .registration-form {
-                padding: 1.5rem;
-            }
-        }
-
-        .curved{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin-bottom: 10rem;
-            height: 30vh;
-            background: #79a480;
-        }
-
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .contact{
-            position: relative;
-            min-height: 100vh;
-            padding: 50px 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .contact .contact-content{
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .contact-container{
-            width:100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px;
-        }
-
-        .contact-container .contactInfo{
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-container .contactInfo .contact-box{
-            position: relative;
-            padding: 20px 0px;
-            display: flex;
-        }  
-
-        .contact-container .contactInfo .contact-box .icon{
-            height: 9vw;
-            width: 9vw;
-            background: var(--primary-light);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            font-size: 22px;
-        }  
-
-        .contact-container .contactInfo .contact-box .contact-text{
-            display: flex;
-            margin-left: 20px;
-            font-size: 16px;
-            flex-direction: column;
-        }  
-
-        .contactForm{
-            width: 40%;
-            padding: 40px;
-            background: var(--white);
-        }
-
-        .contactForm .inputBox{
-            position: relative;
-            width: 100%;
-            margin-top: 10px;
-        }
-        
-        .contactForm .inputBox input, 
-        .contactForm .inputBox textarea{
-            width: 100%;
-            padding: 5px 0;
-            font-size: 16px;
-            margin: 10px 0;
-            border: none;
-            border-bottom: 2px solid var(--primary-color);
-            outline: none;
-            resize: none;
-        }
-
-        .contactForm .inputBox span{
-            position: absolute;
-            left: 0;
-            padding: 5px 0;
-            font-size: 16px;
-            margin: 10px 0;
-            pointer-events: none;
-            transition: 0.5s;
-        }
-
-        .contactForm .inputBox input:focus ~  span,
-        .contactForm .inputBox input:valid ~  span,
-        .contactForm .inputBox textarea:focus ~  span,
-        .contactForm .inputBox textarea:valid ~  span{
-            color: var(--primary-dark);
-            font-size: 12px;
-            transform: translateY(-20px);
-        }
-
-        
-        .contactForm .inputBox input[type="submit"]{
-            width: 100px;
-            border: none;
-            cursor: pointer;
-            background-color: var(--primary-color);
-            padding: 10px;
-            font-size: 18px;
-            border-radius: 7%;
-        }
-
-        @media (max-width: 991px){
-            .contact{
-                padding: 50px;
-            }
-            .contact-container{
-                flex-direction: column;
-            }
-            .contact-container .contactInfo{
-                margin-bottom: 40px;
-                width: 100%;
-            }
-            .contact-container .contactInfo{
-                margin-bottom: 40px;
-            }
-            .contact-container .contactInfo
-            .contactForm{
-                width: 100%;
-            }
-        }
-    .icon-img{
-        width: 9vw;
-        height: 9vw;
+      .button {
+        margin: 5px;
+        display: block;
+      }
     }
-    
-    .story-container{
-    	background-color: var(--white);
-        border-top: solid #79a480 5px;
-        border-left: none;
-        border-right: none;
-		border-bottom: none;
-        border-radius: 15px;
-        padding: 2vw;
-        margin-left: 4vw;
-        margin-right: 4vw;
-    }
-    
-    .chefs-intro{
-    	margin-left: 4vw;
-        color: var(--text-color);
-    }
-    </style>
+  </style>
 </head>
+
 <body>
-<header>
-  <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 100px; padding: 0 20px;">
-    
-    <!-- Logo on the Left -->
-    <div>
-      <img src="logo.png" alt="SpaceTime Logo" style="height: 80px; border-radius: 12px;">
-    </div>
-    
-    <!-- Title in the Center -->
-    <div style="position: absolute; left: 50%; transform: translateX(-50%); text-align: center;">
-      <h1 style="margin: 0;">SpaceTime Online Kitchen</h1>
-      <h3 style="margin: 0; color: var(--white);">About Us</h3>
-    </div>
+  <header>
+    <div class="container">
+      <!-- Logo -->
+      <div style="flex: 1; min-width: 100px;">
+        <img src="logo.png" alt="SpaceTime Logo" style="height: 70px; border-radius: 12px;">
+      </div>
 
-    <!-- Empty space on right to balance layout -->
-    <div style="width: 45vw;"></div>
+      <!-- Title -->
+      <div style="flex: 2; text-align: center; min-width: 200px;">
+        <h1>SpaceTime Online Kitchen</h1>
+        <h3>Culinary Community Hub</h3>
+      </div>
 
-    <!-- Search Function -->
-    <div class="search-container">
-      <input type="text" class="search-input" placeholder="Search the site..." id="searchInput">
-      <button class="search-button" onclick="performSearch()">
-        <i class="fas fa-search"></i>
-      </button>
+      <!-- Search -->
+      <div style="flex: 1; min-width: 150px; text-align: right;">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search..." id="searchInput">
+          <button class="search-button" onclick="performSearch()">
+            <i class="fas fa-search" style="color: white;"></i>
+          </button>
+        </div>
+      </div>
     </div>
+  </header>
+
+  <!-- Navigation -->
+  <div class="button-container">
+    <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
+    <a href="about-us.html" class="button"><i class="fas fa-info-circle"></i> About Us</a>
+    <a href="Recipes.html" class="button"><i class="fas fa-utensils"></i> Recipes</a>
+    <a href="events.html" class="button"><i class="fas fa-calendar-alt"></i> Events</a>
+    <a href="membership.html" class="button"><i class="fas fa-users"></i> Membership</a>
+    <a href="documentation.html" class="button"><i class="fas fa-clipboard-list"></i> Documentation</a>
   </div>
-</header>
-    
-    <div class="button-container">
-        <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
-        <a href="about-us.html" class="button"><i class="fas fa-info-circle"></i> About Us</a>
-        <a href="Recipes.html" class="button"><i class="fas fa-utensils"></i> Recipes</a>
-        <a href="events.html" class="button"><i class="fas fa-calendar-alt"></i> Events</a>
-        <a href="membership.html" class="button"><i class="fas fa-users"></i> Membership</a>
-	<a href="documentation.html" class="button"><i class="fas fa-clipboard-list"></i> Documentation</a>
-    </div>
+
+  <main>
+    <h2>Welcome to SpaceTime Online Kitchen</h2>
+    <p>Explore, cook, and connect with a community passionate about cuisine, culinary innovation, and shared learning.</p>
+    <!-- Add your page content here -->
+  </main>
+
+  <script>
+    function performSearch() {
+      const query = document.getElementById('searchInput').value.trim();
+      if (query !== '') {
+        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+      }
+    }
+  </script>
+</body>
+</html>
+
     <main>
        <div class="story-container">
         <h1>Our Story</h1>
