@@ -2,209 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SpaceTime Online Kitchen - Culinary Community Hub</title>
-  <meta name="description" content="Join our collaborative cooking community with recipes, events, and culinary education" />
+  <meta name="description" content="Join our collaborative cooking community with recipes, events, and culinary education"/>
   
   <!-- Favicon & Fonts -->
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="swiper-bundle.min.css" />
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* CSS Variables fallback */
     :root {
-      --primary-color: #007BFF;
-      --primary-light: #339CFF;
-      --primary-dark: #0056b3;
+      --primary-color: #4CAF50;
+      --primary-light: #4CAF50;
+      --primary-dark: #3e8e41;
       --white: #ffffff;
-      --shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      --card-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Basic Reset */
-    * {
-      box-sizing: border-box;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
     body {
       font-family: 'Lato', sans-serif;
       margin: 0;
-      background-color: #fafafa;
-      color: #333;
+      padding: 0;
+      background-color: #fdfdfd;
     }
 
     header {
       background-color: var(--primary-color);
+      padding: 10px 0;
       color: var(--white);
-      padding: 0 20px;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
     }
 
-    header img {
-      height: 50px;
-      border-radius: 12px;
-    }
-
-    /* Centered Title */
-    header .title-container {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      pointer-events: none; /* So clicks pass through */
-    }
-
-    header .title-container h1,
-    header .title-container h3 {
-      margin: 0;
-      color: var(--white);
-      user-select: none;
-    }
-
-    /* Search Container */
-    .search-container {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-    }
-
-    .search-input {
-      padding: 8px 12px;
-      border: none;
-      border-radius: 4px 0 0 4px;
-      font-size: 1rem;
-      outline: none;
-      width: 200px;
-      max-width: 100%;
-    }
-
-    .search-button {
-      background-color: var(--primary-dark);
-      border: none;
-      padding: 8px 12px;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-      color: white;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.3s ease;
-    }
-
-    .search-button:hover {
-      background-color: #003d80;
-    }
-
-    /* Navigation Buttons Container */
-    .button-container {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 0 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .button {
-      display: inline-block;
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 24px;
-      margin: 0;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      max-width: 200px;
-      flex-grow: 1;
-      transition: background-color 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #45a049;
-    }
-
-    @media (max-width: 768px) {
-      .button {
-        padding: 10px 15px;
-        max-width: 100%;
-        width: 90%;
-      }
-    }
-
-    /* Calendar Container */
-    .calendar-container {
-      max-width: 1000px;
-      margin: 20px auto 40px;
-      padding: 0 10px 20px;
-    }
-
-    .calendar-container h4 {
-      margin-bottom: 20px;
-      font-weight: 700;
-      color: var(--primary-color);
-      text-align: center;
-    }
-
-    .month {
-      margin-bottom: 30px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      padding: 15px 20px 20px;
-    }
-
-    .month-title {
-      margin: 0 0 20px;
-      color: var(--primary-color);
-      border-bottom: 2px solid var(--primary-color);
-      padding-bottom: 10px;
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-
-    .event {
-      background-color: white;
-      border-left: 4px solid var(--primary-light);
-      padding: 15px 20px 20px;
-      margin: 10px 0;
-      border-radius: 0 5px 5px 0;
-      box-shadow: var(--card-shadow);
-    }
-
-    .event-title {
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin: 0 0 5px 0;
-      font-size: 1.4rem;
-    }
-
-    .event-date {
-      color: #666;
-      font-style: italic;
-      margin: 0 0 10px 0;
-      font-size: 0.95rem;
-    }
-
-    .event-description {
-      margin: 0 0 10px 0;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    /* Collapsible Button */
     .collapsible {
       background-color: var(--primary-light);
       color: var(--white);
@@ -214,10 +47,10 @@
       cursor: pointer;
       width: 100%;
       text-align: left;
+      margin: 5px 0;
       font-size: 1rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      margin-top: 10px;
+      transition: 0.2s ease-in-out;
     }
 
     .collapsible:hover {
@@ -226,33 +59,109 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
-    .collapsible.active {
-      background-color: var(--primary-dark);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    /* Collapsible content with smooth transition */
     .content {
-      max-height: 0;
+      padding: 0 18px;
+      display: none;
       overflow: hidden;
       background-color: #f1f1f1;
       border-radius: 0 0 5px 5px;
-      transition: max-height 0.3s ease;
-      padding: 0 18px;
     }
 
-    .content.show {
-      padding: 15px 18px 20px;
-      max-height: 800px; /* large enough for content */
+    .calendar-container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
     }
 
-    /* Flexbox layout for text + image */
+    .month {
+      margin-bottom: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .month-title {
+      padding-left: 10px;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 10px;
+      font-size: 1.8rem;
+    }
+
+    .event {
+      background-color: white;
+      border-left: 4px solid var(--primary-light);
+      padding: 15px;
+      padding-bottom: 20px;
+      margin: 10px 0;
+      border-radius: 0 5px 5px 0;
+      box-shadow: var(--card-shadow);
+    }
+
+    .event-title {
+      font-weight: bold;
+      color: var(--primary-dark);
+      margin: 0 0 5px 0;
+      font-size: 1.4rem;
+    }
+
+    .event-date {
+      color: #666;
+      font-style: italic;
+      margin: 0 0 10px 0;
+    }
+
+    .event-description {
+      margin: 0;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 24px;
+      margin: 10px 0;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      max-width: 200px;
+      transition: 0.2s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: var(--primary-dark);
+    }
+
+    @media (max-width: 768px) {
+      .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .button {
+        padding: 10px 15px;
+        margin: 5px auto;
+        width: 90%;
+      }
+
+      .collapsible-inner {
+        flex-direction: column;
+      }
+
+      .collapsible-inner .card-image {
+        margin-top: 20px;
+      }
+    }
+
     .collapsible-inner {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 20px;
       align-items: flex-start;
+      padding: 15px 0;
     }
 
     .collapsible-inner .text-section {
@@ -267,40 +176,25 @@
       width: 100%;
       height: auto;
       border-radius: 10px;
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      .collapsible-inner {
-        flex-direction: column;
-      }
-
-      .collapsible-inner .card-image {
-        margin-top: 20px;
-      }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <!-- Logo -->
-    <div>
-      <img src="logo.png" alt="SpaceTime Logo" />
-    </div>
-
-    <!-- Centered Title -->
-    <div class="title-container">
-      <h1>SpaceTime Online Kitchen</h1>
-      <h3>Events</h3>
-    </div>
-
-    <!-- Search -->
-    <div class="search-container">
-      <input type="text" class="search-input" placeholder="Search the site..." id="searchInput" />
-      <button class="search-button" onclick="performSearch()">
-        <i class="fas fa-search"></i>
-      </button>
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 100px; padding: 0 20px; position: relative;">
+      <div>
+        <img src="logo.png" alt="SpaceTime Logo" style="height: 50px; border-radius: 12px;">
+      </div>
+      <div style="position: absolute; left: 50%; transform: translateX(-50%); text-align: center; pointer-events: none;">
+        <h1 style="margin: 0; color: var(--white);">SpaceTime Online Kitchen</h1>
+        <h3 style="margin: 0; color: var(--white);">Events</h3>
+      </div>
+      <div class="search-container" style="z-index: 1;">
+        <input type="text" class="search-input" placeholder="Search the site..." id="searchInput" />
+        <button class="search-button" onclick="performSearch()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     </div>
   </header>
 
