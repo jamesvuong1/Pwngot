@@ -147,21 +147,49 @@
         <div class="month">
             <h3 class="month-title">June 2025</h3>
             
-            <div class="event">
-                <h4 class="event-title">Global Fusion Cooking Workshop</h4>
-                <p class="event-date">June 5, 2025 | 6:00 PM - 8:00 PM (GMT)</p>
-                <p class="event-description">Discover the vibrant, bold flavors of fusion cuisine as Chef Marco blends the rich culinary traditions of Latin America and Asia. From umami-packed stir-fries with a spicy kick to tacos with unexpected twists, this journey is perfect for adventurous home cooks looking to try something new in the kitchen. Transport your taste buds around the world—no passport required!
-</p>
-                <button class="collapsible">More Info & Registration</button>
-                <div class="content">
-                    <p>This workshop will cover:</p>
-                    <ol>
-                      <li>Mastering knife techniques from around the world</li>  
-                      <li>Harmonizing flavors across global cuisines</li>
-                      <li>Designing and crafting your own fusion dishes</li>
-			    <div class="card-image">
-                                <img loading="lazy" src="About-Us-Images/pexels-natasha-lois-756212-4689910.jpg" alt="" class="card-img">
-                            </div>
+            <d<button class="collapsible">More Info & Registration</button>
+<div class="content">
+    <div class="collapsible-inner">
+        <div class="text-section">
+            <p>This workshop will cover:</p>
+            <ol>
+                <li>Mastering knife techniques from around the world</li>  
+                <li>Harmonizing flavors across global cuisines</li>
+                <li>Designing and crafting your own fusion dishes</li>
+            </ol>
+        </div>
+        <div class="card-image">
+            <img loading="lazy" src="About-Us-Images/pexels-natasha-lois-756212-4689910.jpg" alt="Cooking workshop" class="card-img">
+        </div>
+    </div>
+</div>
+.content {
+    display: none; /* default hidden */
+    overflow: hidden;
+    padding: 10px;
+}
+
+.collapsible-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.text-section {
+    flex: 2;
+}
+
+.card-image {
+    flex: 1;
+}
+
+.card-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
                     </ol>
                     <br>
                     Cost: $25 for members / $35 for non-members<br>
