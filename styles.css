@@ -467,4 +467,80 @@ img {
     width: auto;
     max-width: 60%;
   }
+
+  /* Welcome Section */
+.welcome-section h1 {
+  font-size: 2.2rem;
+}
+
+.welcome-section h2 {
+  font-size: 1.5rem;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.stat-card h3 {
+  font-size: 1.3rem;
+}
+
+.stat-card p {
+  font-size: 1rem;
+}
+
+/* Mission Section */
+.mission h1 {
+  font-size: 1.8rem;
+}
+
+.mission h3 {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Newsletter */
+.newletter-announcement h1 {
+  font-size: 1.8rem;
+}
+
+.newletter-announcement h2 {
+  font-size: 1.2rem;
+}
+
+/* Mobile Overrides */
+@media (max-width: 768px) {
+  .welcome-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .welcome-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .welcome-section p {
+    font-size: 1rem;
+  }
+  
+  .stat-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .mission h1 {
+    font-size: 1.5rem;
+  }
+  
+  .mission h3 {
+    font-size: 1rem;
+  }
+  
+  .newletter-announcement h1 {
+    font-size: 1.5rem;
+  }
+  
+  .newletter-announcement h2 {
+    font-size: 1.1rem;
+  }
 }
