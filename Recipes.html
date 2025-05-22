@@ -1,46 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipes - SpaceTime Online Kitchen</title>
-  <meta name="description" content="Explore delicious recipes shared by our culinary community at SpaceTime Online Kitchen.">
-  <!-- Favicon & Preloads -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Fonts & Libraries -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="swiper-bundle.min.css">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<!-- Consistent Header -->
-<header class="site-header" role="banner" aria-label="Main site header">
-  <div class="header-content">
-    <div class="header-logo">
-      <img src="logo.png" alt="SpaceTime Logo" loading="lazy">
-    </div>
-    <div class="header-titles">
-      <h1>SpaceTime Online Kitchen</h1>
-      <h2>Recipes</h2>
-    </div>
-  </div>
-</header>
-
-<!-- Consistent Navigation -->
-<nav class="button-container">
-  <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
-  <a href="about-us.html" class="button"><i class="fas fa-info-circle"></i> About Us</a>
-  <a href="Recipes.html" class="button"><i class="fas fa-utensils"></i> Recipes</a>
-  <a href="events.html" class="button"><i class="fas fa-calendar-alt"></i> Events</a>
-  <a href="membership.html" class="button"><i class="fas fa-users"></i> Membership</a>
-  <a href="documentation.html" class="button"><i class="fas fa-clipboard-list"></i> Documentation</a>
-</nav>
-
-   <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - SpaceTime Online Kitchen</title>
+    <meta name="description" content="Learn about our culinary community, meet our chefs, and connect with SpaceTime Online Kitchen">
+    <!-- Favicon & Preloads -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts & Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+   
     :root {
   --primary-color: #2E7D32;
   --primary-light: #4CAF50;
@@ -575,6 +550,42 @@ h3 {
     </style>
 </head>
 <body>
+<header>
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 100px; padding: 0 20px;">
+    
+    <!-- Logo on the Left -->
+    <div>
+      <img src="logo.png" alt="SpaceTime Logo" style="height: 80px; border-radius: 12px;">
+    </div>
+    
+    <!-- Title in the Center -->
+    <div style="position: absolute; left: 50%; transform: translateX(-50%); text-align: center;">
+      <h1 style="margin: 0;">SpaceTime Online Kitchen</h1>
+      <h3 style="margin: 0; color: var(--white);">Recipes</h3>
+    </div>
+
+    <!-- Empty space on right to balance layout -->
+    <div style="width: 45vw;"></div>
+
+    <!-- Search Function -->
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search the site..." id="searchInput">
+      <button class="search-button" onclick="performSearch()">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+</header>
+    
+    <div class="button-container">
+    <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
+        <a href="about-us.html" class="button"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="Recipes.html" class="button"><i class="fas fa-utensils"></i> Recipes</a>
+        <a href="events.html" class="button"><i class="fas fa-calendar-alt"></i> Events</a>
+        <a href="membership.html" class="button"><i class="fas fa-users"></i> Membership</a>
+        <a href="documentation.html" class="button"><i class="fas fa-clipboard-list"></i> Documentation</a>
+    </div>
+   
    
     <main>
         <div class="container">
@@ -1623,7 +1634,7 @@ h3 {
                             item.innerHTML = '<!-- Recipe 7 --><div class="recipe-card" data-recipe="eggplant-moussaka"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/24602038989_fa0a88748f_o.jpg" alt="Eggplant Moussaka"></div><div class="recipe-content"><div class="recipe-number">7</div><div class="recipe-author">By Abdul Dell</div><div class="recipe-name">Meaty Eggplant Moussaka</div><div class="recipe-description">A rich and comforting Mediterranean classic with layers of roasted eggplant, savory spiced meat sauce, and a creamy béchamel topping.</div><div class="recipe-footer"><span class="time-badge">2.5 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==8){
-                            item.innerHTML = '<!-- Recipe 8 --><div class="recipe-card" data-recipe="mango-coconut-pudding"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/lettuce-wraps.png"></div><div class="recipe-content"><div class="recipe-number">10</div><div class="recipe-author">By Helen Smith</div><div class="recipe-name">Coconut Mango Pudding</div><div class="recipe-description">Creamy, sweet tropical dessert with mango and coconut, smooth texture, topped with flavorful extras for a delightful treat. </div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
+                            item.innerHTML = '<!-- Recipe 8 --><div class="recipe-card" data-recipe="mango-coconut-pudding"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/lettuce-wraps.png"></div><div class="recipe-content"><div class="recipe-number">10</div><div class="recipe-author">By Helen Smith</div><div class="recipe-name">Coconut Mango Pudding</div><div class="recipe-description">It’s creamy, sweet, and tastes like a tropical vacation! Just mango and coconut mixed into a smooth, creamy dessert topped with additional items to enhance the flavor. </div><div class="recipe-footer"><span class="time-badge">25 mins</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
                         }
                         else if(i==9){
                             item.innerHTML = '<!-- Recipe 9 --><div class="recipe-card" data-recipe="lamb-tagine"><div class="recipe-image"><img src="Recipe-Thumbnail-Images/5974003219_8ea2382680_o.jpg" alt="Lamb Tagine"></div><div class="recipe-content"><div class="recipe-number">9</div><div class="recipe-author">By Hellen Smith</div><div class="recipe-name">Morrocan Lamb Tagine</div><div class="recipe-description">Aromatic, spiced, and soul-warming—this North African classic is slow-cooked to perfection with sweet dried fruit, tender lamb, and a rich, savory sauce.</div><div class="recipe-footer"><span class="time-badge">2 hours</span><span class="view-recipe">View Recipe</span></div></div></div></div>'
