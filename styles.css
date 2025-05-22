@@ -105,44 +105,6 @@ h3 {
   }
 }
 
-/* Search Function Styles */
-.search-container {
-position: absolute;
-top: 20px;
-right: 20px;
-display: flex;
-align-items: center;
-}
-
-.search-input {
-padding: 8px 15px;
-border: 2px solid var(--white);
-border-radius: 25px;
-background-color: rgba(255, 255, 255, 0.2);
-color: var(--white);
-font-size: 1rem;
-width: 200px;
-transition: width 0.3s ease;
-}
-
-.search-input:focus {
-outline: none;
-width: 250px;
-background-color: rgba(255, 255, 255, 0.3);
-}
-
-.search-input::placeholder{
-    color: var(--white);
-}
-
-.search-button {
-background: none;
-border: none;
-color: var(--white);
-font-size: 1.2rem;
-margin-left: 10px;
-cursor: pointer;
-}
 /* ===== Fix Chef Image Positioning ===== */
 .card-image {
     overflow: hidden;
