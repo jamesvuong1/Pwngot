@@ -78,9 +78,11 @@ img {
 /* ===================== */
 /* ==== TYPOGRAPHY ===== */
 /* ===================== */
+/* Update the typography section */
 h1, h2, h3 {
   margin: 0;
   font-weight: 300;
+  color: var(--primary-color); /* Set default color to green for all headers */
 }
 
 h1 {
@@ -90,14 +92,35 @@ h1 {
 
 h2 {
   font-size: var(--text-lg);
-  color: var(--primary-color);
   margin: 1.5rem 0;
 }
 
 h3 {
   font-size: var(--text-md);
-  color: var(--primary-light);
   margin: 1rem 0;
+}
+
+/* Override header colors for specific sections where white is needed */
+.site-header h1,
+.site-header h2 {
+  color: var(--white);
+}
+
+.welcome-section h1,
+.welcome-section h2,
+.welcome-section h3 {
+  color: var(--white);
+}
+
+.mission h1,
+.mission h3 {
+  color: var(--white);
+}
+
+footer h1,
+footer h2,
+footer h3 {
+  color: var(--white);
 }
 
 /* ===================== */
