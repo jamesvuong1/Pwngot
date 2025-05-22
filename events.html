@@ -155,35 +155,30 @@
   </style>
 </head>
 <body>
-  <!-- Your existing HTML continues here... -->
-
-
-<body>
-
   <header>
-  <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 100px; padding: 0 20px; position: relative;">
-    
-    <!-- Logo on the Left -->
-    <div>
-      <img src="logo.png" alt="SpaceTime Logo" style="height: 50px; border-radius: 12px;">
-    </div>
-    
-    <!-- Title in the Center -->
-    <div style="position: absolute; left: 50%; transform: translateX(-50%); text-align: center; pointer-events: none;">
-      <h1 style="margin: 0; color: var(--white);">SpaceTime Online Kitchen</h1>
-      <h3 style="margin: 0; color: var(--white);">Events</h3>
-    </div>
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 100px; padding: 0 20px; position: relative;">
+      
+      <!-- Logo on the Left -->
+      <div>
+        <img src="logo.png" alt="SpaceTime Logo" style="height: 50px; border-radius: 12px;">
+      </div>
+      
+      <!-- Title in the Center -->
+      <div style="position: absolute; left: 50%; transform: translateX(-50%); text-align: center; pointer-events: none;">
+        <h1 style="margin: 0; color: var(--white);">SpaceTime Online Kitchen</h1>
+        <h3 style="margin: 0; color: var(--white);">Events</h3>
+      </div>
 
-    <!-- Search Function on the Right -->
-    <div class="search-container" style="z-index: 1;">
-      <input type="text" class="search-input" placeholder="Search the site..." id="searchInput" />
-      <button class="search-button" onclick="performSearch()">
-        <i class="fas fa-search"></i>
-      </button>
+      <!-- Search Function on the Right -->
+      <div class="search-container" style="z-index: 1;">
+        <input type="text" class="search-input" placeholder="Search the site..." id="searchInput" />
+        <button class="search-button" onclick="performSearch()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      
     </div>
-    
-  </div>
-</header>
+  </header>
 
   <div class="button-container">
     <a href="index.html" class="button"><i class="fas fa-home"></i> Home</a>
@@ -196,151 +191,149 @@
 
   <div class="calendar-container">
     <h4>Upcoming Culinary Events at SpaceTime Online Kitchen</h4>
-<!-- JUNE -->
-<div class="month">
-  <h3 class="month-title">June 2025</h3>
 
-  <!-- Event 1 -->
-  <div class="event">
-    <h4 class="event-title">Global Fusion Cooking Workshop</h4>
-    <p class="event-date">June 6, 2025 | 5:00 PM - 7:00 PM (GMT)</p>
-    <p class="event-description">Learn to blend culinary traditions and techniques from different cultures into delicious fusion dishes!</p>
-    <button class="collapsible">More Info & Registration</button>
-    <div class="content">
-      <div class="collapsible-inner">
-        <div class="text-section">
-          <p>This workshop will cover:</p>
-          <ol>
-            <li>Mastering knife techniques from around the world</li>
-            <li>Harmonizing flavors across global cuisines</li>
-            <li>Designing and crafting your own fusion dishes</li>
-          </ol>
-          <p>
-            Cost: $25 for members / $35 for non-members<br/>
-            <a href="https://ljmstsastudent.github.io/Pwngo/about-us.html#event-registration" class="button">Register Now</a>
-          </p>
+    <!-- JUNE -->
+    <div class="month">
+      <h3 class="month-title">June 2025</h3>
+
+      <!-- Event 1 -->
+      <div class="event">
+        <h4 class="event-title">Global Fusion Cooking Workshop</h4>
+        <p class="event-date">June 6, 2025 | 5:00 PM - 7:00 PM (GMT)</p>
+        <p class="event-description">Learn to blend culinary traditions and techniques from different cultures into delicious fusion dishes!</p>
+        <button class="collapsible">More Info & Registration</button>
+        <div class="content">
+          <div class="collapsible-inner">
+            <div class="text-section">
+              <p>This workshop will cover:</p>
+              <ol>
+                <li>Mastering knife techniques from around the world</li>
+                <li>Harmonizing flavors across global cuisines</li>
+                <li>Designing and crafting your own fusion dishes</li>
+              </ol>
+              <p>
+                Cost: $25 for members / $35 for non-members<br/>
+                <a href="https://ljmstsastudent.github.io/Pwngo/about-us.html#event-registration" class="button">Register Now</a>
+              </p>
+            </div>
+            <div class="card-image">
+              <img loading="lazy" src="events/culinary-men.png" alt="Cooking workshop" class="card-img">
+            </div>
+          </div>
         </div>
-        <div class="card-image">
-          <img loading="lazy" src="events/culinary-men.png" alt="Cooking workshop" class="card-img">
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event">
+        <h4 class="event-title">Plant-Based Baking Masterclass</h4>
+        <p class="event-date">June 12, 2025 | 4:00 PM - 6:30 PM (GMT)</p>
+        <p class="event-description">Learn how to create delicious vegan desserts that will impress everyone. No dairy, no eggs, no problem!</p>
+        <button class="collapsible">More Info & Registration</button>
+        <div class="content">
+          <div class="collapsible-inner">
+            <div class="text-section">
+              <p>You'll learn to make:<br>
+                - Fluffy vegan pancakes<br>
+                - Rich chocolate avocado mousse<br>
+                - Dairy-free cheesecake<br><br>
+                All participants receive a digital recipe book!<br>
+                Cost: $20 for members / $30 for non-members<br>
+                <a href="https://ljmstsastudent.github.io/Pwngo/about-us.html#event-registration" class="button">Register Now</a>
+              </p>
+            </div>
+            <div class="card-image">
+              <img loading="lazy" src="events/Avocado_chocolate_mousse_(48839488586).jpg" alt="Vegan dessert" class="card-img">
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Event 2 -->
-  <div class="event">
-    <h4 class="event-title">Plant-Based Baking Masterclass</h4>
-    <p class="event-date">June 12, 2025 | 4:00 PM - 6:30 PM (GMT)</p>
-    <p class="event-description">Learn how to create delicious vegan desserts that will impress everyone. No dairy, no eggs, no problem!</p>
-    <button class="collapsible">More Info & Registration</button>
-    <div class="content">
-      <div class="collapsible-inner">
-        <div class="text-section">
-          <p>You'll learn to make:<br>
-            - Fluffy vegan pancakes<br>
-            - Rich chocolate avocado mousse<br>
-            - Dairy-free cheesecake<br><br>
-            All participants receive a digital recipe book!<br>
-            Cost: $20 for members / $30 for non-members<br>
-            <a href="https://ljmstsastudent.github.io/Pwngo/about-us.html#event-registration" class="button">Register Now</a>
-          </p>
+    <!-- JULY -->
+    <div class="month">
+      <h3 class="month-title">July 2025</h3>
+
+      <!-- Event 3 -->
+      <div class="event">
+        <h4 class="event-title">Space-Themed Mocktail Workshop</h4>
+        <p class="event-date">July 3, 2025 | 7:00 PM - 9:00 PM (GMT)</p>
+        <p class="event-description">Explore the cosmos by creating fun and tasty space-themed mocktails! Perfect for young chefs who love creativity and cool flavors.</p>
+        <button class="collapsible">More Info & Registration</button>
+        <div class="content">
+          <div class="collapsible-inner">
+            <div class="text-section">
+              <p>Featured drinks you’ll make:<br>
+                - Cosmic Galaxy Lemonade<br>
+                - Milky Way Smoothie<br>
+                - Shooting Star Fruit Punch<br><br>
+                All ingredients are non-alcoholic and kid-friendly!<br>
+                Cost: $30 (includes ingredient list)<br>
+                <a href="https://ljmstsastudent.github.io/Pwngo/about-us.html#event-registration" class="button">Register Now</a>
+              </p>
+            </div>
+            <div class="card-image">
+              <img loading="lazy" src="events/Adios_Motherfucker_Cocktail.jpg" alt="Mocktail drinks" class="card-img">
+            </div>
+          </div>
         </div>
-        <div class="card-image">
-          <img loading="lazy" src="events/Avocado_chocolate_mousse_(48839488586).jpg" alt="Vegan dessert" class="card-img">
+      </div>
+
+      <!-- Event 4 -->
+      <div class="event">
+        <h4 class="event-title">Family Cooking Challenge</h4>
+        <p class="event-date">July 17, 2025 | 3:00 PM - 5:00 PM (GMT)</p>
+        <p class="event-description">Teams of all ages compete in our fun, interactive cooking challenge using mystery ingredients!</p>
+        <button class="collapsible">More Info & Registration</button>
+        <div class="content">
+          <div class="collapsible-inner">
+            <div class="text-section">
+              <p>Details:<br>
+                - Teams of 2-4 people (at least one adult)<br>
+                - All ingredients provided digitally<br>
+                - Prizes for most creative, best presentation, and tastiest dish<br><br>
+                Free for premium members / $15 per team otherwise<br>
+                <a href="https://ljmstsastudent.github.io/Pwngo/about-us.html#event-registration" class="button">Register Now</a>
+              </p>
+            </div>
+            <div class="card-image">
+              <img loading="lazy" src="events/lewisville_right_image.jpg" alt="Family cooking" class="card-img">
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- JULY -->
-<div class="month">
-  <h3 class="month-title">July 2025</h3>
+    <!-- AUGUST -->
+    <div class="month">
+      <h3 class="month-title">August 2025</h3>
 
-  <!-- Event 3 -->
-  <div class="event">
-    <h4 class="event-title">Space-Themed Mocktail Workshop</h4>
-    <p class="event-date">July 3, 2025 | 7:00 PM - 9:00 PM (GMT)</p>
-    <p class="event-description">Explore the cosmos by creating fun and tasty space-themed mocktails! Perfect for young chefs who love creativity and cool flavors.</p>
-    <button class="collapsible">More Info & Registration</button>
-    <div class="content">
-      <div class="collapsible-inner">
-        <div class="text-section">
-          <p>Featured drinks you’ll make:<br>
-            - Cosmic Galaxy Lemonade<br>
-            - Milky Way Smoothie<br>
-            - Shooting Star Fruit Punch<br><br>
-            All ingredients are non-alcoholic and kid-friendly!<br>
-            Cost: $30 (includes ingredient list)<br>
-            <a href="https://ljmstsastudent.github.io/Pwngo/about-us.html#event-registration" class="button">Register Now</a>
-          </p>
-        </div>
-        <div class="card-image">
-          <img loading="lazy" src="events/Adios_Motherfucker_Cocktail.jpg" alt="Mocktail drinks" class="card-img">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Event 4 -->
-  <div class="event">
-    <h4 class="event-title">Family Cooking Challenge</h4>
-    <p class="event-date">July 17, 2025 | 3:00 PM - 5:00 PM (GMT)</p>
-    <p class="event-description">Teams of all ages compete in our fun, interactive cooking challenge using mystery ingredients!</p>
-    <button class="collapsible">More Info & Registration</button>
-    <div class="content">
-      <div class="collapsible-inner">
-        <div class="text-section">
-          <p>Details:<br>
-            - Teams of 2-4 people (at least one adult)<br>
-            - All ingredients provided digitally<br>
-            - Prizes for most creative, best presentation, and tastiest dish<br><br>
-            Free for premium members / $15 per team otherwise<br>
-            <a href="https://ljmstsastudent.github.io/Pwngo/about-us.html#event-registration" class="button">Register Now</a>
-          </p>
-        </div>
-        <div class="card-image">
-          <img loading="lazy" src="events/lewisville_right_image.jpg" alt="Family cooking" class="card-img">
+      <!-- Event 5 -->
+      <div class="event">
+        <h4 class="event-title">Fermentation Series: Kombucha & More</h4>
+        <p class="event-date">August 7–28, 2025 (4 sessions) | 5:00 PM - 6:30 PM (GMT)</p>
+        <p class="event-description">Weekly deep dive into the world of fermentation. Start your own healthy probiotic creations at home!</p>
+        <button class="collapsible">More Info & Registration</button>
+        <div class="content">
+          <div class="collapsible-inner">
+            <div class="text-section">
+              <p>Series includes:<br>
+                Week 1: Kombucha basics<br>
+                Week 2: Water kefir and dairy kefir<br>
+                Week 3: Fermented vegetables<br>
+                Week 4: Creative flavor combinations<br><br>
+                Sign up for individual sessions or the whole series<br>
+                Series discount available for members<br>
+                <a href="https://ljmstsastudent.github.io/Pwngo/about-us.html#event-registration" class="button">Register Now</a>
+              </p>
+            </div>
+            <div class="card-image">
+              <img loading="lazy" src="events/blob-1652.webp" alt="Fermentation workshop" class="card-img">
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- AUGUST -->
-<div class="month">
-  <h3 class="month-title">August 2025</h3>
-
-  <!-- Event 5 -->
-  <div class="event">
-    <h4 class="event-title">Fermentation Series: Kombucha & More</h4>
-    <p class="event-date">August 7–28, 2025 (4 sessions) | 5:00 PM - 6:30 PM (GMT)</p>
-    <p class="event-description">Weekly deep dive into the world of fermentation. Start your own healthy probiotic creations at home!</p>
-    <button class="collapsible">More Info & Registration</button>
-    <div class="content">
-      <div class="collapsible-inner">
-        <div class="text-section">
-          <p>Series includes:<br>
-            Week 1: Kombucha basics<br>
-            Week 2: Water kefir and dairy kefir<br>
-            Week 3: Fermented vegetables<br>
-            Week 4: Creative flavor combinations<br><br>
-            Sign up for individual sessions or the whole series<br>
-            Series discount available for members<br>
-            <a href="https://ljmstsastudent.github.io/Pwngo/about-us.html#event-registration" class="button">Register Now</a>
-          </p>
-        </div>
-        <div class="card-image">
-          <img loading="lazy" src="events/blob-1652.webp" alt="Fermentation workshop" class="card-img">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    </div>
   </div>
 
   <script>
@@ -359,3 +352,4 @@
   </script>
 </body>
 </html>
+
