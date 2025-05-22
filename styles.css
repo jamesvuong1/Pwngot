@@ -591,3 +591,98 @@ img {
     --text-sm: 1.1rem;
   }
 }
+/* Stats Grid Section */
+.stats-grid {
+  margin: 2rem auto;
+}
+
+.stat-card {
+  padding: 1.5rem;
+}
+
+.stat-card h3 {
+  font-size: var(--text-md);
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: var(--text-sm);
+  line-height: var(--line-normal);
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.circle img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Mission Section */
+.home-page-top {
+  padding: 2rem 1rem;
+}
+
+.mission-statement {
+  padding: 0 1rem;
+}
+
+.static-txt {
+  font-size: var(--text-lg);
+  line-height: var(--line-tight);
+}
+
+.mission h1 {
+  font-size: var(--text-lg);
+  margin-bottom: 0.5rem;
+}
+
+.mission h3 {
+  font-size: var(--text-md);
+  line-height: var(--line-normal);
+}
+
+/* Image Section */
+.change-img {
+  width: 200px;
+  height: 200px;
+}
+
+/* Newsletter Section */
+.newletter-announcement {
+  padding: 2rem 1rem;
+}
+
+.newletter-announcement h1 {
+  font-size: var(--text-lg);
+  margin-bottom: 0.5rem;
+}
+
+.newletter-announcement h2 {
+  font-size: var(--text-md);
+  line-height: var(--line-normal);
+  margin-bottom: 1rem;
+}
+
+/* Social Icons */
+.social-icons {
+  font-size: var(--text-md);
+}
+
+/* Popup Modal */
+.popup-box h2 {
+  font-size: var(--text-lg);
+}
+
+.popup-box h4 {
+  font-size: var(--text-sm);
+}
+
+/* Footer */
+footer {
+  padding: 1.5rem;
+  font-size: var(--text-xs);
+}
